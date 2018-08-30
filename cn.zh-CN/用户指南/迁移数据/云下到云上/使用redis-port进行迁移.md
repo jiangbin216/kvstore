@@ -27,7 +27,11 @@
 
 ## 根据 redis-port 日志查看数据同步状态 { .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15331999982803_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15356228982803_zh-CN.png)
 
 当出现`sync rdb done`时全量同步完成，进入增量同步的模式。
+
+全量同步完成后，如果持续有数据写入，则增量同步也将持续进行。上图`sync rdb done`之后的日志中，包含`+forward=1`的条目的`+nbytes`值如果大于14，则该条目为有数据的增量同步日志，用户可以此为依据判断增量同步情况，并根据实际需求选择将数据切换到云数据库 Redis 版的时间。
+
+**说明：** 当全量同步完成后，同步源会给redis-port发送ping命令，此时会产生`+forward=1`且`+nbytes=14`的日志记录。该记录并非增量同步日志。
 
