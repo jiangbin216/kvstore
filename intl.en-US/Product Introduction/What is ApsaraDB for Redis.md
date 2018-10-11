@@ -1,6 +1,6 @@
 # What is ApsaraDB for Redis {#concept_m3j_s5z_sdb .concept}
 
-ApsaraDB for Redis is compatible with open source redis protocol-standard, which provides persistent memory database services, based on the highly reliable dual-machine hot-standby architecture and the cluster architecture,  this service can meet the needs of businesses that require high read/write performance and flexible capacity adjustment.
+ApsaraDB for Redis is compatible with open source Redis protocol-standard, which provides persistent memory database services, based on the highly reliable dual-machine hot-standby architecture and the cluster architecture,  this service can meet the needs of businesses that require high read/write performance and flexible capacity adjustment.
 
 ApsaraDB for Redis supports many data types including String, List, Set, SortedSet, and Hash, and provides advanced functions such as Transactions and Pub/Sub.
 
