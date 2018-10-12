@@ -2,10 +2,6 @@
 
 ## Flexible Architecture {#section_kft_ls4_tdb .section}
 
-**Single-node architecture**
-
-The single-node architecture is suitable for cache-only scenarios. It supports flexible configuration changes for single-node clusters and provides cost-effective performance that suits high QPS scenarios.
-
 **Dual-machine hot standby architecture**
 
 During system operations, data is synchronized between the master and slave nodes. If the master node is at fault, the system automatically switches over to the slave node in a matter of seconds. The entire process is automatic without affecting your business. The master/slave architecture guarantees the high availability of system services.
