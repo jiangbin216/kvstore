@@ -51,7 +51,7 @@ Caused by: java.util.NoSuchElementException: Pool exhausted
 
 **2.异常描述**
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13758/3933_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13758/15395701003933_zh-CN.png)
 
 上述异常是客户端没有从连接池（最大数量maxTotal）获得可用的Jedis连接造成的，可能有如下原因：
 
@@ -208,7 +208,7 @@ Redis有三种客户端缓冲区：
 -   slave客户端缓冲区\(slave\)：用于同步master节点的写命令，完成复制。
 -   发布订阅缓冲区\(pubsub\)：pubsub不是普通的命令，因此有单独的缓冲区。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13758/3934_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13758/15395701013934_zh-CN.png)
 
 Redis客户端缓冲区配置的格式是：
 
@@ -237,7 +237,7 @@ redis> config get client-output-buffer-limit
 
 **客户**：排查自身代码是否使用JedisPool管理Jedis连接，是否存在并发操作Jedis的情况。
 
-**工单**: 排查是否上述[\(2\)](#p_qwd_qct_xdb)和[\(3\)](#p_l3l_tct_xdb)原因，将阿里云Redis中timeout设置为`0`，表示不主动关闭空闲连接，将缓冲区设置为`0 0 0`，表示不对客户端缓冲区进行限制。经过上述设置，一般可以解决问题。
+**工单**: 排查是否上述[\(2\)](#p_qwd_qct_xdb)或[\(3\)](#p_l3l_tct_xdb)原因。云数据库Redis版默认的timeout值为0， 目前不支持修改。client-output-buffer-limit默认值为500MB，为阿里云优化后的合理值。如果超过该值，说明用户返回的值过多， 出于性能和稳定性考虑， 可建议用户优化应用程序。
 
 ## 三、非法的客户端地址 （阿里云Redis提供客户端白名单功能） { .section}
 
@@ -729,7 +729,7 @@ return resultMap;
 
 **1.异常堆栈**
 
-命令role不能被普通用户执行，详情可参考[暂未开放的Redis命令](../cn.zh-CN/快速入门/支持的 Redis 命令.md#section_xgx_zxy_xdb)。
+命令role不能被普通用户执行，详情可参考[暂未开放的Redis命令](../../../../cn.zh-CN/快速入门/支持的 Redis 命令.md#section_xgx_zxy_xdb)。
 
 ```
 redis.clients.jedis.exceptions.JedisDataException: ERR command role not support **for** normal user
