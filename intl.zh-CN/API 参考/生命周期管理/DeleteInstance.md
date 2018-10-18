@@ -1,6 +1,6 @@
 # DeleteInstance {#reference_ucs_hyx_wdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
+调用该API可以释放实例。
 
 调用释放实例接口的要求如下：
 
@@ -13,7 +13,7 @@
 
 |名称|类型|是否必须|描述|
 |--|--|----|--|
-|<公共请求参数\>|-|是|参见[公共请求参数](cn.zh-CN/API 参考/公共参数.md#section_hph_dhp_wbb)。|
+|<公共请求参数\>|-|是|参见[公共请求参数](intl.zh-CN/API 参考/公共参数.md#section_hph_dhp_wbb)。|
 |Action|String|是|系统规定参数，取值：DeleteInstance。|
 |InstanceId|String|是|实例 ID（全局唯一）|
 
@@ -21,7 +21,7 @@
 
 |名称|类型|描述|
 |--|--|--|
-|<公共返回参数\>|-|参见[公共返回参数](cn.zh-CN/API 参考/公共参数.md#section_rjr_zgp_wbb)。|
+|<公共返回参数\>|-|参见[公共返回参数](intl.zh-CN/API 参考/公共参数.md#section_rjr_zgp_wbb)。|
 
 ## 请求示例 {#section_d3l_4kw_wbb .section}
 
