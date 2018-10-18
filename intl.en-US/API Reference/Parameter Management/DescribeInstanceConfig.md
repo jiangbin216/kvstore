@@ -8,7 +8,7 @@ This API is used to view the configuration parameters of an instance.
 
 |Name|Type|Required|Description|
 |----|----|--------|-----------|
-|<Common request parameters\>|-|Yes|See [Public parameters](intl.en-US/API Reference/Common Parameters.md#section_hph_dhp_wbb).|
+|<Common request parameters\>|-|Yes|See [Public parameters](reseller.en-US/API Reference/Common Parameters.md#section_hph_dhp_wbb).|
 |Action|String|Yes|Required parameter. Value: DescribeInstanceConfig.|
 |InstanceId|String|Yes|Instance ID|
 
@@ -16,8 +16,8 @@ This API is used to view the configuration parameters of an instance.
 
 |Name|Type|Description|
 |----|----|-----------|
-|<Common return parameters\>|-|See [Public return parameters](intl.en-US/API Reference/Common Parameters.md#section_rjr_zgp_wbb).|
-|Config|String|Configuration parameters for the instance. See [Instance configurations table](intl.en-US/API Reference/Appendix/Instance configurations table.md#).|
+|<Common return parameters\>|-|See [Public return parameters](reseller.en-US/API Reference/Common Parameters.md#section_rjr_zgp_wbb).|
+|Config|String|Configuration parameters for the instance. See [Instance configurations table](reseller.en-US/API Reference/Appendix/Instance configurations table.md#).|
 
 ## Request example {#section_d3l_4kw_wbb .section}
 
