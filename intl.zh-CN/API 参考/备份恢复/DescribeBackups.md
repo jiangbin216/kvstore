@@ -1,8 +1,6 @@
 # DescribeBackups {#reference_z1y_kx2_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-查询备份文件的详细信息，包括备份开始时间、文件大小、备份方式及下载地址等详细信息。
+调用该API可以查询备份文件的详细信息，包括备份开始时间、文件大小、备份方式及下载地址等详细信息。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
