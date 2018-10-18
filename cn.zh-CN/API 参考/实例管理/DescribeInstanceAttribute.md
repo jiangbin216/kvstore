@@ -1,8 +1,6 @@
 # DescribeInstanceAttribute {#reference_nyk_w52_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-用来查询实例的详细信息。
+调用该API可以查询实例的详细信息。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
@@ -47,8 +45,8 @@
 |VpcId|String|VPC 的 ID|
 |VSwitchId|String|虚拟交换机 ID|
 |PrivateIpAddress|String|私有 IP 地址|
-|MaintainStartTime|String|可运维开始时间|
-|MaintainEndTime|String|可运维结束时间|
+|MaintainStartTime|String|可运维开始时间，返回格式`HH:mmZ`，如02:00Z。|
+|MaintainEndTime|String|可运维结束时间，返回格式：`HH:mmZ` ，如02:00Z。|
 |SecurityIPList|String|IP 白名单|
 |AvailabilityValue|String|当月的可用性指标|
 
