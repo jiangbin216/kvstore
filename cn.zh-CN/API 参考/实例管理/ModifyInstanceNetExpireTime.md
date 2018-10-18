@@ -1,8 +1,6 @@
 # ModifyInstanceNetExpireTime {#reference_yx1_wv2_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-当实例之前做过经典网络向 VPC 网络迁移，选择了保留经典网络连接地址，调用该接口可以延长经典网络地址的保存时间。
+当实例之前做过经典网络向 VPC 网络迁移，选择了保留经典网络连接地址，可调用该API延长经典网络地址的保存时间。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
