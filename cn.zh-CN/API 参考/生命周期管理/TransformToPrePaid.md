@@ -1,8 +1,6 @@
 # TransformToPrePaid {#reference_ctb_ns2_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-转换实例付费类型，按量付费实例转换为包年包月（预付费）实例。
+调用该API可以转换实例付费类型，将按量付费实例转换为包年包月（预付费）实例。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
