@@ -1,8 +1,6 @@
 # ModifySecurityIps {#reference_hby_zv2_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-设置实例的 IP 白名单，可以选择允许的 ECS IP 访问实例。
+调用该API能够设置实例的 IP 白名单，从而允许指定的ECS IP访问实例。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
