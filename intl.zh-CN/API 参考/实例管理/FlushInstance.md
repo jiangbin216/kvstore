@@ -1,10 +1,8 @@
 # FlushInstance {#reference_zjb_hdf_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
+调用该API将清空该实例的存储数据，且不可恢复。
 
-清空该实例的存储数据，且不可恢复。
-
-此 API 为异步操作，用户调用后 API 即刻返回，清空实例的操作在后台执行。
+调用此 API 为异步操作，用户调用后 API 即刻返回，清空实例的操作在后台执行。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
