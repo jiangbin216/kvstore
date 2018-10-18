@@ -1,5 +1,7 @@
 # API 概览 {#concept_t53_hsn_tdb .concept}
 
+本文汇总了云数据库RDS所有可调用的API，各API的具体信息请参见相关文档。
+
 ## 实例生命周期管理接口 { .section}
 
 |API|描述|
@@ -45,6 +47,6 @@
 
 |API|描述|
 |---|--|
-|DescribeInstanceConfig|查看实例参数配置|
+|DescribeParameters|查看实例参数配置|
 |ModifyInstanceConfig|修改参数配置|
 
