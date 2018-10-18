@@ -1,8 +1,6 @@
 # SwitchNetwork {#reference_qqx_cw2_xdb .reference}
 
-## 描述 {#section_z1z_2kw_wbb .section}
-
-切换实例的网络类型，支持从经典网络切换为 VPC 网络。
+调用该API可以切换实例的网络类型，支持从经典网络切换为VPC网络。
 
 ## 请求参数 {#section_fn4_gkw_wbb .section}
 
