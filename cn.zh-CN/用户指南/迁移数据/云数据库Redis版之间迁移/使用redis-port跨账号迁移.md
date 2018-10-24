@@ -7,8 +7,6 @@
 -   使用chmod u+x redis-port命令将redis-port修改为可执行文件。
 -   在redis-port所在目录下执行mkdir logs。
 
-Redis-port是github上的一款开源第三方软件，基于GO语言实现，主要是为Redis迁移服务。利用该工具可以实现Redis数据的迁移、恢复、同步等操作。
-
 1.  登录[云数据库Redis控制台](http://http、)。 
 2.   在实例列表中，单击源实例的实例ID，或其右侧操作列的**管理**。 
 3.   在左侧导航栏中，单击**备份与恢复**。 
