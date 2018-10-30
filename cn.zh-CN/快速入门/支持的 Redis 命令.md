@@ -32,8 +32,8 @@
 
 以及
 
-|HyperLogLog|Pub/Sub（发布/订阅）|Transaction（事务）|Connection（连接）|Server（服务器）|Scripting\(脚本\)|Geo\(地理位置\)|
-|-----------|--------------|---------------|--------------|-----------|---------------|-----------|
+|HyperLogLog|Pub/Sub（发布/订阅）|Transaction（事务）|Connection（连接）|Server（服务器）|Scripting（脚本）|Geo（地理位置）|
+|-----------|--------------|---------------|--------------|-----------|-------------|---------|
 |PFADD|PSUBSCRIBE|DISCARD|AUTH|FLUSHALL|EVAL|GEOADD|
 |PFCOUNT|PUBLISH|EXEC|ECHO|FLUSHDB|EVALSHA|GEOHASH|
 |PFMERGE|PUBSUB|MULTI|PING|DBSIZE|SCRIPT EXISTS|GEOPOS|
@@ -142,7 +142,7 @@ riinfo db_idx ro_slave_idx [section]
 iscan db_idx cursor [MATCH pattern] [COUNT count]
 ```
 
--   imonitor 命令：和 iinfo, iscan 类似，在 monitor 的基础上新增一个参数指定 monitor 执行的 db\_idx，db\_idx 的范围是\[0, nodecount\), nodecount 可以通过 info 命令获取或者从控制台上查看实例拓扑图。用法如下：
+-   imonitor 命令：和 iinfo、 iscan 类似，在 monitor 的基础上新增一个参数指定 monitor 执行的 db\_idx，db\_idx 的范围是\[0, nodecount\)， nodecount 可以通过 info 命令获取或者从控制台上查看实例拓扑图。用法如下：
 
     `imonitor db_idx`
 
@@ -151,6 +151,8 @@ iscan db_idx cursor [MATCH pattern] [COUNT count]
 ```
 rimonitor db_idx ro_slave_idx
 ```
+
+    **说明：** imonitor和rimonitor请用telnet连接后执行，如需退出imonitor/rimonitor，请使用quit命令。
 
 
 ## 说明 { .section}

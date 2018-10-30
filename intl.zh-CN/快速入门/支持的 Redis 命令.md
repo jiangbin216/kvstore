@@ -32,8 +32,8 @@
 
 以及
 
-|HyperLogLog|Pub/Sub（发布/订阅）|Transaction（事务）|Connection（连接）|Server（服务器）|Scripting\(脚本\)|Geo\(地理位置\)|
-|-----------|--------------|---------------|--------------|-----------|---------------|-----------|
+|HyperLogLog|Pub/Sub（发布/订阅）|Transaction（事务）|Connection（连接）|Server（服务器）|Scripting（脚本）|Geo（地理位置）|
+|-----------|--------------|---------------|--------------|-----------|-------------|---------|
 |PFADD|PSUBSCRIBE|DISCARD|AUTH|FLUSHALL|EVAL|GEOADD|
 |PFCOUNT|PUBLISH|EXEC|ECHO|FLUSHDB|EVALSHA|GEOHASH|
 |PFMERGE|PUBSUB|MULTI|PING|DBSIZE|SCRIPT EXISTS|GEOPOS|
@@ -50,7 +50,7 @@
 
 **说明：** 
 
--   集群实例下，client list 命令列出所有连接到该 proxy 的 user connection。其中，id、age、idle、addr、fd、name、db、multi、omem、cmd 字段和redis内核表达的意思一样。sub、psub 在 proxy 层没作区分，要么都为1，要么都为0。qbuf、qbuf-free、obl、oll 字段目前没有意义。
+-   集群实例下，client list 命令列出所有连接到该 proxy 的 user connection。其中，id、age、idle、addr、fd、name、db、multi、omem、cmd 字段和redis内核表达的意思一样。sub、psub 在 proxy 层没有区分，要么都为1，要么都为0。qbuf、qbuf-free、obl、oll 字段目前没有意义。
 -   集群实例下，client kill 命令目前支持两种形式：`client kill ip:port`和`client kill addr ip:port`。
 
 ## 暂未开放的命令 {#section_xgx_zxy_xdb .section}
@@ -97,6 +97,16 @@
     -   多 key 命令包括：DEL、SORT、MGET、MSET、BITOP、EXISTS、MSETNX、RENAME、 RENAMENX、BLPOP、BRPOP、RPOPLPUSH、BRPOPLPUSH、SMOVE、SUNION、SINTER、SDIFF、SUNIONSTORE、SINTERSTORE、SDIFFSTORE、ZUNIONSTORE、ZINTERSTORE、 PFMERGE、PFCOUNT。
     -   不允许在事务中使用的命令包括：WATCH、UNWATCH、RANDOMKEY、KEYS、SUBSCRIBE、 UNSUBSCRIBE、PSUBSCRIBE、PUNSUBSCRIBE、PUBLISH、PUBSUB、SCRIPT、EVAL、 EVALSHA、SCAN、ISCAN、DBSIZE、ADMINAUTH、AUTH、PING、ECHO、FLUSHDB、 FLUSHALL、MONITOR、IMONITOR、RIMONITOR、INFO、IINFO、RIINFO、CONFIG、 SLOWLOG、TIME、CLIENT。
 
+**Lua使用限制**
+
+Lua 脚本放开限制，标准版-双节点、标准版-单节点支持用户直接调用。
+
+集群版本条件性支持：
+
+-   所有key都应该由 KEYS 数组来传递，redis.call/pcall 中调用的redis命令，key的位置必须是KEYS array（不能使用Lua变量替换KEYS），否则直接返回错误信息，"`-ERR bad lua script for redis cluster, all the keys that the script uses should be passed using the KEYS array\r\n`"。
+-   所有key必须在1个slot上，否则返回错误信息，"`-ERR eval/evalsha command keys must be in same slot\r\n`"。
+-   调用必须要带有key，否则直接返回错误信息， "`-ERR for redis cluster, eval/evalsha number of keys can't be negative or zero\r\n`"。
+
 ## 自研的集群实例命令 { .section}
 
 -   info key 命令：查询 key 所属的 slot 和 db。Redis 原生的 info 命令中最多可以带一个可选的 section \(`info [section]`\)。目前云数据库 Redis 版的集群实例，部分命令限制所有 key 必须在同一个 slot 中，`info key` 命令方便用户查询某些 key 是否在同一个 slot 或 db 节点中。用法如下：
@@ -132,7 +142,7 @@ riinfo db_idx ro_slave_idx [section]
 iscan db_idx cursor [MATCH pattern] [COUNT count]
 ```
 
--   imonitor 命令：和 iinfo, iscan 类似，在 monitor 的基础上新增一个参数指定 monitor 执行的 db\_idx，db\_idx 的范围是\[0, nodecount\), nodecount 可以通过 info 命令获取或者从控制台上查看实例拓扑图。用法如下：
+-   imonitor 命令：和 iinfo、 iscan 类似，在 monitor 的基础上新增一个参数指定 monitor 执行的 db\_idx，db\_idx 的范围是\[0, nodecount\)， nodecount 可以通过 info 命令获取或者从控制台上查看实例拓扑图。用法如下：
 
     `imonitor db_idx`
 
@@ -141,6 +151,8 @@ iscan db_idx cursor [MATCH pattern] [COUNT count]
 ```
 rimonitor db_idx ro_slave_idx
 ```
+
+    **说明：** imonitor和rimonitor请用telnet连接后执行，如需退出imonitor/rimonitor，请使用quit命令。
 
 
 ## 说明 { .section}
