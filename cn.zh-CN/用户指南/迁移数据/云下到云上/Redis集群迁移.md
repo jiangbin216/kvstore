@@ -61,7 +61,7 @@ redis-sync-manager的如下参数和redis-port的参数的用法不同，用户�
 
 ## 运行Demo {#ul_lfs_1y4_k2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15403667046883_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15411349516883_zh-CN.png)
 
 图片中的标注解释如下：
 
