@@ -11,7 +11,7 @@
 
 ## 下载redis-sync-manager { .section}
 
-[redis-sync-manager地址](docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/94155/jp_ja/1540361299092/redis-sync-manager)
+[redis-sync-manager](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/94155/cn_zh/1541131021562/redis-sync-manager)
 
 ## 使用说明 { .section}
 
@@ -61,7 +61,7 @@ redis-sync-manager的如下参数和redis-port的参数的用法不同，用户�
 
 ## 运行Demo {#ul_lfs_1y4_k2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15411349516883_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15411350146883_zh-CN.png)
 
 图片中的标注解释如下：
 
