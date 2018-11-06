@@ -26,6 +26,7 @@ https://r-kvstore.aliyuncs.com/
 &DBInstanceId=r-xxxxxxxxxxxxxxx
 &RegionId=cn-hangzhou
 &AutoRenew=True
+&Duration=1
 &<公共请求参数>
 ```
 
