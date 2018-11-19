@@ -8,7 +8,7 @@
 
 云数据库 Redis 双副本集群版实例由 Proxy 服务器（服务代理）、分片服务器和配置服务器三个组件组成。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3106/880_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3106/1542605168880_zh-CN.png)
 
 -   **Proxy 服务器：**
 
@@ -57,4 +57,9 @@
 
     由于集群版的架构引入了多个组件，在 Redis 协议支持上相比标准版有一定限制。详情请参见[支持的 Redis 命令](../../../../cn.zh-CN/快速入门/支持的 Redis 命令.md#)。
 
+
+## 常用帮助 {#section_fmm_nc5_vfb .section}
+
+-   集群版部分子节点内存占用异常请参见[如何搜索过大的 key](../../../../cn.zh-CN/常见问题/如何搜索过大的 key.md#)。
+-   需要掌握内存中数据的分布情况请参见[Redis内存分析方法](https://help.aliyun.com/knowledge_detail/50037.html)。
 
