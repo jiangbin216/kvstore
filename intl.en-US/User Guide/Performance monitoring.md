@@ -27,9 +27,6 @@ ApsaraDB for Redis provides 10 monitoring groups. You can customize metrics on t
 4.  On the data console logon page, enter the ID and password of the ApsaraDB for Redis instance to go to the homepage of DMS for Redis.
 5.  On the Performance Monitoring page, click **Real-time Monitor**.
 
-    For more information, see [DMS documentation](https://help.aliyun.com/document_detail/47749.html).
-
-
 ## Custom metrics { .section}
 
 1.  Log on to the [Redis console](https://kvstore.console.aliyun.com/) and locate the target instance.
