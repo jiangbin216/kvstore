@@ -128,7 +128,7 @@ Lua 脚本放开限制，标准版-双节点、标准版-单节点支持用户�
 iinfo db_idx [section]
 ```
 
-    其中，db\_idx 的范围是\[0, nodecount\]，nodecount 可以通过 info 命令获取，section 为 info 官方一致的值。要了解某个 Redis 节点的 info 可以使用 iinfo 命令或者从控制台上查看实例拓扑图，详情请参见 [如何查看 Redis 集群子实例内存](https://help.aliyun.com/document_detail/56945.html)。
+    其中，db\_idx 的范围是\[0, nodecount\]，nodecount 可以通过 info 命令获取，section 为 info 官方一致的值。要了解某个 Redis 节点的 info 可以使用 iinfo 命令或者从控制台上查看实例拓扑图。
 
 -   riinfo 命令：和 iinfo 命令类似，但只能在读写分离的模式下使用。用法中增加了一个 readonly slave 的 idx，用于指定在第几个 readonly slave 上执行 info 命令。在读写分离集群中可以用来在指定 readonly slave 上执行 info 命令。如果在非读写分离集群中使用，会返回错误。用法如下：
 
@@ -157,8 +157,5 @@ rimonitor db_idx ro_slave_idx
 
 ## 说明 { .section}
 
--   关于 Redis 命令的详细信息，请参见 [官方文档](http://redis.io/commands)。
-
--   云数据库 Redis 版集群实例最新的命令支持详情，请参见 [云栖社区说明](https://yq.aliyun.com/articles/241237)。
-
+关于 Redis 命令的详细信息，请参见 [官方文档](http://redis.io/commands)。
 
