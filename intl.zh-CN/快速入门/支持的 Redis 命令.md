@@ -128,7 +128,7 @@ Lua 脚本放开限制，标准版-双节点、标准版-单节点支持用户�
 iinfo db_idx [section]
 ```
 
-    其中，db\_idx 的范围是\[0, nodecount\]，nodecount 可以通过 info 命令获取，section 为 info 官方一致的值。要了解某个 Redis 节点的 info 可以使用 iinfo 命令或者从控制台上查看实例拓扑图。
+    其中，db\_idx 的范围是\[0, nodecount\]，nodecount 可以通过 info 命令获取，section 的用法与官方 info 命令中的 section 一致。要了解某个 Redis 节点的 info 可以使用 iinfo 命令或者从控制台上查看实例拓扑图。
 
 -   riinfo 命令：和 iinfo 命令类似，但只能在读写分离的模式下使用。用法中增加了一个 readonly slave 的 idx，用于指定在第几个 readonly slave 上执行 info 命令。在读写分离集群中可以用来在指定 readonly slave 上执行 info 命令。如果在非读写分离集群中使用，会返回错误。用法如下：
 
