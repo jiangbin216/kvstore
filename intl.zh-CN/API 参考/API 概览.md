@@ -6,9 +6,7 @@
 
 |API|描述|
 |---|--|
-|[DescribeRegions](intl.zh-CN/API 参考/区域管理/DescribeRegions.md#)|地域查询|
 |[DescribeZones](intl.zh-CN/API 参考/区域管理/DescribeZones.md#)|可用区查询|
-|[MigrateToOtherZone](intl.zh-CN/API 参考/区域管理/MigrateToOtherZone.md#)|迁移可用区|
 
 ## 实例生命周期管理接口 { .section}
 
@@ -17,7 +15,6 @@
 |[CreateInstance](intl.zh-CN/API 参考/生命周期管理/CreateInstance.md#)|创建实例|
 |[DeleteInstance](intl.zh-CN/API 参考/生命周期管理/DeleteInstance.md#)|释放实例|
 |[ModifyInstanceSpec](intl.zh-CN/API 参考/生命周期管理/ModifyInstanceSpec.md#)|变更实例规格|
-|[TransformToPrePaid](intl.zh-CN/API 参考/生命周期管理/TransformToPrePaid.md#)|按量付费转包年包月|
 
 ## 实例管理接口 { .section}
 
