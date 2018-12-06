@@ -66,7 +66,7 @@ Redis 增量迁移支持的命令包括：
 
     安装完 nginx，修改 nginx 配置文件/etc/nginx/nginx.conf，设置后端监听 redis。 注释掉配置文件中 http 的相关配置，添加 tcp 的配置内容。需要注释掉的 http 配置内容如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931902791_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282791_zh-CN.png)
 
     需要在配置文件中添加 tcp 配置内容：
 
@@ -92,7 +92,7 @@ Redis 增量迁移支持的命令包括：
 
     例如，需要访问的 Redis 的连接地址为：`r-bp1b294374634044.redis.rds.aliyuncs.com:6379`，nginx代理转发端口为3333，那么 tcp 相关配置如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931902792_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282792_zh-CN.png)
 
 3.  通过转发接口访问 Redis
 
@@ -100,7 +100,7 @@ Redis 增量迁移支持的命令包括：
 
     假设 nginx 部署的 ECS 服务的 EIP 为：`114.55.89.152`，那么可以直接用 redis\_cli 访问 nginx 转发端口，测试代理转发是否正常。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931902793_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282793_zh-CN.png)
 
     如上图所示，可以通过访问 nginx 代理转发端口来访问 Redis 实例。
 
@@ -148,7 +148,7 @@ DTS 支持 VPC 后，对于专有网络 Redis 实例或者通过专线接入阿�
 
         **数据库密码**：访问 Redis 实例的密码
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931902794_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282794_zh-CN.png)
 
 3.  当连接信息配置完成后，即可点击页面右下角的 **授权白名单并进入下一步**，开始进行迁移库的选择。
 4.  选择迁移对象及迁移类型
@@ -165,15 +165,15 @@ DTS 支持 VPC 后，对于专有网络 Redis 实例或者通过专线接入阿�
     -   迁移对象
     这个步骤需要选择要迁移的库。目前 Redis 只支持整库迁移，所以只能选择要迁移的库，而不能选择要部分 Key。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931912799_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282799_zh-CN.png)
 
 5.  预检查
 
-    在迁移任务正式启动之前，会先进行前置预检查，只有预检查通过后，才能成功启动迁移。预检查的内容及修复方式可以参考[预检查简介](https://help.aliyun.com/document_detail/52099.html)。
+    在迁移任务正式启动之前，会先进行前置预检查，只有预检查通过后，才能成功启动迁移。
 
     如果预检查失败，那么可以点击具体检查项后的按钮，查看具体的失败详情，并根据失败原因修复后，重新进行预检查。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15439931912800_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3156/15440628282800_zh-CN.png)
 
 6.  启动迁移任务
 
