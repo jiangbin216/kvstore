@@ -4,7 +4,7 @@ You can use redis-sync-manager to migrate data from an on-premises Redis cluster
 
 ## Prerequisites {#section_q3l_2xh_wfb .section}
 
--   You have specified redis-port in the $PATHenvironment variable, because redis-sync-manager depends on [redis-port](intl.en-US/User Guide/Migrate data/Migrate from on-premises Redis to ApsaraDB Redis/暂时只有中文.md#) for the migration.
+-   You have specified redis-port in the $PATH environment variable, because redis-sync-manager depends on [redis-port](intl.en-US/User Guide/Migrate data/Migrate from on-premises Redis to ApsaraDB Redis/暂时只有中文.md#) for the migration.
 -   You must be aware of the possible memory usage requirements for source and target basic data, and the current concurrency.
 -   Make sure that no slots in the source cluster are in an intermediate migration state.
 
@@ -47,7 +47,7 @@ Redis-sync-manager interacts with `src_host:src_port` to obtain information abou
 
 ## Migration example {#ul_lfs_1y4_k2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15439942866883_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15440670166883_en-US.png)
 
 The callouts in the picture are described as follows.
 
