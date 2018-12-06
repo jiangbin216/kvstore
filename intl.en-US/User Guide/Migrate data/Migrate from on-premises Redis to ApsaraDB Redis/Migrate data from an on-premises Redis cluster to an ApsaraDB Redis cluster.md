@@ -47,7 +47,7 @@ Redis-sync-manager interacts with `src_host:src_port` to obtain information abou
 
 ## Migration example {#ul_lfs_1y4_k2b .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15440670166883_en-US.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/15449/15440671566883_en-US.png)
 
 The callouts in the picture are described as follows.
 
