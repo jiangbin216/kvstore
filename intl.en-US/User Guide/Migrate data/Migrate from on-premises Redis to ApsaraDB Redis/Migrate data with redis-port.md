@@ -33,6 +33,6 @@ You can use redis-port to migrate data from a self-managed Redis database to an 
 
 3.  Monitor the logs to make sure the migration procedure runs as expected.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441533652803_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441534232803_en-US.png)
 
 
