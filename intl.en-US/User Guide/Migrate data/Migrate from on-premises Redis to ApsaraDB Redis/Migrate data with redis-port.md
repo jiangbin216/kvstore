@@ -35,10 +35,10 @@ You can use redis-port to migrate data from a self-managed Redis database to an 
 
 3.  Monitor the logs to make sure the migration procedure runs as expected.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441637442803_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441638442803_en-US.png)
 
     **Note:** 
 
-    -   Check the logs after `sync rdb done`, if the `+nbytes` value of an entry containing `+forward=1` is greater than 14, it is a incremental-synchronization log. You can monitor the status of the incremental synchronization to determine the best time to switch databases.
+    -   Check the logs after `sync rdb done`, if the `+nbytes` value of an entry containing `+forward=1` is greater than 14, it is an incremental-synchronization log. You can monitor the status of the incremental synchronization to determine the best time to switch databases.
     -   After full synchronization, the synchronization source \(i.e. the self-managed Redis database\) will send periodic pingrequests, generating logs with `+forward=1` and `+nbytes=14`. These are not incremental-synchronization logs.
 
