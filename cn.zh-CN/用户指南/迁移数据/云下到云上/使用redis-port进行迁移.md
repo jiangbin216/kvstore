@@ -2,14 +2,16 @@
 
 用户可以使用redis-port将自建 Redis 迁移至云数据库 Redis 版。
 
-## 下载 redis-port { .section}
+## 前提条件 {#section_i54_wj5_1gb .section}
 
-[redis-port地址](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/85829/cn_zh/1533199526614/redis-port%282%29)
+-   在目的Redis实例所在的VPC网络中创建了Linux系统的ECS实例。
+-   在ECS实例中下载[redis-port](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/85829/cn_zh/1533199526614/redis-port%282%29?spm=a2c4g.11186623.2.10.1b5447ceE6Wtwt)。
+-   使用chmod u+x redis-port命令将redis-port修改为可执行文件。
 
 ## 使用示例 { .section}
 
 ```
-./redis-port  sync  --from=src_host:src_port --password=src_password  --target=dst_host:dst_port   --auth=dst_password  [--filterkey="str1|str2|str3"] [--targetdb=DB] [--rewrite] [--bigkeysize=SIZE] [--logfile=REDISPORT.LOG]
+./redis-port sync --from=src_host:src_port --password=src_password --target=dst_host:dst_port --auth=dst_password  [--filterkey="str1|str2|str3"] [--targetdb=DB] [--rewrite] [--bigkeysize=SIZE] [--logfile=REDISPORT.LOG]
 ```
 
 **参数说明**
@@ -23,11 +25,11 @@
 -   str1|str2|str3：过滤具有 str1 或 str2 或 str3 的 key
 -   DB：将同步入云 redis 的 DB
 -   rewrite：覆盖已经写入的 key
--   bigkeysize=SIZE：当写入的 value 大于 SIZE 时，走大 key 写入模式
+-   bigkeysize=SIZE：当写入的 value 大于 SIZE 时，启动大 key 写入模式
 
 ## 根据 redis-port 日志查看数据同步状态 { .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15356228982803_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441533632803_zh-CN.png)
 
 当出现`sync rdb done`时全量同步完成，进入增量同步的模式。
 
