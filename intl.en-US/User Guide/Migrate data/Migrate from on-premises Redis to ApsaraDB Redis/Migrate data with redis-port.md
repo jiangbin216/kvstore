@@ -28,11 +28,11 @@ You can use redis-port to migrate data from a self-managed Redis database to an 
     |str1|str2|str3|Filter keys with str1, str2, or str3.|
     |DB|Index of the self-managed Redis DB to be migrated.|
     |rewrite|Overwrite identical keys that already exist in the ApsaraDB for Redis instance.|
-    |bigkeysize=SIZE|While writing keys larger than the value of SIZE, enable big-key writing.|
+    |bigkeysize|While writing keys larger than the value of size, enable big-key writing.|
     |logfile|Specify a file to save the logs.|
 
 3.  Monitor the logs to make sure the migration procedure runs as expected.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441534232803_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15441534942803_en-US.png)
 
 
