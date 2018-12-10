@@ -6,7 +6,7 @@
 
 |API|描述|
 |---|--|
-|[DescribeZones](intl.zh-CN/API 参考/区域管理/DescribeZones.md#)|可用区查询|
+|[DescribeRegions](intl.zh-CN/API 参考/区域管理/DescribeRegions.md#)|地域查询|
 
 ## 实例生命周期管理接口 { .section}
 
