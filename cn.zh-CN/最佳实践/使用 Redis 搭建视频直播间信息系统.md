@@ -20,7 +20,7 @@ Redis 集合使用空值散列表（hash table）实现，因此对集合的增�
 
 -   以 unix timestamp + 毫秒数为分值，记录 user55 的直播间增加的5条弹幕：
 
-    ```language-bourne
+    ```
     redis> ZADD user55:_danmu 1523959031601166 message111111111111
     (integer) 1
     11.160.24.14:3003> ZADD user55:_danmu 1523959031601266 message222222222222
@@ -35,7 +35,7 @@ Redis 集合使用空值散列表（hash table）实现，因此对集合的增�
 
 -   返回最新的3条弹幕信息：
 
-    ```language-bourne
+    ```
     redis> ZREVRANGEBYSCORE user55:_danmu +inf -inf LIMIT 0 3
     1) "message5555"
     2) "message444444"
