@@ -1,8 +1,8 @@
 # 支持的 Redis 命令 {#concept_ztj_rpn_tdb .concept}
 
-云数据库 Redis 版兼容 Redis 3.0 版本，支持 Redis 3.0 的 Geo 命令。目前还有小部分暂未开放的命令和受限制的命令。
+云数据库 Redis 版兼容 Redis 3.0 版本，支持 Redis 3.0 的 Geo 命令。本文列出了云数据库2.8版本和4.0版本支持的 Redis 命令，以及暂未开放或受限制的命令。
 
-## 支持的命令操作 { .section}
+## 支持的命令 { .section}
 
 |Keys（键）|String（字符串）|Hash（哈希表）|List（列表）|Set（集合）|SortedSet（有序集合）|
 |-------|-----------|---------|--------|-------|---------------|
@@ -30,8 +30,6 @@
 | |SETRANGE| | | | |
 | |STRLEN| | | | |
 
-以及
-
 |HyperLogLog|Pub/Sub（发布/订阅）|Transaction（事务）|Connection（连接）|Server（服务器）|Scripting（脚本）|Geo（地理位置）|
 |-----------|--------------|---------------|--------------|-----------|-------------|---------|
 |PFADD|PSUBSCRIBE|DISCARD|AUTH|FLUSHALL|EVAL|GEOADD|
@@ -52,6 +50,19 @@
 
 -   集群实例下，client list 命令列出所有连接到该 proxy 的 user connection。其中，id、age、idle、addr、fd、name、db、multi、omem、cmd 字段和redis内核表达的意思一样。sub、psub 在 proxy 层没有区分，要么都为1，要么都为0。qbuf、qbuf-free、obl、oll 字段目前没有意义。
 -   集群实例下，client kill 命令目前支持两种形式：`client kill ip:port`和`client kill addr ip:port`。
+
+## 4.0版本新增 {#section_zr5_ygy_bgb .section}
+
+|Keys（键）|Server（服务器）|
+|-------|-----------|
+|UNLINK|SWAPDB|
+| |MEMORY|
+
+**4.0更新命令**
+
+FLUSHALL/FLUSHDB 新增选项 ASYNC。
+
+**说明：** 添加 ASYNC 选项后 FLUSHALL 或 FLUSHDB 的操作将在新的线程中异步进行，不会阻塞服务。更多 Redis 4.0相关特性请参见[Redis 4.0 新功能介绍](../../../../intl.zh-CN/产品简介/Redis 4.0 新功能介绍.md#)。
 
 ## 暂未开放的命令 {#section_xgx_zxy_xdb .section}
 
