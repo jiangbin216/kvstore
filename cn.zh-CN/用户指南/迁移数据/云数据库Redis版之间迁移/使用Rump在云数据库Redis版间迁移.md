@@ -33,7 +33,7 @@ Rump迁移优势：
     |source\_addr|源Redis实例地址，格式：`redis://host:port/db`。host与port均需传递，db不传递默认为0。**说明：** 如果要从AWS的cluster导出数据， 请使用cluster的master IP作为源实例地址。您可以在AWS端（例如EC2中）使用redis-cli和如下命令连接cluster并获取master IP：
 
     ```
-#redis-cli -h <host> -p <port> | grep master
+#redis-cli -h <host> -p <port> cluster nodes | grep master
     ```
 
 其中host和port分别为AWS cluster的连接地址和端口号。

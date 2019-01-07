@@ -7,16 +7,16 @@
 
 当前从云服务提供商迁移Redis数据存在如下的问题：
 
--   不支持slaveof、bgsave等数据获取方式；
--   keys命令容易造成服务端阻塞，影响线上服务。
+-   不支持SLAVEOF、BGSAVE等数据获取方式；
+-   KEYS命令容易造成服务端阻塞，影响线上服务。
 
 Rump工作原理：
 
-Rump通过scan的方式从源Redis批量获取key列表，然后通过dump命令获取key内容，通过pttl方式获取过期时间，然后通过pipeline的方式将key restore到目标实例中。
+Rump通过SCAN的方式从源Redis批量获取key列表，接着使用DUMP命令获取key内容，之后通过PTTL方式获取过期时间，最后以pipeline的方式将key RESTORE到目标实例中。
 
 Rump迁移优势：
 
--   使用scan命令代替keys命令，规避keys命令对服务端造成阻塞；
+-   使用SCAN命令代替KEYS命令，规避KEYS命令对服务端造成阻塞；
 -   可以同步任何数据类型；
 -   不使用任何临时文件；
 -   使用带缓冲区的channels来提高源服务器的性能；
@@ -30,9 +30,17 @@ Rump迁移优势：
 
     |参数|说明|
     |--|--|
-    |source\_addr|源Redis实例地址，格式：`redis://host:port/db`。host与port均需传递，db不传递默认为0。|
+    |source\_addr|源Redis实例地址，格式：`redis://host:port/db`。host与port均需传递，db不传递默认为0。**说明：** 如果要从AWS的cluster导出数据， 请使用cluster的master IP作为源实例地址。您可以在AWS端（例如EC2中）使用redis-cli和如下命令连接cluster并获取master IP：
+
+    ```
+#redis-cli -h <host> -p <port> cluster nodes | grep master
+    ```
+
+其中host和port分别为AWS cluster的连接地址和端口号。
+
+|
     |source\_pwd|源Redis实例密码|
-    |dest\_addr|目标Redis实例地址，格式同source\_addr|
+    |dest\_addr|目标Redis实例地址，格式同source\_addr。|
     |dest\_pwd|目标Redis密码|
     |size|单次同步key的数量，默认为10。|
     |-replace|传递此参数表示若目标实例存在相同key则直接覆盖。不传递则不覆盖，将打印错误信息。|
