@@ -1,5 +1,7 @@
 # 将AWS ElastiCache for Redis数据库迁移到阿里云 {#concept_sqz_wmc_ggb .concept}
 
+## 背景信息 {#section_qlq_4f1_hgb .section}
+
 本文为您介绍如何将数据从 AWS ElastiCache for Redis 实例迁移到阿里云 ApsaraDB for Redis 实例。
 
 ## 前提条件 {#section_jj1_wlk_ggb .section}
@@ -18,19 +20,19 @@
 
 1.  创建备份到特定群集。单击左侧导航栏中的Redis，选择需要备份的**集群名称**，单击**备份**，**资源名称**里选择需要备份的集群，填写**备份名称**后单击**创建快照**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235338_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362635338_zh-CN.png)
 
 2.  将备份文件导出到AWS S3存储桶。单击左侧导航栏中的备份，选择需要导出的备份文件，单击上方的**复制**，填写**新缓存快照标识符**名称，选择**目标S3位置**，单击右下角**复制**，导出过程将开始。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235339_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735339_zh-CN.png)
 
 3.  您可以在S3存储桶中找到导出的RDB文件。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235448_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735448_zh-CN.png)
 
 4.  从S3存储桶下载RDB文件。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235449_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735449_zh-CN.png)
 
 
 ## 将RDB文件导入ApsaraDB for Redis数据库 {#section_h51_bxd_ggb .section}
@@ -51,12 +53,12 @@
 
 5.  如果返回restore: rdb done，代表导入成功，此时迁移已经完成。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235450_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735450_zh-CN.png)
 
 6.  登录阿里云 ApsaraDB for Redis [DMS管理控制台](https://dms.console.aliyun.com/#/dms/login)，对迁移结果进行检查，可以搜索一些信息来验证数据。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235451_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735451_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154685529235496_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/154691362735496_zh-CN.png)
 
 
