@@ -12,10 +12,10 @@ Sentinel为社区Redis提供高可用服务，云数据库Redis版开发了Senti
 
 Redis Sentinel为Redis提供主从实例监控、故障告警、自动故障切换等服务，很多使用本地自建Redis数据库并且对可靠性要求较高的业务场景都用到了Sentinel。为了给这类场景中的Redis数据库迁移上云提供方便，阿里云开发了Sentinel兼容模式。
 
-**说明：** 阿里云云数据库Redis版使用自研的[高可用服务](../../../../intl.zh-CN/产品简介/功能特性.md#)HA组件，无需Sentinel。
+**说明：** 阿里云云数据库Redis版使用自研的[高可用服务](../../../../../intl.zh-CN/产品简介/功能特性.md#)HA组件，无需Sentinel。
 
-1.  登录 [Redis 管理控制台](https://kvstore.console.aliyun.com/)。 
-2.  单击目标实例的**实例 ID**或者操作列的**管理**。 
+1.  登录 [Redis管理控制台](https://kvstore.console.aliyun.com/)。 
+2.  单击目标实例的**实例ID**或者操作列的**管理**。 
 3.  在实例信息页的左侧导航栏中，单击**参数设置**。 
 4.  在参数列表中找到\#no\_loose\_sentinel-enabled，单击其操作列的**修改**。 
 
