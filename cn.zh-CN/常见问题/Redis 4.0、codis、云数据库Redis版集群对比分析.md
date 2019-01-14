@@ -24,7 +24,7 @@ Redis 4.0版本的集群是去中心化的结构，集群元数据信息分布�
 
 云数据库Redis版集群版架构图如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3217/15474310843546_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3217/15474312573546_zh-CN.png)
 
 -   云数据库Redis版集群版由3大组件构成：
     -   redis-config : 集群管理工具，双节点，支持容灾。
@@ -48,7 +48,7 @@ Redis 4.0版本的集群是去中心化的结构，集群元数据信息分布�
 
 压测结果图如下：
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3217/15474310843548_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3217/15474312573548_zh-CN.png)
 
 可以看出，单核的codis-proxy性能最弱。8核的codis-proxy压测没有对key使用hashtag，相当于将请求分散到后端8个db节点上， 也可以说相当于8个阿里云的redis-proxy，自然性能数据就比较高了。
 
