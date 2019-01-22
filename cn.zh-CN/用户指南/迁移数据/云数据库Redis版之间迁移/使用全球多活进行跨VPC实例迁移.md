@@ -20,7 +20,7 @@
 2.  单击左侧导航栏的**全球多活**。
 3.  在多活实例列表页，单击右侧的**创建多活实例**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64697/154717248632710_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64697/154814310832710_zh-CN.png)
 
 4.  在创建多活实例对话框，设置以下参数并单击**确定**。
 
@@ -39,7 +39,7 @@
     |目标实例付费类型|选择目标实例的付费类型。|
     |多活实例名称|自定义多活实例的名称。|
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79955/154717248634312_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/79955/154814310834312_zh-CN.png)
 
     **说明：** 在创建目标实例前，系统将自动升级源实例的小版本以支持多活同步功能，期间会发生5秒内的闪断和30秒内的实例只读，请提前做好准备。如需了解您的环境是否会发生小版本升级，请联系阿里云工程师确认当前源实例的小版本与支持多活同步的小版本。
 
@@ -53,7 +53,7 @@
 
     **说明：** 同步完成后，建议您检查新实例中数据的完整性。如无问题，即可选择合适的时机将业务切换到新的实例上，并进行接下来的释放操作。
 
-7.  单击多活实例右侧操作栏的**断开同步**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64697/154717248632709_zh-CN.png)
+7.  单击多活实例右侧操作栏的**断开同步**。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/64697/154814310832709_zh-CN.png)
 8.  [释放源实例](cn.zh-CN/用户指南/管理实例/释放实例.md#)。
 
 **说明：** Redis全球多活可以帮助您在全球多地域构建稳定的多活同步架构，您可以查看其[应用场景](../../../../../cn.zh-CN/全球多活/应用场景.md#)和[产品架构](../../../../../cn.zh-CN/全球多活/产品架构.md#)来了解更多相关信息。
