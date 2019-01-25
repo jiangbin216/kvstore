@@ -1,12 +1,10 @@
 # Lua脚本支持与限制 {#concept_zf1_3mb_kfb .concept}
 
-云数据库Redis版的主从版本、集群版本、读写分离版本都支持Lua相关命令。
+云数据库Redis版的各版本实例都支持Lua相关命令。
 
 ## Lua命令支持 {#section_kdm_tmb_kfb .section}
 
 Lua脚本的使用进一步提升了Redis的性能。通过内嵌对Lua环境的支持，Redis解决了长久以来不能高效地处理CAS（check-and-set）命令的缺点， 并且可以通过组合使用多个命令， 轻松实现以前很难实现或者不能高效实现的模式。
-
-云数据库Redis版的各版本都支持Lua脚本。
 
 **说明：** 如果发现无法执行Eval相关命令，比如提示`ERR command eval not support for normal user`，请尝试[升级小版本](cn.zh-CN/用户指南/管理实例/升级小版本.md#)。升级过程中会出现短暂的闪断和实例只读，建议在业务低峰期进行。
 
