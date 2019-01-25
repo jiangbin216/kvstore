@@ -612,7 +612,3 @@ using StackExchange.Redis;
         ```
 
 
-## 问题排查 {#section_ynz_jxr_ggb .section}
-
-如果连接遇到问题，请参见[Redis连接问题排查与解决](../../../../../intl.zh-CN/常见问题/Redis连接问题排查与解决.md#)。
-
