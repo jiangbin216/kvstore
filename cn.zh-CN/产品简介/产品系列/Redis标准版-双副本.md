@@ -4,7 +4,7 @@
 
 云数据库Redis标准版-双副本模式采用主从（Replication）模式搭建。主节点提供日常服务访问，备节点提供HA高可用，当主节点发生故障，系统会自动在30秒内切换至备节点，保证业务平稳运行。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3105/15469344586584_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3105/15487433636584_zh-CN.png)
 
 ## 特点 {#section_tk1_zjh_tdb .section}
 
