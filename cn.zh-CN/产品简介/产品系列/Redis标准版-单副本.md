@@ -4,7 +4,7 @@
 
 标准版-单副本是云数据库Redis推出的一种新系列，采用单个数据库节点部署架构。与双副本版本相比，它只包含一个节点，没有备用节点实时同步数据，不提供数据持久化和备份策略，适用于数据可靠性要求不高的纯缓存业务场景使用。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3104/1548728874869_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3104/1548729570869_zh-CN.png)
 
 ## 特点 {#section_xf4_v3h_tdb .section}
 
