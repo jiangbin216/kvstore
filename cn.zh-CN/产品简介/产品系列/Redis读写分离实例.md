@@ -8,7 +8,7 @@
 
 Redis读写分离版本由Proxy服务器、主备节点及只读节点组成。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3108/1548746853924_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3108/1548747241924_zh-CN.png)
 
 备节点作为热备节点不对外提供服务。只读节点承担读请求，Proxy按权重（目前权重由系统分配 ，暂时不支持自定义）将读写请求转发到主节点或者某个只读节点上。
 
