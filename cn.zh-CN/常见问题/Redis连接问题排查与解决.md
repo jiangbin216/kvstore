@@ -18,7 +18,7 @@
 
     **说明：** 如果出现`Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: 拒绝连接 (Connection refused)`，请检查Redis白名单设置，若白名单设置无误且可以在ECS上ping通Redis实例，请检查应用中的连接配置。
 
--   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：请检查服务器，并在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
+-   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，尤其是ECS能ping通Redis但telnet 6379端口失败时，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：请检查服务器，并在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
 -   DNS解析问题。客户端出现`UnknownHostException`或者`failed to connect: r-***************.redis.rds.aliyuncs.com could not be resolved`之类的报错。解决方法：用ping或者telnet命令测试Redis连接地址的解析情况，如不成功请检查DNS配置。
 
 **说明：** 如因条件限制无法实施以上解决方案，您可以提交工单重新创建ECS或Redis实例，使二者在同一VPC中。
