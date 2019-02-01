@@ -6,6 +6,7 @@
 
 -   云数据库Redis版仅支持阿里云内网访问，不支持外网访问，即只有在同一VPC内的ECS上安装Redis客户端才能与云数据库建立连接并进行数据操作。
 -   如果同一VPC内的实例开启了免密访问功能，则无需提供密码信息，即可连接数据库。
+-   如果连接遇到问题，请参见[Redis连接问题排查与解决](../../../../../cn.zh-CN/常见问题/Redis连接问题排查与解决.md#)。
 
 Redis的客户端请参考[http://redis.io/clients](http://redis.io/clients)。
 
@@ -611,8 +612,4 @@ using StackExchange.Redis;
         Console.WriteLine();
         ```
 
-
-## 问题排查 {#section_ynz_jxr_ggb .section}
-
-如果连接遇到问题，请参见[Redis连接问题排查与解决](../../../../../intl.zh-CN/常见问题/Redis连接问题排查与解决.md#)。
 
