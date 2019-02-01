@@ -4,6 +4,8 @@
 
 您可以通过以下两种方式使用DMS登录数据库。
 
+**说明：** 如果出现连接问题，请参见[连接问题排查与解决](cn.zh-CN/常见问题/Redis连接问题排查与解决.md#)。
+
 ## 从Redis管理控制台登录 {#section_am5_r11_kfb .section}
 
 **操作步骤**
@@ -25,7 +27,7 @@
 1.  登录[DMS管理控制台](https://dms-rds.aliyun.com)。
 2.  输入要登录的数据库连接地址和密码，单击**登录**，如下图所示。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3127/15477128021079_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3127/15489928001079_zh-CN.png)
 
     **说明：** 
 
