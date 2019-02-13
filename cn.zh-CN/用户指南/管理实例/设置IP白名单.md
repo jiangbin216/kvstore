@@ -6,9 +6,9 @@
 
 ## 前提条件 {#section_snn_3jf_vdb .section}
 
-白名单功能需要一个特定的内核版本支持，否则无法正常使用。若实例不是最新版本，您在设置白名单时会遇到提示信息，如下图所示。关于如何升级小版本，请参见[升级小版本](cn.zh-CN/用户指南/管理实例/升级小版本.md#)。
+白名单功能需要一个特定的内核版本支持，否则无法正常使用。若实例不是最新版本，您在设置白名单时会遇到提示信息，如下图所示。关于如何升级小版本，请参见[升级小版本](intl.zh-CN/用户指南/管理实例/升级小版本.md#)。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3136/15481424951829_zh-CN.png)
+ 
 
 ## 操作步骤 {#section_op5_3jf_vdb .section}
 
@@ -33,4 +33,9 @@
         -   若填写IP段，如`10.10.10.0/24`，则表示10.10.10.X的IP地址都可以访问该Redis实例。
         -   若您需要添加多个IP，请用英文逗号隔开，逗号前后都不能加空格。
         -   所有白名单分组总共最多可以添加1000个IP。
+
+## 相关API {#section_mgb_vw4_tgb .section}
+
+-   [DescribeSecurityIps](../../../../../intl.zh-CN/API 参考/实例管理/DescribeSecurityIps.md#)
+-   [ModifySecurityIps](../../../../../intl.zh-CN/API 参考/实例管理/ModifySecurityIps.md#)
 
