@@ -16,20 +16,23 @@
 
 **参数说明**
 
--   src\_host：自建redis域名（或者IP）
--   src\_port：自建redis端口
--   src\_password：自建redis密码
--   dst\_host：云数据库redis域名
--   dst\_port：云数据库redis端口
--   dst\_password：云数据库redis密码
--   str1|str2|str3：过滤具有str1或str2或str3的key
--   DB：将同步入云redis的DB
--   rewrite：覆盖已经写入的key
--   bigkeysize=SIZE：当写入的value大于SIZE时，启动大key写入模式
+-   src\_host：自建Redis的域名（或者IP）。
+-   src\_port：自建Redis的端口。
+-   src\_password：自建Redis密码。
+-   dst\_host：云数据库Redis版的域名。
+-   dst\_port：云数据库Redis版的端口。
+-   dst\_password：云数据库Redis版的密码
+-   str1|str2|str3：过滤具有str1或str2或str3的key。
+-   DB：将同步入阿里云Redis的DB。
+-   rewrite：覆盖已经写入的key。
+
+    **说明：** 迁移前请确认目的端与源端没有重复的key，否则迁移中会出现`target key name is busy`错误。您可以在迁移命令中设置rewrite选项以覆盖目的端中的重复key。请确保这些重复key可以被覆盖或者您已经进行了备份。
+
+-   bigkeysize：当写入的value大于SIZE时，启动大key写入模式。
 
 ## 根据redis-port日志查看数据同步状态 { .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15471724122803_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3157/15505558582803_zh-CN.png)
 
 当出现`sync rdb done`时全量同步完成，进入增量同步的模式。
 
