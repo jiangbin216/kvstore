@@ -16,9 +16,9 @@
 -   ECS的安全组规则阻塞了对Redis地址和端口的访问。解决方法：[调整ECS安全组规则](https://help.aliyun.com/document_detail/25471.html)，允许访问。
 -   Redis的白名单中未加入ECS的内网地址。解决方法：[设置Redis白名单](../../../../../cn.zh-CN/用户指南/管理实例/设置IP白名单.md#)，将ECS的内网IP加入其中。
 
-    **说明：** 如果出现`Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: 拒绝连接 (Connection refused)`，请检查Redis白名单设置，若白名单设置无误且可以在ECS上ping通Redis实例，请检查应用中的连接配置。
+    **说明：** 如果出现`Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: 拒绝连接 (Connection refused)`，请检查Redis白名单设置，若白名单设置无误且可以在ECS上[ping](../../../../../cn.zh-CN/技术运维问题/网络连接类/使用ping命令检测ECS与Redis之间的连接.md#)通Redis实例，请检查应用中的连接配置。
 
--   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，尤其是ECS能ping通Redis但telnet 6379端口失败时，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：请检查服务器，并在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
+-   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，尤其是ECS能[ping](../../../../../cn.zh-CN/技术运维问题/网络连接类/使用ping命令检测ECS与Redis之间的连接.md#)通Redis但[telnet](../../../../../cn.zh-CN/技术运维问题/网络连接类/使用telnet命令检测Redis端口连通性.md#) 6379端口失败时，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：请检查服务器，并在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
 -   DNS解析问题。客户端出现`UnknownHostException`或者`failed to connect: r-***************.redis.rds.aliyuncs.com could not be resolved`之类的报错。解决方法：用ping或者telnet命令测试Redis连接地址的解析情况，如不成功请检查DNS配置。
 
 **说明：** 如因条件限制无法实施以上解决方案，您可以提交工单重新创建ECS或Redis实例，使二者在同一VPC中。
@@ -39,13 +39,13 @@
 
 使用阿里云的数据管理工具DMS连接并管理数据库请参见 [使用DMS登录Redis](cn.zh-CN/快速入门/连接实例/DMS登录云数据库.md#)。
 
-使用redis-cli连接Redis的方法请参见[redis-cli连接](cn.zh-CN/快速入门/连接实例/Redis-cli连接.md#)。
+使用redis-cli连接Redis的方法请参见[redis-cli连接](cn.zh-CN/快速入门/连接实例/redis-cli连接.md#)。
 
 **说明：** 如果使用各语言的客户端或者redis-cli连接Redis失败，请先排查[Redis与ECS之间的连接问题](#)。
 
 ## 客户端连接问题 {#section_rls_4pw_fgb .section}
 
--   [Jedis常见问题](cn.zh-CN/常见问题/Jedis常见异常汇总.md#)。
+-   [Jedis常见问题](cn.zh-CN/常见问题/实例Jedis常见异常汇总.md#)。
 -   [DMS中单击**登录数据库**无响应](https://help.aliyun.com/knowledge_detail/72737.html)。
 -   [Redis集群版实例常见错误返回信息](../../../../../cn.zh-CN/技术运维问题/Redis集群版实例常见错误返回信息.md#)。
 
