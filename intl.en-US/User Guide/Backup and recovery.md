@@ -2,10 +2,6 @@
 
 As an increasing number of businesses use ApsaraDB for Redis as the ultimate persistent storage engine, users have posed higher data reliability requirements. The ApsaraDB for Redis backup and recovery solution enables comprehensive data reliability upgrade.
 
-For more information about backup and recovery, watch the following video. The video lasts about 3 minutes.
-
-[https://cloud.video.taobao.com/play/u/3050941791/p/1/e/6/t/1/56540476.mp4](https://cloud.video.taobao.com/play/u/3050941791/p/1/e/6/t/1/56540476.mp4)
-
 ## Automatic backup \(backup policy setting\) { .section}
 
 **Background**
