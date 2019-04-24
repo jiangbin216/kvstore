@@ -15,6 +15,16 @@
 |Action|String|是|CreateInstance|系统规定参数，取值：CreateInstance。
 
  |
+|InstanceClass|String|否|redis.master.small.default|实例的规格，详细信息请参见[实例规格表](https://help.aliyun.com/document_detail/107984.html)。
+
+ **说明：** 调用此接口需至少传递Capacity或InstanceClass中的一个参数。
+
+ |
+|Capacity|Long|否|16384|实例的存储容量，单位为MB。
+
+ **说明：** 调用此接口需至少传递Capacity或InstanceClass中的一个参数。
+
+ |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
@@ -25,16 +35,6 @@
 
  |
 |Password|String|否|Acfr5xxx,.xxx|实例密码。 长度为8－32位，需包含大写字母、小写字母、特殊字符和数字中的至少三种，允许的特殊字符包括`!@#$%^&*()_+-=`。
-
- |
-|Capacity|Long|否|16384|实例的存储容量，单位为MB。
-
- **说明：** 调用此接口需至少传递Capacity或InstanceClass中的一个参数。
-
- |
-|InstanceClass|String|否|redis.master.small.default|实例的规格，详细信息请参见[实例规格表](https://help.aliyun.com/document_detail/107984.html)。
-
- **说明：** 调用此接口需至少传递Capacity或InstanceClass中的一个参数。
 
  |
 |ZoneId|String|否|cn-hangzhou-e|可用区ID，可调用[DescribeRegions](~~61012~~)查询，使用此参数指定要创建实例的可用区。
