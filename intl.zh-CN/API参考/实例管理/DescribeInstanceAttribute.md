@@ -1,171 +1,306 @@
-# DescribeInstanceAttribute {#reference_nyk_w52_xdb .reference}
+# DescribeInstanceAttribute {#doc_api_R-kvstore_DescribeInstanceAttribute .reference}
 
-调用该API可以查询实例的详细信息。
+调用DescribeInstanceAttribute查询实例的详细信息。
 
-## 请求参数 {#section_fn4_gkw_wbb .section}
+## 调试 {#apiExplorer .section}
 
-|名称|类型|是否必须|描述|
-|--|--|----|--|
-|<公共请求参数\>|-|是|参见[公共请求参数](intl.zh-CN/API参考/公共参数.md#section_hph_dhp_wbb)。|
-|Action|String|是|系统规定参数，取值：DescribeInstanceAttribute。|
-|InstanceId|String|是|实例ID（全局唯一）|
+前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=DescribeInstanceAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
 
-## 返回参数 {#section_e4w_jkw_wbb .section}
+## 请求参数 {#parameters .section}
 
-|名称|类型|描述|
-|--|--|--|
-|<公共返回参数\>|-|参见[公共返回参数](intl.zh-CN/API参考/公共参数.md#section_rjr_zgp_wbb)。|
-|Instances|List|由DBInstanceAttribute组成的数组|
+|名称|类型|是否必选|示例值|描述|
+|--|--|----|---|--|
+|Action|String|是|DescribeInstanceAttribute|系统规定参数，取值：DescribeInstanceAttribute。
 
-|参数|**类型**|**说明**|
-|--|------|------|
-|Config|String|实例的配置参数（JSON String），参见[实例配置参数表](intl.zh-CN/API参考/附表/实例配置参数表.md#)。|
-|HasRenewChangeOrder|Boolean|是否有未生效的续费变配订单，取值：true或false。|
-|InstanceId|String|实例ID （全局唯一）|
-|ArchitectureType|String|指定架构类型返回实例列表：-   cluster（集群版）
+ |
+|InstanceId|String|是|r-j6cxxxxxxxxxxxxx|需要查询的实例的ID。
+
+ |
+|AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
+
+ |
+
+## 返回参数 {#resultMapping .section}
+
+|名称|类型|示例值|描述|
+|--|--|---|--|
+|Instances| | |实例信息的集合。
+
+ |
+|└ArchitectureType|String|standard|指定架构类型返回实例列表：
+
+ -   cluster（集群版）
 -   standard（标准版）
 -   SplitRW（读写分离版）
 -   NULL（所有类型，默认值）
 
-|
-|ZoneId|String|RegionId下的可用区编码，参见[ZH-CN\_TP\_3191.md\#](intl.zh-CN/API参考/区域管理/DescribeRegions.md#)。|
-|Engine|String|数据库类型|
-|NetworkType|String|网络类型：-   CLASSIC（经典网络）
--   VPC（VPC网络）
+ |
+|└AuditLogRetention|String|15|[审计日志](~~102046~~)中设置的日志保留时间。
 
-|
-|PackageType|String|请参见[资源包类型](https://help.aliyun.com/document_detail/90487.html?spm=5176.11065259.1996646101.searchclickresult.71254771hJtKfD%E3%80%82)。|
-|QPS|String|每个时间间隔的每秒访问次数。|
-|ReplicaId|String|数组的下标|
-|IsRds|Boolean|是否为Rds参数，取值：true或false。|
-|MaintainStartTime|String|可运维开始时间，返回格式HH:mmZ，如02:00Z。|
-|VpcAuthMode|String|VPC认证模式，取值：Open。|
-|EngineVersion|String|数据库版本：-   2.8
--   4.0
+ |
+|└AvailabilityValue|String|100%|当月的可用性指标。
 
-|
-|Bandwidth|Long|实例带宽限制，单位：Mbps。|
-|ChargeType|String|付费类型：-   PrePaid（预付费）
+ |
+|└Bandwidth|Long|10|带宽，单位：MB/s。
+
+ |
+|└Capacity|Long|1024|存储容量，单位：MB。
+
+ |
+|└ChargeType|String|PostPaid|付费类型：
+
+ -   PrePaid（预付费）
 -   PostPaid（后付费）
 
-|
-|MaintainEndTime|String|可运维结束时间，返回格式：HH:mmZ，如02:00Z。|
-|ReplicationMode|String|复制模式：-   master-slave（包括主从版和单节点版）
+ |
+|└Config|String|\{\\"EvictionPolicy\\":\\"volatile-lru\\",\\"hash-max-ziplist-entries\\":512,\\"zset-max-ziplist-entries\\":128,\\"zset-max-ziplist-value\\":64,\\"set-max-intset-entries\\":512,\\"hash-max-ziplist-value\\":64\}|实例的配置参数（JSON String），参见[参数说明](~~43885~~)。
+
+ |
+|└ConnectionDomain|String|r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com|Redis实例的连接地址（仅支持内网访问）。
+
+ |
+|└Connections|Long|10000|实例连接数限制，单位：个。
+
+ |
+|└CreateTime|String|2019-03-06T10:42:03Z|实例创建时间，采用ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。
+
+ |
+|└EndTime|String|2019-04-06T10:42:03Z|预付费实例到期时间。采用ISO8601表示法，并使用UTC时间。格式为： YYYY-MM-DDThh:mm:ssZ。
+
+ |
+|└Engine|String|Redis|数据库类型。
+
+ |
+|└EngineVersion|String|4.0|数据库版本：
+
+ -   2.8
+-   4.0
+-   5.0
+
+ |
+|└HasRenewChangeOrder|String|false|是否有未生效的续费变配订单：
+
+ -   true（是）
+-   false（否）
+
+ |
+|└InstanceClass|String|redis.master.small.default|实例规格。
+
+ |
+|└InstanceId|String|r-j6cxxxxxxxxxxxxx|实例ID。
+
+ |
+|└InstanceName|String|apitest|实例名称。
+
+ |
+|└InstanceStatus|String|Normal|实例状态。
+
+ |
+|└InstanceType|String|Redis|实例类型：
+
+ -   Redis
+-   Memcache
+
+ |
+|└IsRds|Boolean|true|是否属RDS管控：
+
+ -   true（是）
+-   false（否）
+
+ |
+|└MaintainEndTime|String|22:00Z|可运维结束时间，返回格式： `HH:mmZ`，如`02:00Z`。
+
+ |
+|└MaintainStartTime|String|18:00Z|可运维开始时间，返回格式：`HH:mmZ`，如`02:00Z`。
+
+ |
+|└NetworkType|String|CLASSIC|网络类型：
+
+ -   CLASSIC（经典网络）
+-   VPC（VPC网络）
+
+ |
+|└NodeType|String|double|节点类型：
+
+ -   double（双节点）
+-   single（单节点）
+
+ |
+|└PackageType|String|standard|套餐类型：
+
+ -   standard（标准套餐）
+-   customized（定制套餐）
+
+ |
+|└Port|Long|6379|Redis服务端口。
+
+ |
+|└PrivateIp|String|xxx.xxx.xxx.222|内网IP地址。
+
+ |
+|└QPS|Long|100000|理论最大QPS值。
+
+ |
+|└RegionId|String|cn-hongkong|可用区ID，参见[DescribeRegions](~~61012~~)。
+
+ |
+|└ReplicaId|String|bls-awxxxxxxxxxxxxx|副本ID。
+
+ |
+|└ReplicationMode|String|master-slave|副本架构：
+
+ -   master-slave（包括主从版和单节点版）
 -   cluster（包括读写分离版与集群版）
 
-|
-|ConnectionDomain|String|Redis实例的连接域名（仅支持内网访问）。|
-|InstanceType|String|实例类型，取值：Redis，Memcache。 默认为Redis。|
-|InstanceStatus|String|实例状态|
-|Port|Int|Redis连接端口|
-|InstanceClass|String|实例规格|
-|RegionId|String|申请的存储实例所在区域，参见[ZH-CN\_TP\_3191.md\#](intl.zh-CN/API参考/区域管理/DescribeRegions.md#)。|
-|NodeType|String|节点类型|
-|CreateTime|String|实例创建时间。采用ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。|
-|AvailabilityValue|String|当月的可用性指标|
-|EndTime|String|预付费实例到期时间。采用ISO8601表示法，并使用UTC时间。格式为：YYYY-MM-DDThh:mm:ssZ。|
-|Capacity|Long|申请到的存储实例容量；单位：MB。|
-|LuaStatus|String|脚本状态|
-|Connections|Long|实例连接数限制，单位：个。|
-|SecurityIPList|String|IP白名单|
-|AuditLogRetention|String|SQL审计设置时长|
+ |
+|└SecurityIPList|String|127.0.0.1|IP白名单。
 
-## 请求示例 {#section_d3l_4kw_wbb .section}
+ |
+|└Tags| | |标签信息。
 
-```
+ |
+|└Key|String|tagkey|标签key。
+
+ |
+|└Value|String|tagvalue|标签value。
+
+ |
+|└VSwitchId|String|vsw-xxxxxxxxxxxxxxxxxxxxx|虚拟交换机ID。
+
+ |
+|└VpcAuthMode|String|Open|VPC认证模式：
+
+ -   Open（需要密码认证）
+-   Close（关闭密码认证，即VPC免密）
+
+ |
+|└VpcId|String|vpc-bp1cxxxxxxxxxxxxxxxxx|专有网络（VPC）的ID。
+
+ |
+|└ZoneId|String|cn-hongkong-b|RegionId下的可用区编码，参见[DescribeZones](~~94527~~)。
+
+ |
+|RequestId|String|CA40C261-EB72-4EDA-AC57-958722162595|请求ID。
+
+ |
+
+## 示例 {#demo .section}
+
+请求示例
+
+``` {#request_demo}
+
 https://r-kvstore.aliyuncs.com/
 ?Action=DescribeInstanceAttribute
-&InstanceId=r-xxxxxxxxxxxxxxx
+&InstanceId=r-bp1xxxxxxxxxxxxx
 &<公共请求参数>
-```
-
-## 返回示例 {#section_hjp_tkw_wbb .section}
-
-**XML格式**
 
 ```
+
+正常返回示例
+
+`XML` 格式
+
+``` {#xml_return_success_demo}
 <DescribeInstanceAttributeResponse>
- <RequestId>CA40C261-EB72-4EDA-AC57-958722162595</RequestId>
- <Instances>
-   <DBInstanceAttribute>
-     <Config>{"EvictionPolicy":"volatile-lru","list-max-ziplist-entries":512,"zset-max-ziplist-entries":128,"hash-max-ziplist-entries":512,"hash-max-ziplist-value":64,"list-max-ziplist-value":64,"set-max-intset-entries":512,"zset-max-ziplist-value":64}</Config>
-     <HasRenewChangeOrder>false</HasRenewChangeOrder>
-     <InstanceId>r-xxxxxxxxxxxxxxx</InstanceId>
-     <ArchitectureType>standard</ArchitectureType>
-     <ZoneId>cn-hangzhou-b</ZoneId>
-     <Engine>Redis</Engine>
-     <NetworkType>Classic</NetworkType>
-     <PackageType>standard</PackageType>
-     <QPS>100000</QPS>
-     <ReplicaId>bls-xxxxxxxxxxxxxxx</ReplicaId>
-     <IsRds>true</IsRds>
-     <MaintainStartTime>18:00Z</MaintainStartTime>
-     <VpcAuthMode>Open</VpcAuthMode>
-     <ConnectionDomain>xxxxxxxxxxxxxxx.redis.rds.aliyuncs.com</ConnectionDomain>
-     <EngineVersion>4.0</EngineVersion>
-     <Bandwidth>24</Bandwidth>
-     <ChargeType>PrePaid</ChargeType>
-     <MaintainEndTime>22:00Z</MaintainEndTime>
-     <ReplicationMode>master-slave</ReplicationMode>
-     <InstanceType>Redis</InstanceType>
-     <InstanceStatus>Normal</InstanceStatus>
-     <Port>6379</Port>
-     <InstanceClass>redis.master.large.default</InstanceClass>
-     <RegionId>cn-hangzhou</RegionId>
-     <NodeType>double</NodeType>
-     <CreateTime>2018-10-18T17:08:00Z</CreateTime>
-     <AvailabilityValue>100.0%</AvailabilityValue>
-     <EndTime>2019-01-18T16:00:00Z</EndTime>
-     <Capacity>8192</Capacity>
-     <LuaStatus>Enable</LuaStatus>
-     <Connections>10000</Connections>
-     <SecurityIPList>127.0.0.1</SecurityIPList>
-   </DBInstanceAttribute>
- </Instances>
+  <RequestId>5553161D-11B1-43E1-9D95-523B2C82304F</RequestId>
+  <Instances>
+    <DBInstanceAttribute>
+      <Config>{"maxmemory-policy":"volatile-lfu","EvictionPolicy":"volatile-lru","hash-max-ziplist-entries":512,"zset-max-ziplist-entries":128,"zset-max-ziplist-value":64,"set-max-intset-entries":512,"hash-max-ziplist-value":64,"#no_loose_disabled-commands":"flushall,flushdb","lazyfree-lazy-eviction":"yes"}</Config>
+      <HasRenewChangeOrder>false</HasRenewChangeOrder>
+      <InstanceId>r-bp1xxxxxxxxxxxxx</InstanceId>
+      <ArchitectureType>cluster</ArchitectureType>
+      <ZoneId>cn-hangzhou-e</ZoneId>
+      <PrivateIp>xxx.xxx.xxx.224</PrivateIp>
+      <VSwitchId>vsw-bp1xxxxxxxxxxxxxxxxxx</VSwitchId>
+      <VpcId>vpc-bp1xxxxxxxxxxxxxxxxxx</VpcId>
+      <Engine>Redis</Engine>
+      <NetworkType>VPC</NetworkType>
+      <PackageType>standard</PackageType>
+      <QPS>200000</QPS>
+      <ReplicaId>grr-bp1xxxxxxxxxxxxx</ReplicaId>
+      <IsRds>true</IsRds>
+      <MaintainStartTime>18:00Z</MaintainStartTime>
+      <VpcAuthMode>Close</VpcAuthMode>
+      <ConnectionDomain>cluster40.redis.rds.aliyuncs.com</ConnectionDomain>
+      <EngineVersion>4.0</EngineVersion>
+      <InstanceName>cluster40</InstanceName>
+      <Bandwidth>96</Bandwidth>
+      <ChargeType>PostPaid</ChargeType>
+      <AuditLogRetention>30</AuditLogRetention>
+      <MaintainEndTime>22:00Z</MaintainEndTime>
+      <ReplicationMode>cluster</ReplicationMode>
+      <InstanceType>Redis</InstanceType>
+      <Tags/>
+      <InstanceStatus>Normal</InstanceStatus>
+      <Port>6379</Port>
+      <InstanceClass>redis.logic.sharding.2g.2db.0rodb.4proxy.default</InstanceClass>
+      <AvailabilityValue>100.0%</AvailabilityValue>
+      <RegionId>cn-hangzhou</RegionId>
+      <NodeType>double</NodeType>
+      <CreateTime>2018-11-07T16:49:00Z</CreateTime>
+      <Capacity>4096</Capacity>
+      <SecurityIPList>172.0.0.1</SecurityIPList>
+      <Connections>20000</Connections>
+    </DBInstanceAttribute>
+  </Instances>
 </DescribeInstanceAttributeResponse>
-```
-
-**JSON格式**
 
 ```
+
+`JSON` 格式
+
+``` {#json_return_success_demo}
 {
-"RequestId":"CA40C261-EB72-4EDA-AC57-958722162595",
-"Instances":{
- "DBInstanceAttribute":[{
-   "Config":"{\"EvictionPolicy\":\"volatile-lru\",\"list-max-ziplist-entries\":512,\"zset-max-ziplist-entries\":128,\"hash-max-ziplist-entries\":512,\"hash-max-ziplist-value\":64,\"list-max-ziplist-value\":64,\"set-max-intset-entries\":512,\"zset-max-ziplist-value\":64}",
-   "HasRenewChangeOrder":"false",
-   "InstanceId":"r-xxxxxxxxxxxxxxx",
-   "ArchitectureType":"standard",
-   "ZoneId":"cn-hangzhou-b",
-   "Engine":"Redis",
-   "NetworkType":"Classic",
-   "PackageType":"standard",
-   "QPS":100000,
-   "ReplicaId":"bls-xxxxxxxxxxxxxxx",
-   "IsRds":true,
-   "MaintainStartTime":"18:00Z",
-   "VpcAuthMode":"Open",
-   "ConnectionDomain":"xxxxxxxxxxxxxxx.redis.rds.aliyuncs.com",
-   "EngineVersion":"4.0",
-   "Bandwidth":24,
-   "ChargeType":"PrePaid",
-   "MaintainEndTime":"22:00Z",
-   "ReplicationMode":"master-slave",
-   "InstanceType":"Redis",
-   "InstanceStatus":"Normal",
-   "Port":6379,
-   "InstanceClass":"redis.master.large.default",
-   "RegionId":"cn-hangzhou",
-   "NodeType":"double",
-   "CreateTime":"2018-10-18T17:08:00Z",
-   "AvailabilityValue":"100.0%",
-   "EndTime":"2019-01-18T16:00:00Z",
-   "Capacity":8192,
-   "LuaStatus":"Enable",
-   "Connections":10000,
-   "SecurityIPList":"127.0.0.1"
-   					 }]
-   		 }
+	"RequestId":"5553161D-11B1-43E1-9D95-523B2C82304F",
+	"Instances":{
+		"DBInstanceAttribute":[
+			{
+				"Config":"{\"maxmemory-policy\":\"volatile-lfu\",\"EvictionPolicy\":\"volatile-lru\",\"hash-max-ziplist-entries\":512,\"zset-max-ziplist-entries\":128,\"zset-max-ziplist-value\":64,\"set-max-intset-entries\":512,\"hash-max-ziplist-value\":64,\"#no_loose_disabled-commands\":\"flushall,flushdb\",\"lazyfree-lazy-eviction\":\"yes\"}",
+				"HasRenewChangeOrder":"false",
+				"InstanceId":"r-bp1xxxxxxxxxxxxx",
+				"ZoneId":"cn-hangzhou-e",
+				"ArchitectureType":"cluster",
+				"PrivateIp":"xxx.xxx.xxx.224",
+				"VSwitchId":"vsw-bp1xxxxxxxxxxxxxxxxxx",
+				"Engine":"Redis",
+				"VpcId":"vpc-bp1xxxxxxxxxxxxxxxxxx",
+				"NetworkType":"VPC",
+				"QPS":200000,
+				"PackageType":"standard",
+				"ReplicaId":"grr-bp1xxxxxxxxxxxxx",
+				"IsRds":true,
+				"MaintainStartTime":"18:00Z",
+				"VpcAuthMode":"Close",
+				"ConnectionDomain":"cluster40.redis.rds.aliyuncs.com",
+				"EngineVersion":"4.0",
+				"InstanceName":"cluster40",
+				"Bandwidth":96,
+				"ChargeType":"PostPaid",
+				"AuditLogRetention":"30",
+				"MaintainEndTime":"22:00Z",
+				"ReplicationMode":"cluster",
+				"InstanceType":"Redis",
+				"InstanceStatus":"Normal",
+				"Tags":{
+					"Tag":[]
+				},
+				"Port":6379,
+				"InstanceClass":"redis.logic.sharding.2g.2db.0rodb.4proxy.default",
+				"CreateTime":"2018-11-07T16:49:00Z",
+				"NodeType":"double",
+				"RegionId":"cn-hangzhou",
+				"AvailabilityValue":"100.0%",
+				"Capacity":4096,
+				"Connections":20000,
+				"SecurityIPList":"172.0.0.1"
+			}
+		]
+	}
 }
 ```
+
+## 错误码 { .section}
+
+[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
 
