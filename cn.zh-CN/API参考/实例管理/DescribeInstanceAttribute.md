@@ -37,6 +37,8 @@
  |
 |└AuditLogRetention|String|15|[审计日志](~~102046~~)中设置的日志保留时间。
 
+ **说明：** 国际站暂不支持审计日志功能。
+
  |
 |└AvailabilityValue|String|100%|当月的可用性指标。
 
@@ -141,7 +143,7 @@
 |└QPS|Long|100000|理论最大QPS值。
 
  |
-|└RegionId|String|cn-hongkong|可用区ID，参见[DescribeRegions](~~61012~~)。
+|└RegionId|String|cn-hongkong|地域ID，参见[DescribeRegions](~~61012~~)。
 
  |
 |└ReplicaId|String|bls-awxxxxxxxxxxxxx|副本ID。
