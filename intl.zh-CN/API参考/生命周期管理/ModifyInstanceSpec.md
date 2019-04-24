@@ -1,4 +1,4 @@
-# ModifyInstanceSpec {#doc_api_1162775 .reference}
+# ModifyInstanceSpec {#doc_api_R-kvstore_ModifyInstanceSpec .reference}
 
 调用ModifyInstanceSpec变更实例规格。
 
@@ -18,7 +18,7 @@
 |InstanceClass|String|是|redis.master.small.default|变更后的实例规格，各规格的InstanceClass值请参见[实例规格表](~~107984~~)。
 
  |
-|InstanceId|String|是|r-j6cxxxxxxxxxxxxx|需要变配的实例的ID。
+|InstanceId|String|是|r-j6cxxxxxxxxxxxxx|目标实例的ID。
 
  |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
@@ -26,10 +26,10 @@
  |
 |AutoPay|Boolean|否|true|是否自动付款，可选值为：
 
- -   true
--   false
+ -   true（是）
+-   false（否）
 
- **说明：** 不传默认为true。
+ **说明：** 不传默认为true。如果设置为false则需要在实例即将到期时在控制台[手动续费](~~26352~~)。
 
  |
 |BusinessInfo|String|否|000000000|活动ID、业务信息。
@@ -38,10 +38,12 @@
 |CouponNo|String|否|youhuiquan\_promotion\_option\_id\_for\_blank|优惠码，默认值为：`youhuiquan_promotion_option_id_for_blank`。
 
  |
-|EffectiveTime|String|否|Immediately|变更生效时间：
+|EffectiveTime|String|否|Immediately|变更执行时间：
 
- -   Immediately（立即生效）
--   MaintainTime（运维时间生效）
+ -   Immediately（立即执行）
+-   MaintainTime（运维时间执行）
+
+ **说明：** 不传默认为Immediately。
 
  |
 |ForceUpgrade|Boolean|否|true|是否强制变配：
@@ -57,7 +59,10 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|OrderId|String|111111111111111|订单 ID
+|OrderId|String|111111111111111|订单ID。
+
+ |
+|RequestId|String|0DA1D7EF-C80D-432C-8758-7D225182626B|请求ID。
 
  |
 
