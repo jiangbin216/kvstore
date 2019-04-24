@@ -40,7 +40,7 @@
 |ZoneId|String|否|cn-hangzhou-e|可用区ID，可调用[DescribeRegions](~~61012~~)查询，使用此参数指定要创建实例的可用区。
 
  |
-|Config|String|否|\{\\"EvictionPolicy\\":\\"volatile-lru\\",\\"hash-max-ziplist-entries\\":512,\\"zset-max-ziplist-entries\\":128,\\"zset-max-ziplist-value\\":64,\\"set-max-intset-entries\\":512,\\"hash-max-ziplist-value\\":64\}|实例的详细配置，为JSON格式的字符串，配置参数请参见[实例配置参数表](~~61209~~)。
+|Config|String|否|\{\\"EvictionPolicy\\":\\"volatile-lru\\",\\"hash-max-ziplist-entries\\":512,\\"zset-max-ziplist-entries\\":128,\\"zset-max-ziplist-value\\":64,\\"set-max-intset-entries\\":512,\\"hash-max-ziplist-value\\":64\}|实例的详细配置，为JSON格式的字符串，参见[参数配置](~~43885~~)。
 
  |
 |ChargeType|String|否|PostPaid|付费类型：
@@ -87,7 +87,7 @@
 |SrcDBInstanceId|String|否|r-bp1xxxxxxxxxxxxxx|如需基于某个实例的备份集创建新实例，则在此参数中传递源实例的ID。
 
  |
-|BackupId|String|否|111111111|如需基于某个实例的备份集创建新实例，则在此参数中传递源实例的备份集ID。通过调用[DescribeBackups](~~DescribeBackups~~)可查询BackupId。
+|BackupId|String|否|111111111|如需基于某个实例的备份集创建新实例，则在此参数中传递源实例的备份集ID。通过调用[DescribeBackups](~~61081~~)可查询BackupId。
 
  |
 |InstanceType|String|否|Redis|实例类型，取值：
@@ -117,7 +117,7 @@
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
-|Bandwidth|Long|32|实例带宽限制，单位：Mbps。
+|Bandwidth|Long|32|实例带宽限制，单位：MB/s。
 
  |
 |Capacity|Long|16384|实例的存储容量，单位：MB。
