@@ -2,7 +2,7 @@
 
 This topic describes the types and parameters of all ApsaraDB for Redis editions and the method of testing queries per second \(QPS\). To call the APIs related to a type of instance, use the InstanceClass parameter for the corresponding type described in this topic.
 
-**Note:** The maximum internal network in below tables includes the maximum upstream bandwidth and the maximum downstream bandwidth. If network resources are sufficient, the bandwidth is unlimited for ApsaraDB for Redis instances. However, if network resources are insufficient, the maximum bandwidth takes effect for the instances.
+**Note:** The maximum internal network bandwidth in below tables includes the maximum upstream bandwidth and the maximum downstream bandwidth. If network resources are sufficient, the bandwidth is unlimited for ApsaraDB for Redis instances. However, if network resources are insufficient, the maximum bandwidth takes effect for the instances.
 
 ## Standard dual-replica edition {#section_hh2_5p4_tdb .section}
 
@@ -90,5 +90,4 @@ QPS reference values of non-cluster instances range from 80,000 to 100,000. QPS 
     ```
 
 3.  Summarize the testing data on these ECS instances. The total QPS is the sum of the QPS on each ECS instance.
-
 
