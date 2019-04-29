@@ -37,7 +37,7 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 4.  切换到vendor目录，下载govendor并将其设置为可执行文件。
 
     ``` {#codeblock_ywx_asc_6io}
-    # cd src/verdor
+    # cd src/vendor
     # wget http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/94155/cn_zh/1556268861235/govendor
     # chmod u+x govendor
     ```
