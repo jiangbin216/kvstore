@@ -7,7 +7,7 @@
 -   已创建作为迁移目的端的云数据库Redis版实例；
 -   已创建用于运行redis-shake的ECS实例；
 -   ECS实例可以访问目的Redis实例；
--   ECS实例的系统为Linux。
+-   ECS实例的系统为Linux；
 -   ECS中已经安装了git和golang。
 
 ## 背景信息 {#section_o6o_bml_4mz .section}
