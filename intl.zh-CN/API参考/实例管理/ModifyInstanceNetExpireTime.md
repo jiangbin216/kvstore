@@ -1,6 +1,6 @@
 # ModifyInstanceNetExpireTime {#doc_api_R-kvstore_ModifyInstanceNetExpireTime .reference}
 
-若实例之前执行过由经典网络向VPC网络切换，并保留了经典网络连接地址，则可调用ModifyInstanceNetExpireTime延长经典网络连接地址的保存时间。
+若Redis实例之前执行过由经典网络向VPC网络切换，并保留了经典网络连接地址，则可调用ModifyInstanceNetExpireTime延长经典网络连接地址的保存时间。
 
 **说明：** 将实例从经典网络切换到VPC网络的方法请参见[SwitchNetwork](~~61005~~)。
 
