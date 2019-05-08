@@ -1,8 +1,8 @@
 # CreateInstance {#doc_api_R-kvstore_CreateInstance .reference}
 
-调用CreateInstance创建一个实例。
+调用CreateInstance创建一个Redis实例。
 
-创建实例所需的实例规格请参见[实例规格表](~~107984~~)。
+创建Redis实例所需的实例规格请参见[实例规格表](~~107984~~)。
 
 ## 调试 {#apiExplorer .section}
 
@@ -15,7 +15,7 @@
 |Action|String|是|CreateInstance|系统规定参数，取值：CreateInstance。
 
  |
-|InstanceClass|String|否|redis.master.small.default|实例的规格，详细信息请参见[实例规格表](https://help.aliyun.com/document_detail/107984.html)。
+|InstanceClass|String|否|redis.master.small.default|实例的规格，详细信息请参见[实例规格表](~~107984~~)。
 
  **说明：** 调用此接口需至少传递Capacity或InstanceClass中的一个参数。
 
@@ -145,6 +145,22 @@
 
  |
 |InstanceStatus|String|Creating|实例的当前状态。
+
+ |
+|NetworkType|String|VPC|网络类型：
+
+ -   CLASSIC（经典网络）
+-   VPC（专有网络）
+
+ **说明：** 默认为经典网络。
+
+ |
+|NodeType|String|MASTER\_SLAVE|节点类型：
+
+ -   STAND\_ALONE（单节点）
+-   MASTER\_SLAVE（多节点）
+
+ **说明：** 默认值为MASTER\_SLAVE。
 
  |
 |Port|Integer|6379|Redis服务端口。
