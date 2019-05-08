@@ -1,8 +1,8 @@
 # TransformToPrePaid {#doc_api_R-kvstore_TransformToPrePaid .reference}
 
-调用TransformToPrePaid转换实例付费类型，将按量付费实例转换为包年包月（预付费）实例。
+调用TransformToPrePaid将按量付费的Redis实例转换为包年包月（预付费）实例。
 
-**说明：** 包年包月实例暂不支持转换到按量付费实例。
+**说明：** 包年包月实例暂不支持转换为按量付费实例。
 
 ## 调试 {#apiExplorer .section}
 
@@ -53,7 +53,8 @@
 
 ``` {#request_demo}
 
-http(s)://[Endpoint]/?Action=TransformToPrePaid
+https://r-kvstore.aliyuncs.com/
+?Action=TransformToPrePaid
 &InstanceId=r-bp1xxxxxxxxxxxxx
 &Period=12
 &<公共请求参数>
