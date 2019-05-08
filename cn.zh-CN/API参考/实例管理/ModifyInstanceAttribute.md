@@ -1,6 +1,6 @@
 # ModifyInstanceAttribute {#doc_api_R-kvstore_ModifyInstanceAttribute .reference}
 
-调用ModifyInstanceAttribute修改指定实例的属性，包括名称和密码。
+调用ModifyInstanceAttribute修改Redis实例的属性，包括名称和密码。
 
 ## 调试 {#apiExplorer .section}
 
