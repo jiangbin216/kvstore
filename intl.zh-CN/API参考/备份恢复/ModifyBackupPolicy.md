@@ -1,6 +1,6 @@
 # ModifyBackupPolicy {#doc_api_R-kvstore_ModifyBackupPolicy .reference}
 
-调用ModifyBackupPolicy修改自动备份的策略。
+调用ModifyBackupPolicy修改Redis实例的自动备份策略。
 
 ## 调试 {#apiExplorer .section}
 
