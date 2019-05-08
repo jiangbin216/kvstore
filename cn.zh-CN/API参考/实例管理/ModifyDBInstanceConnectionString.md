@@ -1,6 +1,6 @@
 # ModifyDBInstanceConnectionString {#doc_api_R-kvstore_ModifyDBInstanceConnectionString .reference}
 
-调用ModifyDBInstanceConnectionString修改实例的连接地址。
+调用ModifyDBInstanceConnectionString修改Redis实例的连接地址。
 
 ## 调试 {#apiExplorer .section}
 
@@ -13,7 +13,7 @@
 |Action|String|是|ModifyDBInstanceConnectionString|系统规定参数，取值ModifyDBInstanceConnectionString。
 
  |
-|CurrentConnectionString|String|是|r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com|实例当前的连接地址。
+|CurrentConnectionString|String|是|r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com|Redis实例当前的连接地址。
 
  |
 |DBInstanceId|String|是|r-bp1xxxxxxxxxxxxx|目标实例的ID。
