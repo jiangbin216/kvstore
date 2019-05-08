@@ -1,6 +1,6 @@
 # DescribeZones {#doc_api_R-kvstore_DescribeZones .reference}
 
-调用DescribeZones查询可用区。
+调用DescribeZones查询支持Redis的可用区。
 
 ## 调试 {#apiExplorer .section}
 
@@ -13,7 +13,7 @@
 |Action|String|是|DescribeZones|系统规定参数，取值：DescribeZones。
 
  |
-|AcceptLanguage|String|否|en|返回值的语言，取值：
+|AcceptLanguage|String|否|en-US|返回值的语言，取值：
 
  -   zh-CN（中文）
 -   en-US（英文）
