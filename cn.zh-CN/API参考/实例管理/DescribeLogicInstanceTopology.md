@@ -1,6 +1,6 @@
 # DescribeLogicInstanceTopology {#doc_api_R-kvstore_DescribeLogicInstanceTopology .reference}
 
-调用DescribeLogicInstanceTopology返回指定实例的逻辑拓扑结构。
+调用DescribeLogicInstanceTopology查询Redis实例的逻辑拓扑结构。
 
 ## 调试 {#apiExplorer .section}
 
