@@ -1,6 +1,6 @@
 # ModifyInstanceMaintainTime {#doc_api_R-kvstore_ModifyInstanceMaintainTime .reference}
 
-调用ModifyInstanceMaintainTime修改实例的可运维时间段，阿里云将在您设定的可运维时间段内对实例进行例行维护。
+调用ModifyInstanceMaintainTime修改Redis实例的可维护时间段，阿里云将在您设定的可维护时间段内对Redis实例进行例行维护。
 
 ## 调试 {#apiExplorer .section}
 
@@ -16,10 +16,10 @@
 |InstanceId|String|是|r-bp1xxxxxxxxxxxxx|目标实例的ID。
 
  |
-|MaintainStartTime|String|是|03:00Z|可运维时间段的开始时间，格式：`HH:mmZ`。
+|MaintainStartTime|String|是|03:00Z|可维护时间段的开始时间，格式：`HH:mmZ`。
 
  |
-|MaintainEndTime|String|是|02:00Z|可运维时间段的结束时间，格式：`HH:mmZ`。
+|MaintainEndTime|String|是|02:00Z|可维护时间段的结束时间，格式：`HH:mmZ`。
 
  **说明：** 开始时间和结束时间的间隔应为1小时，如：MaintainStartTime为`01:00Z`，MaintainEndTime为`02:00Z`。
 
