@@ -1,6 +1,6 @@
 # DescribeInstanceAttribute {#doc_api_R-kvstore_DescribeInstanceAttribute .reference}
 
-调用DescribeInstanceAttribute查询实例的详细信息。
+调用DescribeInstanceAttribute查询Redis实例的详细信息。
 
 ## 调试 {#apiExplorer .section}
 
@@ -13,7 +13,7 @@
 |Action|String|是|DescribeInstanceAttribute|系统规定参数，取值：DescribeInstanceAttribute。
 
  |
-|InstanceId|String|是|r-j6cxxxxxxxxxxxxx|需要查询的实例的ID。
+|InstanceId|String|是|r-bp1xxxxxxxxxxxxx|需要查询的实例的ID。
 
  |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
@@ -98,10 +98,7 @@
 |└InstanceStatus|String|Normal|实例状态。
 
  |
-|└InstanceType|String|Redis|实例类型：
-
- -   Redis
--   Memcache
+|└InstanceType|String|Redis|实例类型。
 
  |
 |└IsRds|Boolean|true|是否属RDS管控：
