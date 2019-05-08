@@ -1,6 +1,6 @@
 # ModifyInstanceSpec {#doc_api_R-kvstore_ModifyInstanceSpec .reference}
 
-调用ModifyInstanceSpec变更实例规格。
+调用ModifyInstanceSpec变更Redis实例的规格。
 
 各规格的详情请参见[实例规格表](~~107984~~)。
 
