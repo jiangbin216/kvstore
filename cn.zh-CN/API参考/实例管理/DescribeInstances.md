@@ -1,6 +1,6 @@
 # DescribeInstances {#doc_api_R-kvstore_DescribeInstances .reference}
 
-调用DescribeInstances查询账户下的某一个或多个实例的信息。
+调用DescribeInstances查询一个或多个Redis实例的信息。
 
 ## 调试 {#apiExplorer .section}
 
@@ -72,10 +72,7 @@
 |PageSize|Integer|否|10|每页最多可显示的行数，最大值为50，默认值为10。
 
  |
-|InstanceType|String|否|Redis|引擎类型：
-
- -   Memcache
--   Redis
+|InstanceType|String|否|Redis|引擎类型，可用值为Redis。
 
  |
 |SearchKey|String|否|apitest|实例名称。
@@ -123,7 +120,7 @@
 -   NULL（所有类型，默认值）
 
  |
-|└Bandwidth|Long|96|实例带宽。
+|└Bandwidth|Long|96|实例带宽，单位：MB/s。
 
  |
 |└Capacity|Long|4096|实例容量， 单位：MB。
@@ -139,6 +136,12 @@
 
  |
 |└ConnectionDomain|String|r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com|实例的内网连接地址。
+
+ |
+|└ConnectionMode|String|Standard|实例的访问模式，取值：
+
+ -   Standard（标准访问模式）
+-   Safe（数据库代理模式）
 
  |
 |└Connections|Long|20000|实例的连接数限制。
@@ -178,10 +181,7 @@
 |└InstanceStatus|String|Normal|实例的状态。
 
  |
-|└InstanceType|String|Redis|实例类型，取值：
-
- -   Redis
--   Memcache
+|└InstanceType|String|Redis|实例类型。
 
  |
 |└IsRds|Boolean|true|是否属RDS管控，取值：
