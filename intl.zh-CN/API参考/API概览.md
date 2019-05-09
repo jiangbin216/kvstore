@@ -1,100 +1,50 @@
-# API概览 {#doc_api_overview .concept}
+# API 概览 {#concept_t53_hsn_tdb .concept}
 
-云数据库Redis版提供以下相关API接口。
-
-**说明：** SDK代码示例与更多API资源请访问[API Explorer](https://api.aliyun.com/)。
-
-## 生命周期管理 { .section}
+## 实例生命周期管理接口 { .section}
 
 |API|描述|
 |---|--|
-|[CreateInstance](intl.zh-CN/API参考/生命周期管理/CreateInstance.md#)|创建一个Redis实例。|
-|[DeleteInstance](intl.zh-CN/API参考/生命周期管理/DeleteInstance.md#)|释放Redis实例。|
-|[ModifyInstanceSpec](intl.zh-CN/API参考/生命周期管理/ModifyInstanceSpec.md#)|变更Redis实例的规格。|
-|[TransformToPrePaid](intl.zh-CN/API参考/生命周期管理/TransformToPrePaid.md#)|将按量付费的Redis实例转换为包年包月（预付费）实例。|
+|CreateInstance|创建实例|
+|DeleteInstance|释放实例|
+|ModifyInstanceSpec|变更实例|
+|TransformToPrePaid|付费类型转换|
 
-## 区域管理 {#section_iwt_qhr_bmt .section}
-
-|API|描述|
-|---|--|
-|[DescribeRegions](intl.zh-CN/API参考/区域管理/DescribeRegions.md#)|查询可创建Redis实例的地域。|
-|[DescribeZones](intl.zh-CN/API参考/区域管理/DescribeZones.md#)|查询支持Redis的可用区。|
-|[MigrateToOtherZone](intl.zh-CN/API参考/区域管理/MigrateToOtherZone.md#)|将Redis实例迁移到同地域内的其它可用区。|
-
-## 实例管理 {#section_jhk_02h_r6k .section}
+## 实例管理接口 { .section}
 
 |API|描述|
 |---|--|
-|[DescribeDBInstanceNetInfo](intl.zh-CN/API参考/实例管理/DescribeDBInstanceNetInfo.md#)|查看Redis实例的网络信息。|
-|[DescribeInstanceAttribute](intl.zh-CN/API参考/实例管理/DescribeInstanceAttribute.md#)|查询Redis实例的详细信息。|
-|[DescribeInstances](intl.zh-CN/API参考/实例管理/DescribeInstances.md#)|查询一个或多个Redis实例的信息。|
-|[DescribeLogicInstanceTopology](intl.zh-CN/API参考/实例管理/DescribeLogicInstanceTopology.md#)|查询Redis实例的逻辑拓扑结构。|
-|[FlushInstance](intl.zh-CN/API参考/实例管理/FlushInstance.md#)|清空Redis实例中的数据。|
-|[ModifyInstanceAttribute](intl.zh-CN/API参考/实例管理/ModifyInstanceAttribute.md#)|修改Redis实例的属性，包括名称和密码。|
-|[ModifyInstanceMaintainTime](intl.zh-CN/API参考/实例管理/ModifyInstanceMaintainTime.md#)|修改Redis实例的可维护时间段。|
-|[ModifyInstanceNetExpireTime](intl.zh-CN/API参考/实例管理/ModifyInstanceNetExpireTime.md#)|延长经典网络连接地址的保存时间。|
-|[ModifyDBInstanceConnectionString](intl.zh-CN/API参考/实例管理/ModifyDBInstanceConnectionString.md#)|修改Redis实例的连接地址。|
-|[SwitchNetwork](intl.zh-CN/API参考/实例管理/SwitchNetwork.md#)|切换Redis实例的网络类型，支持从经典网络切换为VPC网络。|
-|[ModifyInstanceMajorVersion](intl.zh-CN/API参考/实例管理/ModifyInstanceMajorVersion.md#)|升级Redis实例的大版本。|
-|[RestartInstance](intl.zh-CN/API参考/实例管理/RestartInstance.md#)|重启运行中的Redis实例。|
+|ModifyInstanceAttribute|修改实例属性|
+|FlushInstance|清空实例|
+|DescribeInstances|查询实例基础信息|
+|DescribeInstanceAttribute|查询实例详情|
+|DescribeSecurityIps|查询允许访问实例的 IP 名单|
+|ModifyInstanceMaintainTime|修改实例可运维时间|
+|ModifySecurityIps|修改实例白名单|
+|DescribeRegions|查询实例可售卖地域|
+|SwitchNetwork|修改网络类型|
+|ModifyInstanceNetExpireTime|修改经典网络域名的保留时间|
 
-## 续费管理 {#section_x6s_0q9_7bv .section}
+## 备份恢复接口 { .section}
 
 |API|描述|
 |---|--|
-|[ModifyInstanceAutoRenewalAttribute](intl.zh-CN/API参考/续费管理/ModifyInstanceAutoRenewalAttribute.md#)|开启或者关闭Redis实例的到期前自动续费功能。|
-|[DescribePrice](intl.zh-CN/API参考/续费管理/DescribePrice.md#)|查询创建Redis实例、升级配置或续费等操作产生的费用。|
-|[DescribeInstanceAutoRenewalAttribute](intl.zh-CN/API参考/续费管理/DescribeInstanceAutoRenewalAttribute.md#)|查看Redis实例的自动续费情况。|
+|CreateBackup|创建备份|
+|ModifyBackupPolicy|修改备份策略|
+|DescribeBackupPolicy|查询备份策略|
+|DescribeBackups|显示备份列表|
+|RestoreInstance|基于备份集回滚实例|
 
-## 备份恢复 {#section_ejj_0mf_0us .section}
-
-|API|描述|
-|---|--|
-|[CreateBackup](intl.zh-CN/API参考/备份恢复/CreateBackup.md#)|为Redis实例创建数据备份。|
-|[ModifyBackupPolicy](intl.zh-CN/API参考/备份恢复/ModifyBackupPolicy.md#)|修改Redis实例的自动备份策略。|
-|[DescribeBackupPolicy](intl.zh-CN/API参考/备份恢复/DescribeBackupPolicy.md#)|查询Redis实例的备份策略，包括备份周期、备份时间等。|
-|[DescribeBackups](intl.zh-CN/API参考/备份恢复/DescribeBackups.md#)|查询Redis实例的备份文件信息。|
-|[RestoreInstance](intl.zh-CN/API参考/备份恢复/RestoreInstance.md#)|将备份文件中的数据恢复到指定的Redis实例中。|
-
-## 监控管理 {#section_bhg_c95_0yz .section}
+## 监控管理接口 { .section}
 
 |API|描述|
 |---|--|
-|[DescribeMonitorItems](intl.zh-CN/API参考/监控管理/DescribeMonitorItems.md#)|查询Redis监控项列表。|
-|[DescribeHistoryMonitorValues](intl.zh-CN/API参考/监控管理/DescribeHistoryMonitorValues.md#)|查看Redis实例的历史监控信息。|
+|DescribeMonitorItems|查看监控项列表|
+|DescribeHistoryMonitorValues|查看历史监控|
 
-## 日志管理 { .section}
-
-|API|描述|
-|---|--|
-|[DescribeAuditRecords](intl.zh-CN/API参考/日志管理/DescribeAuditRecords.md#)|查看Redis实例的审计日志。|
-|[DescribeRunningLogRecords](intl.zh-CN/API参考/日志管理/DescribeRunningLogRecords.md#)|查询Redis实例的运行日志列表。|
-|[DescribeSlowLogRecords](intl.zh-CN/API参考/日志管理/DescribeSlowLogRecords.md#)|查询Redis实例在指定时间内产生的慢日志。|
-
-## 账号管理 {#section_c8z_fci_n7w .section}
+## 参数管理接口 { .section}
 
 |API|描述|
 |---|--|
-|[DescribeAccounts](intl.zh-CN/API参考/账号管理/DescribeAccounts.md#)|查找指定Redis实例的帐户列表信息或实例中某个账号的信息。|
-|[ModifyAccountDescription](intl.zh-CN/API参考/账号管理/ModifyAccountDescription.md#)|修改Redis账号的描述。|
-|[ResetAccountPassword](intl.zh-CN/API参考/账号管理/ResetAccountPassword.md#)|重置Redis账号的密码。|
-|[CreateAccount](intl.zh-CN/API参考/账号管理/CreateAccount.md#)|在Redis实例中创建有特定权限的账号。|
-|[DeleteAccount](intl.zh-CN/API参考/账号管理/DeleteAccount.md#)|删除一个Redis账号。|
-|[GrantAccountPrivilege](intl.zh-CN/API参考/账号管理/GrantAccountPrivilege.md#)|修改Redis账号的权限。|
-
-## 网络安全 {#section_2bz_zhh_hul .section}
-
-|API|描述|
-|---|--|
-|[ModifyInstanceSSL](intl.zh-CN/API参考/网络安全/ModifyInstanceSSL.md#)|设置Redis实例的SSL加密模式。|
-|[ModifySecurityIps](intl.zh-CN/API参考/网络安全/ModifySecurityIps.md#)|设置Redis实例的IP白名单。|
-|[ModifyInstanceVpcAuthMode](intl.zh-CN/API参考/网络安全/ModifyInstanceVpcAuthMode.md#)|开启或关闭免密访问。|
-|[DescribeSecurityIps](intl.zh-CN/API参考/网络安全/DescribeSecurityIps.md#)|查询允许访问Redis实例的IP名单。|
-
-## 参数管理 {#section_9mh_9zq_8ma .section}
-
-|API|描述|
-|---|--|
-|[DescribeParameters](intl.zh-CN/API参考/参数管理/DescribeParameters.md#)|查询Redis实例的配置参数和运行参数。|
-|[ModifyInstanceConfig](intl.zh-CN/API参考/参数管理/ModifyInstanceConfig.md#)|修改Redis实例的配置参数。|
+|DescribeInstanceConfig|查看实例参数配置|
+|ModifyInstanceConfig|修改参数配置|
 
