@@ -1,6 +1,6 @@
 # ModifyAccountDescription {#doc_api_R-kvstore_ModifyAccountDescription .reference}
 
-调用ModifyAccountDescription修改账号描述。
+调用ModifyAccountDescription修改Redis账号的描述。
 
 该API仅支持4.0版本的Redis实例。
 
