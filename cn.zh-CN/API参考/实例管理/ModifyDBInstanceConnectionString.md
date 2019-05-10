@@ -2,6 +2,8 @@
 
 调用ModifyDBInstanceConnectionString修改Redis实例的连接地址。
 
+该API对应的控制台操作请参见[修改连接地址](~~85683~~)。
+
 ## 调试 {#apiExplorer .section}
 
 前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyDBInstanceConnectionString)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
