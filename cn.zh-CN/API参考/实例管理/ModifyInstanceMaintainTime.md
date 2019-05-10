@@ -2,6 +2,8 @@
 
 调用ModifyInstanceMaintainTime修改Redis实例的可维护时间段，阿里云将在您设定的可维护时间段内对Redis实例进行例行维护。
 
+该API对应的控制台操作请参见[设置可维护时间段](~~55252~~)。
+
 ## 调试 {#apiExplorer .section}
 
 前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceMaintainTime)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
