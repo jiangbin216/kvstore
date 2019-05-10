@@ -1,6 +1,8 @@
 # DescribeHistoryMonitorValues {#doc_api_R-kvstore_DescribeHistoryMonitorValues .reference}
 
-调用DescribeHistoryMonitorValues查看实例的历史监控信息。
+调用DescribeHistoryMonitorValues查看Redis实例的历史监控信息。
+
+该API对应的控制台操作请参见[性能监控](~~43887~~)。
 
 ## 调试 {#apiExplorer .section}
 
