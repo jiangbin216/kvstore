@@ -2,6 +2,8 @@
 
 调用CreateInstance创建一个Redis实例。
 
+该API对应的控制台操作请参见[创建实例](~~26351~~)。
+
 创建Redis实例所需的实例规格请参见[实例规格表](~~107984~~)。
 
 **说明：** 除下列参数外，您还需要调用[DescribeRegions](~~61012~~)查询可用的RegionId，并在请求中传入RegionId以指定Redis实例创建到的地域。
