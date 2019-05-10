@@ -2,6 +2,8 @@
 
 若Redis实例之前执行过由经典网络向VPC网络切换，并保留了经典网络连接地址，则可调用ModifyInstanceNetExpireTime延长经典网络连接地址的保存时间。
 
+该API对应的控制台操作请参见[修改原经典网络地址的使用期限](~~60062~~)。
+
 **说明：** 将实例从经典网络切换到VPC网络的方法请参见[SwitchNetwork](~~61005~~)。
 
 ## 调试 {#apiExplorer .section}
