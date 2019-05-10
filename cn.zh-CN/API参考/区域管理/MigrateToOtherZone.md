@@ -1,6 +1,8 @@
 # MigrateToOtherZone {#doc_api_R-kvstore_MigrateToOtherZone .reference}
 
-调用MigrateToOtherZone将实例迁移至同地域内的其它可用区。
+调用MigrateToOtherZone将Redis实例迁移到同地域内的其它可用区。
+
+该API对应的控制台操作请参见[迁移可用区](~~106272~~)。
 
 ## 调试 {#apiExplorer .section}
 
