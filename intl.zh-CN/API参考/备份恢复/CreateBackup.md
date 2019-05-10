@@ -1,6 +1,8 @@
 # CreateBackup {#doc_api_R-kvstore_CreateBackup .reference}
 
-调用CreateBackup创建备份。
+调用CreateBackup为Redis实例创建数据备份。
+
+该API对应的控制台操作请参见[备份与恢复](~~43886~~)。
 
 ## 调试 {#apiExplorer .section}
 
