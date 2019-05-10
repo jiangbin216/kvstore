@@ -2,6 +2,8 @@
 
 调用ModifyInstanceAttribute修改Redis实例的属性，包括名称和密码。
 
+该API对应的控制台操作请参见[修改密码](~~43874~~)。
+
 ## 调试 {#apiExplorer .section}
 
 前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceAttribute)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
