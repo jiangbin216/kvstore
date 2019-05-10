@@ -1,6 +1,8 @@
 # DeleteInstance {#doc_api_R-kvstore_DeleteInstance .reference}
 
-调用DeleteInstance释放实例。
+调用DeleteInstance释放Redis实例。
+
+该API对应的控制台操作请参见[释放实例](~~43882~~)。
 
 调用DeleteInstance接口的前提条件如下：
 
