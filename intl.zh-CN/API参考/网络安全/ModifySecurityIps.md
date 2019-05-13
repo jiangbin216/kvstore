@@ -1,6 +1,8 @@
 # ModifySecurityIps {#doc_api_R-kvstore_ModifySecurityIps .reference}
 
-调用ModifySecurityIps设置实例的IP白名单。
+调用ModifySecurityIps设置Redis实例的IP白名单。
+
+该API对应的控制台操作请参见[设置IP白名单](~~56464~~)。
 
 ## 调试 {#apiExplorer .section}
 
@@ -50,7 +52,8 @@
 
 ``` {#request_demo}
 
-http(s)://[Endpoint]/?Action=ModifySecurityIps
+https://r-kvstore.aliyuncs.com/
+?Action=ModifySecurityIps
 &InstanceId=r-bp1xxxxxxxxxxxxx
 &SecurityIps=100.xxx.xxx.xxx/24,10.xxx.xxx.xxx
 &<公共请求参数>
