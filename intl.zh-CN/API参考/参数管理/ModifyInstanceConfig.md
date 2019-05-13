@@ -1,6 +1,8 @@
 # ModifyInstanceConfig {#doc_api_R-kvstore_ModifyInstanceConfig .reference}
 
-调用ModifyInstanceConfig修改实例的配置参数。
+调用ModifyInstanceConfig修改Redis实例的配置参数。
+
+该API对应的控制台操作请参见[参数设置](~~43885~~)。
 
 ## 调试 {#apiExplorer .section}
 
