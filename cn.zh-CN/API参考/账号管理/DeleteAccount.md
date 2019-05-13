@@ -1,6 +1,6 @@
 # DeleteAccount {#doc_api_R-kvstore_DeleteAccount .reference}
 
-调用DeleteAccount删除一个账号。
+调用DeleteAccount删除一个Redis账号。
 
 -   该API仅支持4.0版本的Redis实例；
 -   实例的状态为运行中时才能调用该API。
