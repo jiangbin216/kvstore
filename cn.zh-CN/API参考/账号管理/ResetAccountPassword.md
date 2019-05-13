@@ -1,6 +1,6 @@
 # ResetAccountPassword {#doc_api_R-kvstore_ResetAccountPassword .reference}
 
-调用ResetAccountPassword重置账号的密码。
+调用ResetAccountPassword重置Redis账号的密码。
 
 该API仅支持4.0版本的Redis实例。
 
