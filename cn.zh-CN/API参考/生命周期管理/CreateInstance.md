@@ -6,8 +6,6 @@
 
 创建Redis实例所需的实例规格请参见[实例规格表](~~107984~~)。
 
-**说明：** 除下列参数外，您还需要调用[DescribeRegions](~~61012~~)查询可用的RegionId，并在请求中传入RegionId以指定Redis实例创建到的地域。
-
 ## 调试 {#apiExplorer .section}
 
 前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=CreateInstance)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
@@ -17,6 +15,9 @@
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
 |Action|String|是|CreateInstance|系统规定参数，取值：CreateInstance。
+
+ |
+|RegionId|String|是|cn-hangzhou|地域ID，可调用[DescribeRegions](~~61012~~)查询，使用此参数指定要创建实例的地域。
 
  |
 |InstanceClass|String|否|redis.master.small.default|实例的规格，详细信息请参见[实例规格表](~~107984~~)。
