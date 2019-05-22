@@ -7,8 +7,7 @@
 -   已创建作为迁移目的端的云数据库Redis版实例；
 -   已创建用于运行redis-shake的ECS；
 -   ECS可以访问源端和目的端Redis；
--   ECS的系统为Linux；
--   ECS中已经安装了git和golang。
+-   ECS的系统为Linux。
 
 ## 背景信息 {#section_uv4_c4p_8xh .section}
 
@@ -16,52 +15,33 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 
 **说明：** 
 
--   如需了解更多redis-shake相关信息，请参见[redis-shake Github主页](https://github.com/aliyun/redis-shake)。
--   redis-shake的rump模式不支持增量数据迁移，建议您先停止源端Redis的写入再进行迁移，防止数据不一致。
+-   rump模式不支持增量数据迁移，建议您先停止源端Redis的写入再进行迁移，防止数据不一致。
+-   如需了解更多redis-shake相关信息，请参见[redis-shake Github主页](https://github.com/aliyun/redis-shake)或[FAQ](https://github.com/alibaba/RedisShake/wiki/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE%EF%BC%9F)。
 
 ## 操作步骤 {#section_0ne_wlk_e5d .section}
 
 1.  登录可以连接源端和目的端Redis的ECS。
-2.  将redis-shake资源克隆到ECS。
+2.  在ECS中下[redis-shake](https://github.com/alibaba/RedisShake/releases)。
 
-    ``` {#codeblock_wca_cgc_wnx}
-    # git clone https://github.com/alibaba/RedisShake.git
+    **说明：** 建议您下载最新发布的版本。
+
+3.  解压redis-shake.tar.gz。
+
+    ``` {#codeblock_os5_5t1_5yd}
+    # tar -xvf redis-shake.tar.gz
     ```
 
-    ![](images/45575_zh-CN.png "将redis-shake资源git clone到ECS")
+    **说明：** 解压获得的redis-shake.linux64为64位Linux系统所需的二进制文件，redis-shake.conf为redis-shake的配置文件，您将在下个步骤对其进行修改。
 
-3.  切换到RedisShake目录并设置环境变量。
-
-    ``` {#codeblock_twd_9j8_e1h}
-    # cd RedisShake
-    # export GOPATH=`pwd`
-    ```
-
-4.  切换到vendor目录，下载govendor并将其设置为可执行文件。
-
-    ``` {#codeblock_ywx_asc_6io}
-    # cd src/vendor
-    # wget http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/94155/cn_zh/1556268861235/govendor
-    # chmod u+x govendor
-    ```
-
-    **说明：** 如您已经安装了govendor请略过此步骤。
-
-5.  执行`./govendor sync`并等待同步完成。
-6.  切换到RedisShake目录编译文件。
-
-    ``` {#codeblock_ote_lv8_42b}
-    # cd ../../
-    # ./build.sh
-    ```
-
-7.  修改redis-shake配置文件，rump模式涉及的主要参数的说明如下。
+4.  修改redis-shake配置文件，rump模式涉及的主要参数的说明如下。
 
     |参数|说明|示例值|
     |--|--|---|
-    |source.address|源端Redis的连接地址。|`r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
-    |source.password\_raw|源端Redis的连接密码。|`SourcePass233`|
-    |target.address|目的端Redis的连接地址。|`r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
+    |source.address|源端Redis的连接地址与服务端口。|`r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
+    |source.password\_raw|源端Redis的连接密码。|`SourcePass233` **说明：** 如使用非默认账号连接云数据库Redis版实例，密码格式为`account:password`。
+
+ |
+    |target.address|目的端Redis的连接地址与服务端口。|`r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
     |target.password\_raw|目的端Redis的连接密码。|`TargetPass233`|
     |rewrite|如果目的Redis有与RDB文件中相同的key，是否覆盖，可选值：     -   true（覆盖）；
     -   false（不覆盖）。
@@ -73,10 +53,10 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 
  |
 
-8.  在RedisShake目录中使用如下命令进行迁移。
+5.  使用如下命令进行迁移。
 
     ```
-    # ./bin/redis-shake -type=rump -conf=conf/redis-shake.conf
+    # ./bin/redis-shake -type=rump -conf=redis-shake.conf
     ```
 
     ![](images/46084_zh-CN.png "rump模式迁移示例")
