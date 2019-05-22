@@ -1,6 +1,6 @@
 # 使用redis-shake进行迁移 {#concept_vsd_r1g_chb .concept}
 
-您可以使用redis-shake将自建Redis迁移至云数据库Redis版。
+您可以使用redis-shake的sync模式将自建Redis迁移至云数据库Redis版。
 
 ## 前提条件 {#section_i54_wj5_1gb .section}
 
@@ -16,6 +16,7 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 **说明：** 
 
 -   sync模式下源端Redis需支持SYNC、PSYNC命令。如源端为云数据库Redis版，需使用[有复制权限的账号](cn.zh-CN/用户指南/管理实例/账号管理.md#)连接Redis。
+-   sync模式支持跨版本同步，如2.8版本实例与4.0版本实例同步。
 -   云数据库Redis集群版目前无法作为sync模式的源端。
 -   如需了解更多redis-shake相关信息，请参见[redis-shake Github主页](https://github.com/aliyun/redis-shake)或[FAQ](https://github.com/alibaba/RedisShake/wiki/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE%EF%BC%9F)。
 
@@ -53,14 +54,18 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 
 5.  使用如下命令进行迁移。
 
+    ``` {#codeblock_85b_yui_8e5}
+    # ./redis-shake.linux64 -type=sync -conf=redis-shake.conf
     ```
-    # ./redis-shake -type=sync -conf=redis-shake.conf
-    ```
 
-    ![使用redis-shake迁移Redis的示例](images/40848_zh-CN.png "使用redis-shake迁移Redis的示例")
+    **说明：** 此命令需在二进制文件redis-shake.linux64和配置文件redis-shake.conf所在的目录中执行，否则请在命令中指定正确的文件路径。
 
-6.  查看同步日志确认同步状态，当出现`sync rds done`时，全量同步已经完成，同步进入增量阶段。
+6.  查看同步日志确认同步状态，当出现`sync rdb done`时，全量同步已经完成，同步进入增量阶段。
 
-    **说明：** `sync rdb done`之后的日志中，若`+forward=0`，则此时源端没有新的数据写入，同步链路中没有增量数据正在传输，您可以以此为依据选择适当的时机将业务对接到云数据库Redis版。
+    ![使用redis-shake迁移Redis的示例](images/40848_zh-CN.png "同步日志")
 
+    **说明：** 
+
+    -   `sync rdb done`之后的日志中，若`+forward=0`，则此时源端没有新的数据写入，同步链路中没有增量数据正在传输，您可以以此为依据选择适当的时机将业务对接到云数据库Redis版。
+    -   迁移完成后，您可以使用redis-full-check进行数据校验，确保两端数据一致，详细步骤请参见[校验迁移后的数据](cn.zh-CN/用户指南/迁移数据/校验迁移后的数据.md#)。
 
