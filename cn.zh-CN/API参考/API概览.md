@@ -45,6 +45,7 @@
 |[ModifyInstanceAutoRenewalAttribute](cn.zh-CN/API参考/续费管理/ModifyInstanceAutoRenewalAttribute.md#)|开启或者关闭Redis实例的到期前自动续费功能。|
 |[DescribePrice](cn.zh-CN/API参考/续费管理/DescribePrice.md#)|查询创建Redis实例、升级配置或续费等操作产生的费用。|
 |[DescribeInstanceAutoRenewalAttribute](cn.zh-CN/API参考/续费管理/DescribeInstanceAutoRenewalAttribute.md#)|查看Redis实例的自动续费情况。|
+| [DescribeAvailableResource](cn.zh-CN/API参考/续费管理/DescribeAvailableResource.md#)|查询指定可用区内的可用资源详情。|
 
 ## 备份恢复 {#section_ejj_0mf_0us .section}
 
