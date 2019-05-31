@@ -11,7 +11,7 @@
 -   [使用说明](https://help.aliyun.com/document_detail/66496.html)
 -   [下载地址](https://developer.aliyun.com/tools/sdk#/java) 
 
-    **说明：** 在该页面使用浏览器搜索功能查找Redis即可快速发现最新版本的云数据库Redis版Java SDK。
+    **说明：** 打开下载页面后，使用浏览器搜索功能查找Redis即可快速发现最新版本的云数据库Redis版Java SDK。
 
 
 ## Python SDK {#section_t6q_t23_9ob .section}
@@ -19,7 +19,7 @@
 -   [使用说明](https://help.aliyun.com/document_detail/53090.html)
 -   [下载地址](https://developer.aliyun.com/tools/sdk#/python) 
 
-    **说明：** 在该页面使用浏览器搜索功能查找Redis即可快速发现最新版本的云数据库Redis版Python SDK。
+    **说明：** 打开下载页面后，使用浏览器搜索功能查找Redis即可快速发现最新版本的云数据库Redis版Python SDK。
 
 
 ## PHP SDK {#section_xdd_u9l_ujn .section}
