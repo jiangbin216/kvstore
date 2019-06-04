@@ -47,12 +47,12 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 5.  使用如下命令进行迁移。
 
     ``` {#codeblock_1x7_mkf_e30}
-    ./redis-shake.linux64 -type=dump -conf=redis-shake.conf
+    ./redis-shake -type=dump -conf=redis-shake.conf
     ```
 
-    **说明：** 此命令需在二进制文件 redis-shake.linux64和配置文件 redis-shake.conf所在的目录中执行，否则请在命令中指定正确的文件路径。
+    **说明：** 此命令需在二进制文件 redis-shake和配置文件 redis-shake.conf所在的目录中执行，否则请在命令中指定正确的文件路径。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/236144/155901489447834_zh-CN.jpg)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/236144/155963485547834_zh-CN.jpg)
 
     **说明：** 
 
