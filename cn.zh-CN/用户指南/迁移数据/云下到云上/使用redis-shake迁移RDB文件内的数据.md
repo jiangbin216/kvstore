@@ -37,7 +37,7 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 
     |参数|说明|示例|
     |--|--|--|
-    |input\_rdb|备份文件（RDB文件）的路径，可使用相对路径或绝对路径。|/root/tools/RedisShake/demo.rdb|
+    |rdb.input|备份文件（RDB文件）的路径，可使用相对路径或绝对路径。|/root/tools/RedisShake/demo.rdb|
     |target.address|目的Redis的连接地址与端口号。|`r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com:6379`|
     |source.password\_raw|目的Redis的连接密码。|`TargetPass233` **说明：** 如使用非默认账号连接云数据库Redis版实例，密码格式为`account:password`。
 
@@ -53,7 +53,7 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
 
 5.  使用如下命令进行迁移。
 
-    ```
+    ``` {#codeblock_hdd_lmb_jny}
     # ./redis-shake.linux64 -type=restore -conf=redis-shake.conf
     ```
 
