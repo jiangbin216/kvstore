@@ -4,6 +4,11 @@
 
 该API对应的控制台操作请参见[迁移可用区](~~106272~~)。
 
+**说明：** 
+
+-   如果实例是从经典网络切换到专有网络的，并且保留了经典网络的连接地址，则需等到经典网络连接地址到期释放后才能执行可用区迁移。
+-   迁移之后实例的连接地址不会改变，但VIP会发生变化，请在业务中使用连接地址连接实例而非其VIP地址。
+
 ## 调试 {#apiExplorer .section}
 
 前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=MigrateToOtherZone)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
@@ -18,7 +23,21 @@
 |DBInstanceId|String|是|r-bp1xxxxxxxxxxxxx|实例 ID（全局唯一）。
 
  |
-|ZoneId|String|是|cn-hangzhou-g|要迁移到的可用区（即目的可用区），您可以调用[DescribeZones](~~94527~~)接口查询可用区。
+|ZoneId|String|是|cn-hangzhou-g|目的可用区的ID，可调用[DescribeZones](~~94527~~)接口查询。
+
+ |
+|RegionId|String|否|cn-hangzhou|地域ID，可以调用[DescribeRegions](~~61012~~)接口查询。
+
+ |
+|EffectiveTime|String|否|Immediately|数据迁移后执行数据库切换的时间。可选值：
+
+ -   Immediately（迁移完立即切换）
+-   MaintainTime（可维护时间段内切换）
+
+ **说明：** 默认值：Immediately。
+
+ |
+|AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
 |VSwitchId|String|否|vsw-sdrxxxxxxxxxxxxxxxxxx|虚拟交换机的ID 。
@@ -27,17 +46,6 @@
 
 -   VSwitch所在可用区须与ZoneId（目的可用区）一致；
 -   如果实例的网络类型为VPC，则该参数为必选。
-
- |
-|EffectiveTime|String|否|Immediately|数据迁移后执行数据库切换的时间。可选值：
-
- -   Immediately（迁移完立即切换）
--   MaintainTime（可维护时间段内切换）
-
- **说明：** 默认为Immediately，迁移完立即切换。
-
- |
-|AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
 
