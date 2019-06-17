@@ -2,7 +2,7 @@
 
 调用CreateInstance创建一个Redis实例。
 
-该API对应的控制台操作请参见[创建实例](~~26351~~)。
+ **该API对应的控制台操作请参见\[创建实例\]\(~~26351~~\)。** 
 
 创建Redis实例所需的实例规格请参见[实例规格表](~~107984~~)。
 
@@ -115,6 +115,33 @@
 |PrivateIpAddress|String|否|172.16.0.10|指定新实例的内网IP地址。
 
  **说明：** 内网IP需在实例所属的交换机网段内。
+
+ |
+|AutoRenew|String|否|true|是否开启自动续费，可选值：
+
+ -   true（开启）
+-   false（不开启）
+
+ **说明：** 默认值：false。
+
+ |
+|AutoRenewPeriod|String|否|3|自动续费周期，单位为月，可选值：
+
+ -   1
+-   2
+-   3
+-   6
+-   12
+
+ **说明：** 当**AutoRenew**为`true`时该参数必选。
+
+ |
+|AutoUseCoupon|String|否|false|是否使用代金券，可选值：
+
+ -   true（使用）
+-   false（不使用）
+
+ **说明：** 默认值：false。
 
  |
 
