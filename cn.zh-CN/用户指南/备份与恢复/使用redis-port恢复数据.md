@@ -14,26 +14,26 @@
 
 在开始前，请通过以下链接下载工具包：
 
-[工具包下载](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/73964/cn_zh/1536832169445/redis-rdb-auto-restore.zip)
+ [工具包下载](http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/assets/attach/73964/cn_zh/1536832169445/redis-rdb-auto-restore.zip)
 
 ## 操作步骤 {#section_d3x_ft5_cfb .section}
 
 1.  通过命令安装OpenAPI依赖：
 
-    ```
+    ``` {#codeblock_1r6_yln_r4v}
     pip install aliyun-python-sdk-core #安装阿里云OpenAPI依赖包
     ```
 
 2.  修改config.json，acesskeyID为RAM信息中的客户自己的AcesskeyID，acesskeySecret为RAM信息中客户自己的AcesskeySecret，regionid为实例的region编号。
 3.  执行脚本，请参考如下示例：
 
-    ```
+    ``` {#codeblock_w2p_2xl_84m}
     python rdb_restore.py -c r-m5ec7db53da93674 -d 2018-07-17 -i rm-davinx-003.redis.6d6e3611-8.newtest.rdstest.aliyun-inc.com -p 6379 -a Davinx123456
     ```
 
     命令参数详解如下：
 
-    ```
+    ``` {#codeblock_gio_gcu_fam}
     #python rdb_restore.py -h
     Usage: rdb_restore.py [options]
             Example : rdb_restore.py rdb_analysis.py -c r-m5ec7db53da93674 -d 2018-07-17 -t
@@ -53,10 +53,10 @@
       -a AUTH, --auth=AUTH  target instance auth password #目标实例的密码
     ```
 
+    **说明：** 如果一天内一个节点有多个备份文件，需设置`-b`参数。多个备份ID（BAKID）请用英文逗号隔开，如：`111,222,333`。BAKID需调用[DescribeBackups](../../../../cn.zh-CN/API参考/备份恢复/DescribeBackups.md#)接口查询，您可以直接在[OpenAPI Explorer](https://api.aliyun.com/?#/?product=R-kvstore)上登录阿里云账号后调用查询。
+
     示例脚本执行的结果如下，当出现`restore: rdb done`时数据恢复完成。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21349/156039576511901_zh-CN.png)
-
-    **说明：** 如果一天之内有多个备份文件的话请务必加上`-b`参数，如需传入多个备份id请用逗号隔开，如：`xxx,xxxx,xxxx`。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21349/156095032311901_zh-CN.png)
 
 
