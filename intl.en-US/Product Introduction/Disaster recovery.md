@@ -32,18 +32,6 @@ A [dual-replica cluster](intl.en-US/Product Introduction/Product  series/Redis 
 
 ![](images/34890_en-US.png "High-availability architecture of the dual-replica cluster edition")
 
-**Read/write splitting edition**
-
-A [read/write splitting](intl.en-US/Product Introduction/Product  series/Redis read-write separation instance.md#) instance consists of a proxy server, a master-replica read/write node, and multiple read-only replicas.
-
--   The HA module monitors node status in real time. When the master node of the read/write node fails, the HA module performs the failover operation, and connects a read-only node to the new master node.
--   When a read-only node fails, the HA module reconstructs a read-only node, and updates corresponding routing and weight information.
--   The proxy server monitors service status of the read-only nodes. When a read-only node fails, the proxy server reduces the weight of this node. If multiple attempts of connecting a read-only node failed, the proxy server stops the service on the node until the node recovers from the failure.
-
- 
-
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/81454/156091376234897_en-US.png)
-
 ## Zone-disaster recovery mechanism {#section_h5s_zxn_fgb .section}
 
 The standard and cluster editions support zone-disaster recovery between two data centers. You can deploy your business in a single region, and require excellent disaster recovery. In this case, you need to select a zone that supports zone-disaster recovery when you create an ApsaraDB for Redis instance. For example, you can select **Singapore Zone \(B+C\)** as shown in the following figure.
