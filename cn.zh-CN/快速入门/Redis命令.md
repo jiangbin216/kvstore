@@ -58,11 +58,11 @@
 |UNLINK|SWAPDB|
 | |MEMORY|
 
-**4.0更新的Redis命令**
+ **4.0更新的Redis命令** 
 
 FLUSHALL/FLUSHDB新增选项ASYNC。
 
-**说明：** 添加ASYNC选项后FLUSHALL或FLUSHDB的操作将在新的线程中异步进行，不会阻塞服务。更多Redis 4.0相关特性请参见[Redis 4.0命令及新特性介绍](../../../../../intl.zh-CN/产品简介/Redis 4.0新功能介绍.md#)。
+**说明：** 添加ASYNC选项后FLUSHALL或FLUSHDB的操作将在新的线程中异步进行，不会阻塞服务。更多Redis 4.0相关特性请参见[Redis 4.0命令及新特性介绍](../../../../cn.zh-CN/产品简介/Redis 4.0新功能介绍.md#)。
 
 ## 暂未开放的Redis命令 {#section_xgx_zxy_xdb .section}
 
@@ -108,7 +108,7 @@ FLUSHALL/FLUSHDB新增选项ASYNC。
     -   多key命令包括：DEL、SORT、MGET、MSET、BITOP、EXISTS、MSETNX、RENAME、 RENAMENX、BLPOP、BRPOP、RPOPLPUSH、BRPOPLPUSH、SMOVE、SUNION、SINTER、SDIFF、SUNIONSTORE、SINTERSTORE、SDIFFSTORE、ZUNIONSTORE、ZINTERSTORE、 PFMERGE、PFCOUNT。
     -   不允许在事务中使用的命令包括：WATCH、UNWATCH、RANDOMKEY、KEYS、SUBSCRIBE、 UNSUBSCRIBE、PSUBSCRIBE、PUNSUBSCRIBE、PUBLISH、PUBSUB、SCRIPT、EVAL、 EVALSHA、SCAN、ISCAN、DBSIZE、ADMINAUTH、AUTH、PING、ECHO、FLUSHDB、 FLUSHALL、MONITOR、IMONITOR、RIMONITOR、INFO、IINFO、RIINFO、CONFIG、 SLOWLOG、TIME、CLIENT。
 
-**Lua使用限制**
+ **Lua使用限制** 
 
 Lua脚本放开限制，标准版-双节点、标准版-单节点支持用户直接调用。
 
@@ -131,7 +131,7 @@ Lua脚本放开限制，标准版-双节点、标准版-单节点支持用户直
 
     -   线上旧版本可能出现`info key`显示出来的`node index`和实例拓扑图的`node index`不一致，最新版本已经修复。
 
-    -   `info key`显示的node是指集群规格下后端的物理节点，和select命令中的db不是同一个概念。
+    -    `info key`显示的node是指集群规格下后端的物理节点，和select命令中的db不是同一个概念。
 
 -   iinfo命令：用法类似于info，用于在指定的Redis节点上执行info命令。用法如下：
 
@@ -139,7 +139,7 @@ Lua脚本放开限制，标准版-双节点、标准版-单节点支持用户直
 iinfo db_idx [section]
 ```
 
-    其中，db\_idx的范围是\[0, nodecount\]，nodecount可以通过info命令获取，section的用法与官方info命令中的section一致。要了解某个Redis节点的info可以使用iinfo命令或者从控制台上查看实例拓扑图。
+    其中，db\_idx的范围是\[0, nodecount\]，nodecount可以通过info命令获取，section的用法与官方info命令中的section一致。要了解某个Redis节点的info可以使用iinfo命令或者从控制台上查看实例拓扑图，详情请参见 [如何查看Redis集群子实例内存](https://help.aliyun.com/document_detail/56945.html)。
 
 -   riinfo命令：和iinfo命令类似，但只能在读写分离的模式下使用。用法中增加了一个readonly slave的idx，用于指定在第几个readonly slave上执行info命令。在读写分离集群中可以用来在指定readonly slave上执行info命令。如果在非读写分离集群中使用，会返回错误。用法如下：
 
@@ -155,7 +155,7 @@ iscan db_idx cursor [MATCH pattern] [COUNT count]
 
 -   imonitor命令：和iinfo、 iscan类似，在monitor的基础上新增一个参数指定monitor执行的db\_idx，db\_idx的范围是\[0, nodecount\)， nodecount可以通过info命令获取或者从控制台上查看实例拓扑图。用法如下：
 
-    `imonitor db_idx`
+     `imonitor db_idx` 
 
 -   rimonitor命令：和riinfo类似，用于读写分离场景下，在指定的shard里的指定只读从库上执行monitor命令。用法如下：
 
@@ -169,5 +169,8 @@ rimonitor db_idx ro_slave_idx
 ## 说明 { .section}
 
 -   关于Redis命令的详细信息，请参见[官方文档](http://redis.io/commands)。
--   如果在集群规格实例上使用已经支持的命令仍然提示`unkown command`，请在控制台[升级小版本](../../../../../intl.zh-CN/用户指南/管理实例/升级小版本.md#)。
+
+-   如果在集群规格实例上使用已经支持的命令仍然提示`unkown command`，请在控制台[升级小版本](../../../../cn.zh-CN/用户指南/管理实例/升级小版本.md#)。
+-   云数据库Redis版集群实例最新的命令支持详情，请参见[云栖社区说明](https://yq.aliyun.com/articles/241237)。
+
 
