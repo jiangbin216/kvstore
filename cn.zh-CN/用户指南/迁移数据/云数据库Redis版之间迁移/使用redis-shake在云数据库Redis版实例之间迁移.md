@@ -33,35 +33,35 @@ redis-shake是阿里云自研的开源工具，支持对Redis数据进行解析�
     # tar -xvf redis-shake.tar.gz
     ```
 
-    **说明：** 解压获得的redis-shake.linux64为64位Linux系统所需的二进制文件，redis-shake.conf为redis-shake的配置文件，您将在下个步骤对其进行修改。
+    **说明：** 解压获得的redis-shake为64位Linux系统所需的二进制文件，redis-shake.conf为redis-shake的配置文件，您将在下个步骤对其进行修改。
 
 4.  修改redis-shake配置文件，rump模式涉及的主要参数的说明如下。
 
     |参数|说明|示例值|
     |--|--|---|
-    |source.address|源端Redis的连接地址与服务端口。|`r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
-    |source.password\_raw|源端Redis的连接密码。|`SourcePass233` **说明：** 如使用非默认账号连接云数据库Redis版实例，密码格式为`account:password`。
+    |source.address|源端Redis的连接地址与服务端口。| `r-bp1xxxxxxxxxxxxx.redis.rds.aliyuncs.com` |
+    |source.password\_raw|源端Redis的连接密码。| `SourcePass233` **说明：** 如使用非默认账号连接云数据库Redis版实例，密码格式为`account:password`。
 
  |
-    |target.address|目的端Redis的连接地址与服务端口。|`r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com`|
-    |target.password\_raw|目的端Redis的连接密码。|`TargetPass233`|
+    |target.address|目的端Redis的连接地址与服务端口。| `r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com` |
+    |target.password\_raw|目的端Redis的连接密码。| `TargetPass233` |
     |rewrite|如果目的Redis有与RDB文件中相同的key，是否覆盖，可选值：     -   true（覆盖）；
     -   false（不覆盖）。
  **说明：** 默认为true，建议对目的Redis中的有效数据进行完善的备份再执行恢复。如设置为false且存在数据冲突则会出现异常提示。
 
- |`true`|
-    |scan.key\_number|每次SCAN获取的key的个数，不配置则默认为100。|`100`|
-    |scan.special\_cloud|用于支持特殊版本云Redis的迁移。|`aliyun_cluster` **说明：** 该示例值适用于源端为阿里云Redis集群版实例的迁移。
+ | `true` |
+    |scan.key\_number|每次SCAN获取的key的个数，不配置则默认为100。| `100` |
+    |scan.special\_cloud|用于支持特殊版本云Redis的迁移。| `aliyun_cluster` **说明：** 该示例值适用于源端为阿里云Redis集群版实例的迁移。
 
  |
 
 5.  使用如下命令进行迁移。
 
-    ```
-    # ./redis-shake.linux64 -type=rump -conf=redis-shake.conf
+    ``` {#codeblock_5iu_0n5_d0a}
+    # ./redis-shake -type=rump -conf=redis-shake.conf
     ```
 
-    **说明：** 此命令需在二进制文件redis-shake.linux64和配置文件redis-shake.conf所在的目录中执行，否则请在命令中指定正确的文件路径。
+    **说明：** 此命令需在二进制文件redis-shake和配置文件redis-shake.conf所在的目录中执行，否则请在命令中指定正确的文件路径。
 
     ![](images/46084_zh-CN.png "rump模式迁移示例")
 
