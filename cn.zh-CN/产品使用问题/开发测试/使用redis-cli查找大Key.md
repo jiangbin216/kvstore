@@ -18,8 +18,8 @@
 
 1.  在ECS中使用以下命令：
 
-    ```
-    redis-cli -h r-***************.redis.rds.aliyuncs.com -a <password> --hotkeys
+    ``` {#codeblock_0xz_99i_cpu}
+    redis-cli -h r-***************.redis.rds.aliyuncs.com -a <password> --bigkeys
     ```
 
     |名称|说明|
@@ -33,12 +33,12 @@
 
 执行命令后得到的结果示例如下，在Summary中可以看到大Key的详情。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/85399/154744475735754_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/85399/156151225235754_zh-CN.png)
 
 ## 更多信息 {#section_nmp_byc_3gb .section}
 
 您还可以使用以下方法查找大Key：
 
--   [在Python脚本中使用SCAN命令查找大Key](../../../../../cn.zh-CN/常见问题/如何搜索过大的key.md#)；
--   [使用rdb文件分析内存结构查找大Key](https://help.aliyun.com/knowledge_detail/50037.html)。
+-    [在Python脚本中使用SCAN命令查找大Key](../../../../cn.zh-CN/常见问题/如何搜索过大的key.md#)；
+-    [使用rdb文件分析内存结构查找大Key](https://help.aliyun.com/knowledge_detail/50037.html)。
 
