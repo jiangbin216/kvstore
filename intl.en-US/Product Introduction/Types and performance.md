@@ -6,11 +6,8 @@ This topic describes the types and parameters of all ApsaraDB for Redis editions
 
 ## Standard dual-replica edition {#section_hh2_5p4_tdb .section}
 
-**Note:** A 256 MB master-replica instance uses the subscription billing method only.
-
 |Type|InstanceClass \(used in API operations\)|Maximum concorrent connections|Maximum internal network bandwidth \(MB\)|CPU processing capacity|QPS reference value|Description|
 |----|----------------------------------------|------------------------------|-----------------------------------------|-----------------------|-------------------|-----------|
-|256 MB master-replica|redis.master.micro.default|10,000|10|Single-core|80,000|Master-replica instance|
 |1 GB master-replica|redis.master.small.default|10,000|10|Single-core|80,000|Master-replica instance|
 |2 GB master-replica|redis.master.mid.default|10,000|16|Single-core|80,000|Master-replica instance|
 |4 GB master-replica|redis.master.stand.default|10,000|24|Single-core|80,000|Master-replica instance|
@@ -21,7 +18,7 @@ This topic describes the types and parameters of all ApsaraDB for Redis editions
 
 ## Standard zone-disaster recovery edition {#section_ndd_gyg_vgb .section}
 
-**Note:** To create a zone-disaster recovery instance, you have to select the region and zone that support zone-disaster recovery, such as **China \(Hangzhou\) and Hangzhou Zones B and F.**
+**Note:** To create a zone-disaster recovery instance, you have to select the region and zone that support zone-disaster recovery, such as **China \(Hangzhou\) Zone \(G+H\)**.
 
 |Type|InstanceClass \(used in API operations\)|Maximum concorrent connections|Maximum internal network bandwidth \(MB\)|CPU processing capacity|QPS reference value|Description|
 |----|----------------------------------------|------------------------------|-----------------------------------------|-----------------------|-------------------|-----------|
@@ -33,9 +30,22 @@ This topic describes the types and parameters of all ApsaraDB for Redis editions
 |Zone-disaster recovery 32 GB|redis.logic.sharding.drredissdb32g. 1db. 0rodb. 4proxy.default|40,000|32|Single-core|80,000|Master-replica zone-disaster recovery instance|
 |Zone-disaster recovery 64 GB|redis.logic.sharding.drredissdb64g. 1db. 0rodb. 4proxy.default|40,000|48|Single-core|80,000|Master-replica zone-disaster recovery instance|
 
+## Dual-replica cluster edition {#section_ckk_htg_vgb .section}
+
+|Type|InstanceClass \(used in API operations\)|Number of nodes|Maximum concorrent connections|Maximum internal network bandwidth \(MB\)|CPU processing capacity|QPS reference value|Description|
+|----|----------------------------------------|---------------|------------------------------|-----------------------------------------|-----------------------|-------------------|-----------|
+|16 GB cluster|redis.logic.sharding. 2g. 8db. 0rodb. 8proxy.default|8|80,000|768|8-core|640,000|High-performance cluster instance|
+|32 GB cluster|redis.logic.sharding. 4g. 8db. 0rodb. 8proxy.default|8|80,000|768|8-core|640,000|High-performance cluster instance|
+|64 GB cluster|redis.logic.sharding. 8g. 8db. 0rodb. 8proxy.default|8|80,000|768|8-core|640,000|High-performance cluster instance|
+|128 GB cluster|redis.logic.sharding. 8g. 16db. 0rodb. 16proxy.default|16|160,000|1,536|16-core|1,280,000|High-performance cluster instance|
+|256 GB cluster|redis.logic.sharding. 16g. 16db. 0rodb. 16proxy.default|16|160,000|1,536|16-core|1,280,000|High-performance cluster instance|
+|512 GB cluster|redis.logic.sharding. 16g. 32db. 0rodb. 32proxy.default|32|320,000|3,072|32-core|2,560,000|High-performance cluster instance|
+
+**Note:** The number of nodes in the dual-replica cluster instance is the number of master nodes.
+
 ## Zone-disaster recovery cluster edition {#section_zqv_nyg_vgb .section}
 
-**Note:** To create a zone-disaster recovery instance, you have to select the region and zone that support zone-disaster recovery, such as **China \(Hangzhou\) and Hangzhou Zones B and F.**
+**Note:** To create a zone-disaster recovery instance, you have to select the region and zone that support zone-disaster recovery, such as **China \(Hangzhou\) Zone \(G+H\)**.
 
 |Type|InstanceClass \(used in API operations\)|Number of nodes|Maximum concorrent connections|Maximum internal network bandwidth \(MB\)|CPU processing capacity|QPS reference value|Description|
 |----|----------------------------------------|---------------|------------------------------|-----------------------------------------|-----------------------|-------------------|-----------|
@@ -45,9 +55,6 @@ This topic describes the types and parameters of all ApsaraDB for Redis editions
 |Zone-disaster recovery 128 GB cluster|redis.logic.sharding.drredismdb128g. 16db. 0rodb. 16proxy.default|16|160,000|1,536|16-core|1,600,000|Zone-disaster recovery cluster instance|
 |Zone-disaster recovery 256 GB cluster|redis.logic.sharding.drredismdb256g. 16db. 0rodb. 16proxy.default|16|160,000|1,536|16-core|1,600,000|Zone-disaster recovery cluster instance|
 |Zone-disaster recovery 512 GB cluster|redis.logic.sharding.drredismdb512g. 32db. 0rodb. 32proxy.default|32|320,000|3,072|32-core|3,200,000|Zone-disaster recovery cluster instance|
-|Zone-disaster recovery 1 TB cluster|redis.logic.sharding.drredismdb1024g. 64db. 0rodb. 64proxy.default|64|640,000|6,144|64-core|6,400,000|Zone-disaster recovery cluster instance|
-|Zone-disaster recovery 2 TB cluster|redis.logic.sharding.drredismdb2048g. 128db. 0rodb. 128proxy.default|128|1,280,000|12,288|128-core|12,800,000|Zone-disaster recovery cluster instance|
-|Zone-disaster recovery 4 TB cluster|redis.logic.sharding.drredismdb4096g. 256db. 0rodb. 256proxy.default|256|2,560,000|24,576|256-core|25,600,000|Zone-disaster recovery cluster instance|
 
 ## QPS performance reference {#section_bhd_cp4_tdb .section}
 
@@ -75,7 +82,7 @@ QPS reference values of non-cluster instances range from 80,000 to 100,000. QPS 
 
 1.  Download the source code package for redis-2.8.19 to three ECS instances.
 
-    ```
+    ``` {#codeblock_i5x_3pl_tch}
      $ wget http://download.redis.io/releases/redis-2.8.19.tar.gz
      $ tar xzf redis-2.8.19.tar.gz
      $ cd redis-2.8.19
@@ -85,7 +92,7 @@ QPS reference values of non-cluster instances range from 80,000 to 100,000. QPS 
 
 2.  Run the following command on these ECS instances at the same time.
 
-    ```
+    ``` {#codeblock_g0u_qy9_k6a}
      redis-benchmark -h ***********.m.cnsza.kvstore.aliyuncs.com -p 6379 -a password -t set -c 50 -d 128 -n 25000000 -r 5000000
     ```
 
