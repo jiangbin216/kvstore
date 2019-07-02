@@ -1,56 +1,56 @@
-# 集群实例特定子节点中热点Key的分析方法 {#concept_uk5_mxg_1gb .concept}
+# Analyze hotkeys in a specific sub-node of a cluster instance {#concept_uk5_mxg_1gb .concept}
 
-您可以使用阿里云自研的imonitor命令监控Redis集群中某一节点的请求状态，并利用请求解析工具redis-faina快速地从监控数据中分析出热点Key和命令。
+You can use the imonitor command developed by Alibaba Cloud to monitor the request status of a specific node in the Redis cluster, and use redis-faina to discover hotkeys and commands from the monitoring data.
 
-## 背景信息 {#section_wtd_fbh_1gb .section}
+## Background information {#section_wtd_fbh_1gb .section}
 
-在使用云数据库Redis集群版的过程中，如果某一节点上的热点Key流量过大，可能导致服务器中其它服务无法进行。若热点Key的缓存超过当前的缓存容量，就会产生缓存分片服务负载过高，进而造成缓存雪崩等严重问题。
+When you use the ApsaraDB for Redis cluster edition, if the hotkey traffic on a specific node is too large, other services in the server may fail to continue. If the cache of the hotkey exceeds the current cache capacity, the sharding service of the cache will crash.
 
-您可以利用云数据库Redis版的[性能监控](../../../../intl.zh-CN/用户指南/性能监控/监控指标说明.md#)和[报警规则](../../../../intl.zh-CN/用户指南/报警设置.md#)对集群状况进行实时监控并设置告警，在发现特定子节点负载突出时，使用imonitor命令查看该节点的客户端请求，并使用redis-faina分析出热点Key。
+You can use [Performance monitoring](../../../../reseller.en-US/User Guide/Performance monitoring/Performance monitoring.md#) and [Alarm settings](../../../../reseller.en-US/User Guide/Alarm settings.md#) to monitor the cluster status in real time and set alert rules. When you discover an overloaded sub-node, you can use the imonitor command to view the client request of the node, and use redis-faina to analyze the hotkey.
 
-## 前提条件 {#section_kkl_rkh_1gb .section}
+## Prerequisites {#section_kkl_rkh_1gb .section}
 
--   已部署与云数据库Redis集群版互通的ECS实例。
--   ECS实例中已安装Python和Telnet。
+-   You have activated an ECS instance that can interconnect with the ApsaraDB for Redis cluster edition.
+-   You have installed Python and Telnet in the ECS instance.
 
-**说明：** 本文中的示例环境使用CentOS 7.4系统和Python 2.7.5。
+**Note:** The sample environment in this topic is CentOS 7.4 and Python 2.7.5.
 
-## 操作步骤 {#section_u11_nkh_1gb .section}
+## Procedure {#section_u11_nkh_1gb .section}
 
-1.  在ECS实例中，以Telnet方式连接到Redis集群。
+1.  In the ECS instance, use Telnet to connect to the Redis cluster.
 
-    1.  使用`# telnet <host> <port>`连接到Redis集群。
+    1.  Use `# telnet <host> <port>` to connect to the Redis cluster.
 
-        **说明：** `host`为Redis集群的连接地址，`port`为连接端口（默认为6379）。
+        **Note:** `host` is the connection address of the Redis cluster. `port` is the connection port \( the default port number is 6379\).
 
-    2.  输入`auth <password>`进行认证。
+    2.  Enter `auth <password>` for verification.
 
-        **说明：** `password`为Redis集群的密码。
+        **Note:** `password` is the password for the Redis cluster.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205711033746_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205712533746_en-US.png)
 
-    **说明：** 返回`+OK`表示连接成功。
+    **Note:** If `+OK` is returned, the connection is successful.
 
-2.  使用`imonitor <db_idx>`收集目的节点的请求数据。
+2.  Use `imonitor <db_idx>` to collect the request data of the target node.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205711033749_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205712533749_en-US.png)
 
-    **说明：** 
+    **Note:** 
 
-    imonitor命令与iinfo、 iscan类似，在 monitor命令的基础上新增了一个参数，用户指定monitor执行的节点（db\_idx），db\_idx的范围是\[0, nodecount\)， nodecount可以通过info命令获取，或者从控制台上的实例拓扑图中查看。
+    The imonitor command is similar to the iinfocommand and the iscan command. This command added a parameter to the monitor command, and the user can specify the node to run the monitor command. In this command, the value range of db\_idx is \[0, nodecount\). You can obtain the value of nodecount by running the info command or viewing the instance topology in the console.
 
-    本例中目的节点的db\_idx为0。
+    In this example, the value of db\_idx of the target node is 0.
 
-    返回`+OK`后将会持续输出监控到的请求记录。
+    If `+OK` is returned, the output of of monitored request records continues.
 
-3.  根据需要收集一定数量的监控数据，之后输入QUIT命令并按Enter关闭Telnet连接。
-4.  将监控数据保存到一个.txt文件中，删除行首的 “+”（可在文本编辑工具中使用全部替换的方式）删除。保存的文件如下。
+3.  Collect the monitoring data based on your business requirements and enter the QUIT command. Press Enter to close the Telnet connection.
+4.  Store the monitoring data to a .txt file, and delete the plus sign \(+\) at the beginning of the line. You can replace this sign by using the text editing tool. The stored file is as follows:
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205711033751_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205712533751_en-US.png)
 
-5.  创建进行请求分析的Python脚本，保存为redis-faina.py。代码如下。
+5.  Create a Python script for request analysis, and save it as redis-faina.py. The code is as follows:
 
-    ```
+    ``` {#codeblock_cm6_aa5_nid}
     #! /usr/bin/env python
     import argparse
     import sys
@@ -58,11 +58,11 @@
     import re
     
     line_re_24 = re.compile(r"""
-        ^(?P<timestamp>[\d\.]+)\s(\(db\s(?P<db>\d+)\)\s)?"(?P<command>\w+)"(\s"(?P<key>[^(?<!\\)"]+)(?<!\\)")?(\s(?P<args>.+))?$
+        ^(? P<timestamp>[\d\.]+)\s(\(db\s(? P<db>\d+)\)\s)?"(? P<command>\w+)"(\s"(? P<key>[^(? <! \\)"]+)(? <! \\)")?( \s(? P<args>. +))? $
         """, re.VERBOSE)
     
     line_re_26 = re.compile(r"""
-        ^(?P<timestamp>[\d\.]+)\s\[(?P<db>\d+)\s\d+\.\d+\.\d+\.\d+:\d+]\s"(?P<command>\w+)"(\s"(?P<key>[^(?<!\\)"]+)(?<!\\)")?(\s(?P<args>.+))?$
+        ^(? P<timestamp>[\d\.]+)\s\[(? P<db>\d+)\s\d+\.\d+\.\d+\.\d+:\d+]\s"(? P<command>\w+)"(\s"(? P<key>[^(? <! \\)"]+)(? <! \\)")?( \s(? P<args>. +))? $
         """, re.VERBOSE)
     
     class StatCounter(object):
@@ -130,9 +130,9 @@
             sorted_times = self._get_or_sort_list(times)
             num_times = len(sorted_times)
             percent_50 = sorted_times[int(num_times / 2)][0]
-            percent_75 = sorted_times[int(num_times * .75)][0]
-            percent_90 = sorted_times[int(num_times * .90)][0]
-            percent_99 = sorted_times[int(num_times * .99)][0]
+            percent_75 = sorted_times[int(num_times * . 75)][0]
+            percent_90 = sorted_times[int(num_times * . 90)][0]
+            percent_99 = sorted_times[int(num_times * . 99)][0]
             return (("Median", percent_50),
                     ("75%", percent_75),
                     ("90%", percent_90),
@@ -155,7 +155,7 @@
             total_time = (self.last_ts - self.start_ts) / (1000*1000)
             return (
                 ("Lines Processed", self.line_count),
-                ("Commands/Sec", '%.2f' % (self.line_count / total_time))
+                ("Commands/Sec", '%. 2f' % (self.line_count / total_time))
             )
     
         def process_entry(self, entry):
@@ -181,7 +181,7 @@
                 key_padding = max(max_key_len - len(key), 0) * ' '
                 if percentages:
                     val_padding = max(max_val_len - len(str(val)), 0) * ' '
-                    val = '%s%s\t(%.2f%%)' % (val, val_padding, (float(val) / self.line_count) * 100)
+                    val = '%s%s\t(%. 2f%%)' % (val, val_padding, (float(val) / self.line_count) * 100)
                 print key,key_padding,'\t',val
             print
     
@@ -201,7 +201,7 @@
                 line = line.strip()
                 match = self.line_re.match(line)
                 if not match:
-                    if line != "OK":
+                    if line ! = "OK":
                         self.skipped_lines += 1
                     continue
                 self.process_entry(match.groupdict())
@@ -232,10 +232,12 @@
         counter.print_stats()
     ```
 
-    **说明：** 以上脚本来自[redis-faina](https://github.com/facebookarchive/redis-faina)。
+    **Note:** The preceding script is from [redis-faina](https://github.com/facebookarchive/redis-faina).
 
-6.  使用`python redis-faina imonitorOut.txt`命令解析监控数据。其中imonitorOut.txt为本文示例中保存的监控数据。![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205711033759_zh-CN.png)
+6.  Run the `python redis-faina imonitorOut.txt` command to parse the monitoring data. imonitorOut.txt is the monitoring data stored in the example.
 
-    **说明：** 在以上分析结果中，Top Keys显示该时间段内请求次数最多的键，Top Commands显示使用最频繁的命令。您可以根据分析情况解决热点Key问题。
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/76677/156205712533759_en-US.png)
+
+    **Note:** In the preceding analysis result, Top Keys displays the most requested keys during this time period, and Top Commands displays the most frequently used commands. You can solve the hotkey problem based on the analysis results.
 
 
