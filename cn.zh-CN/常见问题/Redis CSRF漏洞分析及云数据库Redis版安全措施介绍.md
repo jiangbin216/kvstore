@@ -4,7 +4,7 @@
 
 CSRF（Cross-site request forgery）跨站请求伪造，也被称为One Click Attack或者Session Riding，通常缩写为CSRF或者XSRF，是一种对网站的恶意利用。
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13767/15474311833937_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13767/15623122873937_zh-CN.png)
 
 上图为CSRF攻击的一个简单模型：用户访问恶意网站B，恶意网站B返回给用户的HTTP信息中要求用户访问网站A，而由于用户和网站A之间可能已经有信任关系导致这个请求就像用户真实发送的一样会被执行。
 
@@ -12,7 +12,7 @@ CSRF（Cross-site request forgery）跨站请求伪造，也被称为One Click A
 
 ## Redis CSRF攻击模型 { .section}
 
-![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13767/15474311833938_zh-CN.png)
+![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/13767/15623122873938_zh-CN.png)
 
 根据上面CSRF的原理，恶意网站可以让用户发送一个HTTP请求给Redis。由于Redis支持文本协议，而在解析协议过程中如果碰到非法的协议并不会断开链接，这个时候攻击者可以通过在正常的HTTP请求之后携带Redis命令从而在Redis上执行命令，而如果用户和Redis之间没有密码验证，则可以正常执行Redis命令并对数据进行加密勒索，就像之前MongoDB赎金事件一样。
 
