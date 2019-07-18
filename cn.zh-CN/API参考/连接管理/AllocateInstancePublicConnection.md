@@ -12,9 +12,9 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|ConnectionStringPrefix|String|是|r-bp1xxxxxxxxxxxxx|外网连接地址的前缀。
+|ConnectionStringPrefix|String|是|r-bp1xxxxxxxxxxxxx|外网连接地址的前缀，需由小写英文字母与数字组成，以小写字母开头，长度为8~64个字符。
 
- Redis外网连接地址格式为：`<前缀>.redis.rds.aliyuncs.com`。您可以自定义地址的前缀。
+ Redis外网连接地址格式为：`<前缀>.redis.rds.aliyuncs.com`。
 
  |
 |InstanceId|String|是|r-bp1xxxxxxxxxxxxx|实例ID。
