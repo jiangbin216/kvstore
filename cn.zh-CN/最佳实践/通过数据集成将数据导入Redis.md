@@ -12,7 +12,7 @@ Redis 数据源支持写入Redis的通道，可以通过脚本模式配置同步
 
 -   只有项目管理员角色才能够新建数据源，其他角色的成员仅能查看数据源。
 
--   如您想用子账号创建数据集成任务，需赋予子账号相应的权限。具体请参考：[开通阿里云主账号](https://help.aliyun.com/document_detail/56141.html)[设置子账号](https://help.aliyun.com/document_detail/56143.html)。
+-   如您想用子账号创建数据集成任务，需赋予子账号相应的权限。具体请参考： [开通阿里云主账号](https://help.aliyun.com/document_detail/56141.html)[设置子账号](https://help.aliyun.com/document_detail/56143.html)。
 
 
 **操作步骤**
@@ -24,7 +24,7 @@ Redis 数据源支持写入Redis的通道，可以通过脚本模式配置同步
 3.  在新建数据源对话框中，选择数据源类型为 **Redis**。
 4.  配置Redis数据源的各个信息项，如下图所示。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562593143_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089963143_zh-CN.png)
 
     **说明：** 
 
@@ -47,15 +47,15 @@ Redis 数据源支持写入Redis的通道，可以通过脚本模式配置同步
 5.  完成上述信息项的配置后，单击**测试连通性**。
 6.  测试连通性通过后，单击**确定**。
 
-**二、配置脚本模式的同步任务**
+**二、配置脚本模式的同步任务** 
 
 1.  以项目管理员身份进入[数加管理控制台](https://workbench.data.aliyun.com/console)，单击大数据开发套件下对应项目操作栏中的**进入工作区**。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562593145_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089973145_zh-CN.png)
 
 2.  进入顶部菜单栏中的数据集成页面，选择**脚本模式**，如下图。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562593146_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089973146_zh-CN.png)
 
     **说明：** 
 
@@ -63,15 +63,15 @@ Redis 数据源支持写入Redis的通道，可以通过脚本模式配置同步
 
 3.  在导入模板对话框中选择需要的**来源类型**和**目标类型**，并单击**确认**。如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562593147_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089973147_zh-CN.png)
 
 4.  在脚本模式配置页面，根据自身情况进行配置，如有问题可单击右上方的**Redis Writer帮助手册**进行查看。如下图所示：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562603149_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089973149_zh-CN.png)
 
     **说明**：RedisWriter脚本案例如下：
 
-    ```
+    ``` {#codeblock_8b0_iso_9xw}
     {
        "type": "job",
        "configuration": {
@@ -126,8 +126,8 @@ Redis 数据源支持写入Redis的通道，可以通过脚本模式配置同步
 
     运行结果如下：
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15620562603151_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3165/15647089983151_zh-CN.png)
 
 
--   RedisWriter参数说明请参考 [RedisWriter 配置](https://help.aliyun.com/document_detail/50349.html)。
+-   RedisWriter参数说明请参见[配置Redis Writer](https://help.aliyun.com/knowledge_detail/74348.html)。
 
