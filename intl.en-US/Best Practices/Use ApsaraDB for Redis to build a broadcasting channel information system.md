@@ -20,7 +20,7 @@ The Redis set is stored in a hash table. The time complexity of the insert, dele
 
 -   Uses "unix timestamp + milliseconds" as the score to record the last five live comments in the user55 broadcasting channel.
 
-    ```
+    ``` {#codeblock_cmf_5ht_k4f}
     redis> ZADD user55:_danmu 1523959031601166 message111111111111
     (integer) 1
     11.160.24.14:3003> ZADD user55:_danmu 1523959031601266 message222222222222
@@ -35,7 +35,7 @@ The Redis set is stored in a hash table. The time complexity of the insert, dele
 
 -   Returns the last three live comments:
 
-    ```
+    ``` {#codeblock_bex_q4p_hw0}
     redis> ZREVRANGEBYSCORE user55:_danmu +inf -inf LIMIT 0 3
     1) "message5555"
     2) "message444444"
@@ -44,7 +44,7 @@ The Redis set is stored in a hash table. The time complexity of the insert, dele
 
 -   Returns three live comments within the specified time period:
 
-    ```
+    ``` {#codeblock_zia_snq_6on}
     redis> ZREVRANGEBYSCORE user55:_danmu 1523959088894232 -inf LIMIT 0 3
     1) "message33333"
     2) "message222222222222"
@@ -56,7 +56,7 @@ The Redis set is stored in a hash table. The time complexity of the insert, dele
 
 In case of the user-related data, the counting information includes the number of unread messages, followers, and fans, and the experience value. The hash structure in Redis is suitable to process this type of data. For example, the number of followers can be processed as follows:
 
-```
+``` {#codeblock_pdi_toz_ly8}
 redis> HSET user:55 follower 5
 (integer) 1
 redis> HINCRBY user:55 follower 1 //The number of followers +1
@@ -70,7 +70,7 @@ redis> HGETALL user:55
 
 The timeline information is a list of information sorted in time order. For example, the broadcaster moments and new posts. This type of information is arranged in a fixed chronological order and can be stored using a Redis list or an ordered list. The example is as follows:
 
-```
+``` {#codeblock_84v_hgg_unf}
 redis> LPUSH user:55_recent_activitiy  '{datetime:201804112010,type:publish,title:The show starts, content:Come on}'
 (integer) 1
 redis> LPUSH user:55_recent_activitiy '{datetime:201804131910,type:publish,title: Ask for a leave, content: Sorry, I have plans today.}'
@@ -82,7 +82,6 @@ redis> LRANGE user:55_recent_activitiy 0 10
 
 ## Related resources {#section_yww_yhw_1gb .section}
 
--   For more information about solutions to the common hotkey problems in the broadcasting system, see [Discovery and solutions of hotkey problems](reseller.en-US/Best Practices/Discovery and solutions of hotkey problems.md#).
 -   For more information about how to eliminate potential risks and locate business performance bottlenecks, see [Redis memory usage analysis](https://help.aliyun.com/knowledge_detail/50037.html).
--   For more information about how to handle high concurrency, see [ApsaraDB for Redis cluster edition](../../../../reseller.en-US/Product Introduction/Product  series/Dual-replica cluster edition.md#).
+-   For more information about how to handle high concurrency, see [ApsaraDB for Redis cluster edition](../../../../intl.en-US/Product Introduction/Product  series/Dual-replica cluster edition.md#).
 
