@@ -35,7 +35,9 @@
 -   NULL（所有类型，默认值）
 
  |
-|AuditLogRetention|String|15| 国际站暂不支持该参数对应的审计日志功能。
+|AuditLogRetention|String|15|审计日志中设置的日志保留时间。
+
+ **说明：** 国际站暂不支持审计日志功能。
 
  |
 |AvailabilityValue|String|100%|当月的可用性指标。
@@ -144,7 +146,7 @@
 |QPS|Long|100000|理论最大QPS值。
 
  |
-|RegionId|String|cn-hongkong|地域ID，参见[DescribeRegions](~~61012~~)。
+|RegionId|String|cn-hongkong|地域ID，可调用[DescribeRegions](~~61012~~)查询。
 
  |
 |ReplicaId|String|bls-awxxxxxxxxxxxxx|副本ID。
@@ -180,7 +182,7 @@
 |VpcId|String|vpc-bp1cxxxxxxxxxxxxxxxxx|专有网络（VPC）的ID。
 
  |
-|ZoneId|String|cn-hongkong-b|RegionId下的可用区编码，参见[DescribeZones](~~94527~~)。
+|ZoneId|String|cn-hongkong-b|可用区ID，可调用[DescribeRegions](~~61012~~)查询。
 
  |
 |RequestId|String|CA40C261-EB72-4EDA-AC57-958722162595|请求ID。
