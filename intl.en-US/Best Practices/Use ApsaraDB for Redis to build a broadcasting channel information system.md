@@ -82,6 +82,6 @@ redis> LRANGE user:55_recent_activitiy 0 10
 
 ## Related resources {#section_yww_yhw_1gb .section}
 
--   For more information about how to eliminate potential risks and locate business performance bottlenecks, see [Redis memory usage analysis](https://help.aliyun.com/knowledge_detail/50037.html).
+-   For more information about how to eliminate potential risks and locate business performance bottlenecks, see [Redis memory usage analysis](https://partners-intl.aliyun.com/help/doc-detail/50037.htm).
 -   For more information about how to handle high concurrency, see [ApsaraDB for Redis cluster edition](../../../../reseller.en-US/Product Introduction/Product  series/Dual-replica cluster edition.md#).
 
