@@ -4,17 +4,13 @@
 
 ## 为什么选择云数据库Redis版 {#section_g1v_gk5_i1p .section}
 
--   云数据库Redis版支持字符串（String）、链表（List）、集合（Set）、有序集合（Sorted Set）、哈希表（Hash）等多种数据类型，及事务（Transaction）、消息订阅与发布（Pub/Sub）等高级功能。
+-   云数据库Redis版支持字符串（String）、链表（List）、集合（Set）、有序集合（Sorted Set）、哈希表（Hash）、流数据（Stream）等多种数据类型，及事务（Transaction）、消息订阅与发布（Pub/Sub）等高级功能。
 -   通过“内存+硬盘”的存储方式，在提供高速数据读写能力的同时满足数据持久化需求。
 -   硬件和数据部署在云端，有完善的基础设施规划、网络安全保障、系统维护服务，确保用户可以专注于业务创新。
 
 ## 学习路径 {#section_fdj_6vr_8bn .section}
 
 您可以通过学习[云数据库Redis版学习路径](https://help.aliyun.com/product/26340.html)，由浅入深地学习运维云数据库Redis版。
-
-## 优惠活动 {#section_as7_i1o_bhf .section}
-
-6月1日至6月30日，阿里云数据库上云季，购买全规格Redis实例享受7折优惠，详情请参见[活动主页](https://promotion.aliyun.com/ntms/act/aliyundbshangyunji.html)。
 
 ## 实例架构 {#section_mn9_xx7_q4t .section}
 
