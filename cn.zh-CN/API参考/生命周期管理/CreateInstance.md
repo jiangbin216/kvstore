@@ -2,13 +2,13 @@
 
 调用CreateInstance创建一个Redis实例。
 
- **该API对应的控制台操作请参见\[创建实例\]\(~~26351~~\)。** 
+该API对应的控制台操作请参见[创建实例](~~26351~~)。
 
 创建Redis实例所需的实例规格请参见[实例规格表](~~107984~~)。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=CreateInstance)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=CreateInstance&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
@@ -145,7 +145,7 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -244,23 +244,22 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <CreateInstanceResponse>
-  <ChargeType>PostPaid</ChargeType>
-  <Config>{"EvictionPolicy":"volatile-lru","hash-max-ziplist-entries":512,"zset-max-ziplist-entries":128,"zset-max-ziplist-value":64,"set-max-intset-entries":512,"hash-max-ziplist-value":64}</Config>
-  <InstanceId>r-j6cxxxxxxxxxxxxx</InstanceId>
-  <UserName>r-j6cxxxxxxxxxxxxx</UserName>
-  <ZoneId>cn-hongkong-b</ZoneId>
-  <InstanceStatus>Creating</InstanceStatus>
-  <Port>6379</Port>
-  <QPS>100000</QPS>
-  <RequestId>96132219-F1E6-40AB-8853-C32055B84BE1</RequestId>
-  <RegionId>cn-hongkong</RegionId>
-  <Capacity>16384</Capacity>
-  <ConnectionDomain>r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com</ConnectionDomain>
-  <InstanceName>apitest</InstanceName>
-  <Bandwidth>32</Bandwidth>
-  <Connections>10000</Connections>
+	  <ChargeType>PostPaid</ChargeType>
+	  <Config>{"EvictionPolicy":"volatile-lru","hash-max-ziplist-entries":512,"zset-max-ziplist-entries":128,"zset-max-ziplist-value":64,"set-max-intset-entries":512,"hash-max-ziplist-value":64}</Config>
+	  <InstanceId>r-j6cxxxxxxxxxxxxx</InstanceId>
+	  <UserName>r-j6cxxxxxxxxxxxxx</UserName>
+	  <ZoneId>cn-hongkong-b</ZoneId>
+	  <InstanceStatus>Creating</InstanceStatus>
+	  <Port>6379</Port>
+	  <QPS>100000</QPS>
+	  <RequestId>96132219-F1E6-40AB-8853-C32055B84BE1</RequestId>
+	  <RegionId>cn-hongkong</RegionId>
+	  <Capacity>16384</Capacity>
+	  <ConnectionDomain>r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com</ConnectionDomain>
+	  <InstanceName>apitest</InstanceName>
+	  <Bandwidth>32</Bandwidth>
+	  <Connections>10000</Connections>
 </CreateInstanceResponse>
-
 ```
 
 `JSON` 格式
@@ -305,5 +304,5 @@ https://r-kvstore.aliyuncs.com/
 |400|VpcServiceError|Invoke vpc service failed.|调用vpc服务失败。|
 |400|IzNotSupportVpcError|Specify iz not support vpc.|指定 iz不支持Vpc。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/R-kvstore)查看更多错误码。
 
