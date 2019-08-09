@@ -6,36 +6,41 @@
 
 **说明：** 包年包月实例暂不支持转换为按量付费实例。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=TransformToPrePaid)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=TransformToPrePaid&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|TransformToPrePaid|系统规定参数，取值：TransformToPrePaid。
-
- |
 |InstanceId|String|是|r-bp1xxxxxxxxxxxxx|需要转换付费类型的实例的ID。
 
  |
-|Period|Long|是|12|预付费时长，单位是月。取值范围为：1-9、12、24、36。
+|Period|Long|是|12|预付费时长，单位是月。取值范围：1-9、12、24、36。
+
+ |
+|Action|String|否|TransformToPrePaid|系统规定参数，取值：TransformToPrePaid。
+
+ |
+|RegionId|String|否|cn-hangzhou|地域ID。
+
+ |
+|AutoPay|Boolean|否|true|是否自动付款，可选值：
+
+ -   true（是）
+-   false（否）
+
+ 默认值：false。
+
+ **说明：** 当值为`false`时，请在实例即将到期时到控制台[手动续费](~~26352~~)。
 
  |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
-|AutoPay|Boolean|否|true|是否自动付款。可选值：
 
- -   true
--   false
-
- **说明：** 不传默认为true。如果设置为false则需要在实例即将到期时在控制台手动[续费](~~26352~~)。
-
- |
-
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -69,11 +74,10 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <TransformToPrePaidResponse>
-  <OrderId>111111111111111</OrderId>
-  <RequestId>426F1356-B6EF-4DAD-A1C3-DE53B9DAF586</RequestId>
-  <EndTime>2019-01-18T16:00:00Z</EndTime>
+      <OrderId>111111111111111</OrderId>
+      <RequestId>426F1356-B6EF-4DAD-A1C3-DE53B9DAF586</RequestId>
+      <EndTime>2019-01-18T16:00:00Z</EndTime>
 </TransformToPrePaidResponse>
-
 ```
 
 `JSON` 格式
@@ -97,5 +101,5 @@ https://r-kvstore.aliyuncs.com/
 |400|InsufficientBalance|Your account does not have enough balance.|账户余额不足，请先充值再操作。|
 |403|RealNameAuthenticationError|Your account has not passed the real-name authentication yet.|您的帐户还没有通过实名认证。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.aliyun.com/status/product/R-kvstore)查看更多错误码。
 
