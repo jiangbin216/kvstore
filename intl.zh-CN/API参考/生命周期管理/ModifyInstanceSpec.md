@@ -2,60 +2,66 @@
 
 调用ModifyInstanceSpec变更Redis实例的规格。
 
-各规格的详情请参见[实例规格表](~~107984~~)。
+-   各规格的详情请参见[实例规格表](~~107984~~)。
+-   该API对应的控制台操作请参见[变更配置](~~26353~~)。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceSpec)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceSpec&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyInstanceSpec|系统规定参数，取值：ModifyInstanceSpec。
-
- |
-|InstanceClass|String|是|redis.master.small.default|变更后的实例规格，各规格的InstanceClass值请参见[实例规格表](~~107984~~)。
-
- |
 |InstanceId|String|是|r-j6cxxxxxxxxxxxxx|目标实例的ID。
 
  |
-|AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
+|Action|String|否|ModifyInstanceSpec|系统规定参数，取值：ModifyInstanceSpec。
 
  |
-|AutoPay|Boolean|否|true|是否自动付款，可选值为：
+|RegionId|String|否|cn-hangzhou|地域ID。
 
- -   true（是）
--   false（否）
-
- **说明：** 不传默认为true。如果设置为false则需要在实例即将到期时在控制台[手动续费](~~26352~~)。
+ |
+|InstanceClass|String|否|redis.master.small.default|变更后的实例规格，各规格的InstanceClass值请参见[实例规格表](~~107984~~)。
 
  |
 |BusinessInfo|String|否|000000000|活动ID、业务信息。
 
  |
-|CouponNo|String|否|youhuiquan\_promotion\_option\_id\_for\_blank|优惠码，默认值为：`youhuiquan_promotion_option_id_for_blank`。
+|CouponNo|String|否|youhuiquan\_promotion\_option\_id\_for\_blank|优惠码，默认值：`youhuiquan_promotion_option_id_for_blank`。
 
  |
-|EffectiveTime|String|否|Immediately|变更执行时间：
-
- -   Immediately（立即执行）
--   MaintainTime（运维时间执行）
-
- **说明：** 不传默认为Immediately。
-
- |
-|ForceUpgrade|Boolean|否|true|是否强制变配：
+|ForceUpgrade|Boolean|否|true|是否强制变配，可选值：
 
  -   false（否）；
 -   true（是）。
 
- **说明：** 默认为true。
+ **说明：** 默认值：true。
+
+ |
+|AutoPay|Boolean|否|true|是否自动付款，可选值：
+
+ -   true（是）
+-   false（否）
+
+ 默认值：false。
+
+ **说明：** 当值为`false`时，请在实例即将到期时到控制台[手动续费](~~26352~~)。
+
+ |
+|AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
+
+ |
+|EffectiveTime|String|否|Immediately|变更执行时间，可选值：
+
+ -   Immediately（立即执行）
+-   MaintainTime（运维时间执行）
+
+ 默认值：Immediately。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -86,10 +92,9 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <ModifyInstanceSpecResponse>
-  <OrderId>111111111111111</OrderId>
-  <RequestId>0DA1D7EF-C80D-432C-8758-7D225182626B</RequestId>
+      <OrderId>111111111111111</OrderId>
+      <RequestId>0DA1D7EF-C80D-432C-8758-7D225182626B</RequestId>
 </ModifyInstanceSpecResponse>
-
 ```
 
 `JSON` 格式
@@ -108,5 +113,5 @@ https://r-kvstore.aliyuncs.com/
 |400|PaymentMethodNotFound|No payment method has been registered on the account.|帐户上没有登记付款方法。|
 |400|HasRenewChangeOrder|This instance has a renewChange order.|实例还有续费变配订单。|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.alibabacloud.com/status/product/R-kvstore)查看更多错误码。
 
