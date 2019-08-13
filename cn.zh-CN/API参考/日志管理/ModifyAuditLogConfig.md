@@ -1,6 +1,6 @@
 # ModifyAuditLogConfig {#doc_api_R-kvstore_ModifyAuditLogConfig .reference}
 
-调用ModifyAuditLogConfig设置审计日志的保留天数和作为审计对象的命令。
+调用ModifyAuditLogConfig设置审计日志的保留天数。
 
 该API对应的控制台操作请参见[设置审计日志保留时间](~~102046~~)。
 
