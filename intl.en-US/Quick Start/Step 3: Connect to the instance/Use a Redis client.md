@@ -6,7 +6,6 @@ The database service of ApsaraDB for Redis is fully compatible with Redis databa
 
 **Note:** 
 
--   ApsaraDB for Redis only supports connections over an internal network of Alibaba Cloud. Therefore, you have to install a Redis client on an ECS instance in the same VPC as an ApsaraDB for Redis instance, and connect the ECS instance to the ApsaraDB for Redis instance to perform data operations.
 -   If you enable password-free access for instances in the same VPC, you can connect to databases of the ApsaraDB for Redis instance with on password.
 -   Before you connect to the ApsaraDB for Redis instance by using a client, you must add the private IP address of the ECS instance to [a whitelist group of the ApsaraDB for Redis instance](../../../../reseller.en-US/User Guide/Manage instances/Set IP whitelists.md#).
 
