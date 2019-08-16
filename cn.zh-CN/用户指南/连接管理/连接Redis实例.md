@@ -12,11 +12,11 @@
 
 ## 内网连接 {#section_iwi_k7j_gag .section}
 
-刚创建的云数据库Redis版实例仅支持通过阿里云内网连接。ECS等产品通过内网连接Redis的前提如下：
+在未申请[外网连接地址](../../../../cn.zh-CN/快速入门/步骤3：连接实例/外网连接.md#)前，云数据库Redis版实例仅支持通过阿里云内网连接。ECS等产品通过内网连接Redis的前提如下：
 
--   ECS实例和Redis实例在相同的地域；
--   ECS实例和Redis实例的网络类型都是经典网络，或者都在同一个VPC中；
--   ECS实例的内网地址在Redis实例的白名单中。
+-   ECS实例和Redis实例在相同的[地域（Region）](../../../../cn.zh-CN/通用参考/地域和可用区.md#section_ug5_k5k_xdb)；
+-   ECS实例和Redis实例的[网络类型](cn.zh-CN/用户指南/实例管理/切换为专有网络.md#section_snh_bbg_vdb)都是经典网络，或者都在同一个VPC中；
+-   ECS实例的内网地址在Redis实例的[白名单](../../../../cn.zh-CN/快速入门/步骤2：设置白名单.md#)中。
 
 ## 外网连接 {#section_gfq_1wg_qq7 .section}
 
