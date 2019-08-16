@@ -6,7 +6,7 @@ Redis管理控制台是阿里云管理控制台的一部分，关于控制台的
 
 ## 控制台首页 {#section_ed5_a9w_dvj .section}
 
-登录 [Redis管理控制台](https://kvstore.console.aliyun.com/)即进入控制台首页。对于Redis所有类型的实例而言，控制台首页的界面信息都是相同的。
+登录[Redis管理控制台](https://kvstore.console.aliyun.com/)即进入控制台首页。对于Redis所有类型的实例而言，控制台首页的界面信息都是相同的。
 
 **说明：** 若没有阿里云账号，请先[注册](https://account.alibabacloud.com/register/intl_register.html)。
 
@@ -16,7 +16,7 @@ Redis管理控制台是阿里云管理控制台的一部分，关于控制台的
 
 -   区域1为地域选择菜单，单击或光标悬浮于该区域即展示区域列表。单击目标地域即可切换到该地域的实例列表。
 
-    ![Redis管理控制台地域选择栏](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3122/156592669340288_zh-CN.png)
+    ![Redis管理控制台地域选择栏](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3122/156593292440288_zh-CN.png)
 
 -   区域2为首页左侧导航栏。登录Redis管理控制台后默认进入实例列表页。
     -   **实例列表**中展示本地域的实例资源列表。详情请参见下文对区域3的说明。

@@ -2,13 +2,13 @@
 
 Redis管理控制台是用于管理Redis实例的Web应用程序，管理Redis实例所需的基础操作都可以在控制台上完成。您可以通过本文档了解控制台的使用方法。
 
-Redis管理控制台是阿里云管理控制台的一部分，关于控制台的通用设置和基本操作请参见[使用阿里云管理控制台](https://help.aliyun.com/document_detail/47605.html)。本文将介绍Redis控制台的通用界面，若有差异，请以控制台实际界面为准。
+Redis管理控制台是阿里云管理控制台的一部分，关于控制台的通用设置和基本操作请参见[使用阿里云管理控制台](https://www.alibabacloud.com/help/doc-detail/47605.html)。本文将介绍Redis控制台的通用界面，若有差异，请以控制台实际界面为准。
 
 ## 控制台首页 {#section_ed5_a9w_dvj .section}
 
-登录 [Redis管理控制台](https://kvstore.console.aliyun.com/)即进入控制台首页。对于Redis所有类型的实例而言，控制台首页的界面信息都是相同的。
+登录[Redis管理控制台](https://kvstore.console.aliyun.com/)即进入控制台首页。对于Redis所有类型的实例而言，控制台首页的界面信息都是相同的。
 
-**说明：** 若没有阿里云账号，请先[注册](https://account.aliyun.com/register/register.htm)。
+**说明：** 若没有阿里云账号，请先[注册](https://account.alibabacloud.com/register/intl_register.html)。
 
  ![Redis管理控制台首页主要功能区](images/973_zh-CN.png "Redis管理控制台首页")
 
@@ -16,7 +16,7 @@ Redis管理控制台是阿里云管理控制台的一部分，关于控制台的
 
 -   区域1为地域选择菜单，单击或光标悬浮于该区域即展示区域列表。单击目标地域即可切换到该地域的实例列表。
 
-    ![Redis管理控制台地域选择栏](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3122/156592665340288_zh-CN.png)
+    ![Redis管理控制台地域选择栏](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/3122/156593292440288_zh-CN.png)
 
 -   区域2为首页左侧导航栏。登录Redis管理控制台后默认进入实例列表页。
     -   **实例列表**中展示本地域的实例资源列表。详情请参见下文对区域3的说明。
@@ -26,18 +26,12 @@ Redis管理控制台是阿里云管理控制台的一部分，关于控制台的
 
     **已用内存及配额**是由底层系统根据采集信息进行离线汇总得到的结果，存在10分钟左右的延迟，与当前时间的实际值可能存在差别。
 
-    如果需要查看实时信息，建议登录DMS进行查看，详细步骤请参见[DMS 登录云数据库](cn.zh-CN/快速入门/步骤3：连接实例/DMS登录云数据库.md#)。
-
 
 ## 控制台常用功能导航 {#section_awf_sv1_1hb .section}
 
--   [性能监控](../../../../cn.zh-CN/用户指南/性能监控/监控指标说明.md#)
--   [报警设置](../../../../cn.zh-CN/用户指南/报警设置.md#)
--   [白名单设置](../../../../cn.zh-CN/用户指南/实例管理/设置IP白名单.md#)
--   [参数设置](../../../../cn.zh-CN/用户指南/参数设置/参数说明及设置方法.md#)
--   [账号管理](../../../../cn.zh-CN/用户指南/实例管理/账号管理.md#)
--   [备份与恢复](../../../../cn.zh-CN/用户指南/备份与恢复/在控制台进行备份与恢复.md#)
--   [日志管理](../../../../cn.zh-CN/用户指南/日志管理/查询慢日志.md#)
--   [缓存分析](../../../../cn.zh-CN/用户指南/缓存分析.md#)
--   [DMS for Redis](https://help.aliyun.com/document_detail/47680.html)
+-   [性能监控](../../../../intl.zh-CN/用户指南/性能监控/监控指标说明.md#)
+-   [报警设置](../../../../intl.zh-CN/用户指南/报警设置.md#)
+-   [白名单设置](../../../../intl.zh-CN/用户指南/实例管理/设置IP白名单.md#)
+-   [参数设置](../../../../intl.zh-CN/用户指南/参数设置/参数说明及设置方法.md#)
+-   [备份与恢复](../../../../intl.zh-CN/用户指南/备份与恢复/在控制台进行备份与恢复.md#)
 
