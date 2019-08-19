@@ -14,7 +14,7 @@ The following table shows how to describe resources to be authorized in RAM.
 
 -   `$regionid` describes a region. Replace it with a region ID or an asterisk \( \* \).
 -   `$accountid` describes an account. Replace it with an account ID or an asterisk \( \* \).
--   `$instanceid` describes an instance. Replace it with a region ID or an asterisk \( \* \).
+-   `$instanceid` describes an instance. Replace it with an instance ID or an asterisk \( \* \).
 
 ## Authorization rules {#section_g1j_d4q_kfb .section}
 
