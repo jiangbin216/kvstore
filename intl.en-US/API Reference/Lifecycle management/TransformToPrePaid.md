@@ -2,7 +2,7 @@
 
 You can call this operation to change the billing method of an ApsaraDB for Redis instance from Pay-As-You-Go to subscription.
 
-For more information about how to perform the corresponding operation in the console, see [Switch to subscription](../../../../intl.en-US/User Guide/Manage instances/Switch to subscription.md#).
+For more information about how to perform the corresponding operation in the console, see [Switch to subscription](../../../../reseller.en-US/User Guide/Manage instances/Switch to subscription.md#).
 
 **Note:** Currently, you cannot change the billing method of an instance from subscription to Pay-As-You-Go.
 
@@ -31,7 +31,7 @@ Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use [Open
  -   true
 -   false
 
- **Note:** Default value: true. If you set this parameter to false, please [manually renew the instance](../../../../intl.en-US/User Guide/Manage instances/Renew an instance.md#section_p2y_lll_vdb) before the instance expires.
+ **Note:** Default value: true. If you set this parameter to false, please [manually renew the instance](../../../../reseller.en-US/User Guide/Manage instances/Renew an instance.md#section_p2y_lll_vdb) before the instance expires.
 
  |
 
