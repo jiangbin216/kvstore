@@ -2,9 +2,9 @@
 
 调用DescribeAvailableResource查询指定可用区内可创建的实例。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=DescribeAvailableResource)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=DescribeAvailableResource&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
@@ -31,57 +31,57 @@
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |AvailableZones| | |可用区详情。
 
  |
-|└RegionId|String|cn-beijing|地域ID。
+|RegionId|String|cn-beijing|地域ID。
 
  |
-|└SupportedEngines| | |引擎类型。
+|SupportedEngines| | |引擎类型。
 
  |
-|└Engine|String|Redis|实例的引擎类型。
+|Engine|String|Redis|实例的引擎类型。
 
  |
-|└SupportedEngineVersions| | |引擎版本。
+|SupportedEngineVersions| | |引擎版本。
 
  |
-|└SupportedArchitectureTypes| | |架构类型。
+|SupportedArchitectureTypes| | |架构类型。
 
  |
-|└Architecture|String|standard|实例架构：
+|Architecture|String|standard|实例架构：
 
  -   standard（标准版）
 -   cluster（集群版）
 -   rwsplit（读写分离版）
 
  |
-|└SupportedPerformanceTypes| | |性能类型。
+|SupportedPerformanceTypes| | |性能类型。
 
  |
-|└PerformanceType|String|standard\_performance\_type|性能类型：
+|PerformanceType|String|standard\_performance\_type|性能类型：
 
  -   standard\_performance\_type（标准性能）
 -   enhance\_performance\_type（增强性能）
 
  |
-|└SupportedStorageTypes| | |存储类型。
+|SupportedStorageTypes| | |存储类型。
 
  |
-|└StorageType|String|inmemory|存储类型：
+|StorageType|String|inmemory|存储类型：
 
  -   inmemory（高性能内存型）
 -   hybrid（混合存储型）
 
  |
-|└SupportedNodeTypes| | |节点类型。
+|SupportedNodeTypes| | |节点类型。
 
  |
-|└NodeType|String|double|节点类型：
+|NodeType|String|double|节点类型：
 
  -   double（双副本）
 -   single（单副本）
@@ -90,25 +90,25 @@
 -   readfive（5个只读节点）
 
  |
-|└SupportedPackageTypes| | |套餐类型。
+|SupportedPackageTypes| | |套餐类型。
 
  |
-|└AvailableResources| | |实例规格。
+|AvailableResources| | |实例规格。
 
  |
-|└InstanceClass|String|redis.master.small.default|实例的规格。
+|InstanceClass|String|redis.master.small.default|实例的规格。
 
  |
-|└PackageType|String|standard|套餐类型：
+|PackageType|String|standard|套餐类型：
 
  -   standard（标准套餐）
 -   customized（定制套餐）
 
  |
-|└Version|String|4.0|引擎版本。
+|Version|String|4.0|引擎版本。
 
  |
-|└ZoneId|String|cn-beijing-c|可用区ID。
+|ZoneId|String|cn-beijing-c|可用区ID。
 
  |
 |RequestId|String|128BD75D-A423-4235-B777-811429BB6E4D|请求ID。
@@ -135,84 +135,83 @@ https://r-kvstore.aliyuncs.com
 
 ``` {#xml_return_success_demo}
 <DescribeAvailableResourceResponse>
-  <RequestId>128BD75D-A423-4235-B777-811429BB6E4D</RequestId>
-  <AvailableZones>
-    <AvailableZone>
-      <ZoneId>cn-beijing-c</ZoneId>
-      <SupportedEngines>
-        <SupportedEngine>
-          <SupportedEngineVersions>
-            <SupportedEngineVersion>
-              <SupportedArchitectureTypes>
-                <SupportedArchitectureType>
-                  <SupportedPerformanceTypes>
-                    <SupportedPerformanceType>
-                      <PerformanceType>standard_performance_type</PerformanceType>
-                      <SupportedStorageTypes>
-                        <SupportedStorageType>
-                          <SupportedNodeTypes>
-                            <SupportedNodeType>
-                              <NodeType>double</NodeType>
-                              <SupportedPackageTypes>
-                                <SupportedPackageType>
-                                  <PackageType>standard</PackageType>
-                                  <AvailableResources>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.2g.8db.0rodb.8proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.2g.2db.0rodb.4proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.4g.2db.0rodb.4proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.4g.8db.0rodb.8proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.8g.8db.0rodb.8proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.8g.16db.0rodb.16proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.16g.16db.0rodb.16proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.16g.32db.0rodb.32proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.sharding.16xlarge.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.sharding.32xlarge.default</InstanceClass>
-                                    </AvailableResource>
-                                    <AvailableResource>
-                                    <InstanceClass>redis.logic.sharding.16g.256db.0rodb.256proxy.default</InstanceClass>
-                                    </AvailableResource>
-                                  </AvailableResources>
-                                </SupportedPackageType>
-                              </SupportedPackageTypes>
-                            </SupportedNodeType>
-                          </SupportedNodeTypes>
-                          <StorageType>inmemory</StorageType>
-                        </SupportedStorageType>
-                      </SupportedStorageTypes>
-                    </SupportedPerformanceType>
-                  </SupportedPerformanceTypes>
-                  <Architecture>cluster</Architecture>
-                </SupportedArchitectureType>
-              </SupportedArchitectureTypes>
-              <Version>4.0</Version>
-            </SupportedEngineVersion>
-            <Engine>redis</Engine>
-          </SupportedEngineVersions>
-        </SupportedEngine>
-      </SupportedEngines>
-    </AvailableZone>
-  </AvailableZones>
+	  <RequestId>128BD75D-A423-4235-B777-811429BB6E4D</RequestId>
+	  <AvailableZones>
+		    <AvailableZone>
+			      <ZoneId>cn-beijing-c</ZoneId>
+			      <SupportedEngines>
+				        <SupportedEngine>
+					          <SupportedEngineVersions>
+						            <SupportedEngineVersion>
+							              <SupportedArchitectureTypes>
+								                <SupportedArchitectureType>
+									                  <SupportedPerformanceTypes>
+										                    <SupportedPerformanceType>
+											                      <PerformanceType>standard_performance_type</PerformanceType>
+											                      <SupportedStorageTypes>
+												                        <SupportedStorageType>
+													                          <SupportedNodeTypes>
+														                            <SupportedNodeType>
+															                              <NodeType>double</NodeType>
+															                              <SupportedPackageTypes>
+																                                <SupportedPackageType>
+																	                                  <PackageType>standard</PackageType>
+																	                                  <AvailableResources>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.2g.8db.0rodb.8proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.2g.2db.0rodb.4proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.4g.2db.0rodb.4proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.4g.8db.0rodb.8proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.8g.8db.0rodb.8proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.8g.16db.0rodb.16proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.16g.16db.0rodb.16proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.16g.32db.0rodb.32proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.sharding.16xlarge.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.sharding.32xlarge.default</InstanceClass>
+																		                                    </AvailableResource>
+																		                                    <AvailableResource>
+																			                                      <InstanceClass>redis.logic.sharding.16g.256db.0rodb.256proxy.default</InstanceClass>
+																		                                    </AvailableResource>
+																	                                  </AvailableResources>
+																                                </SupportedPackageType>
+															                              </SupportedPackageTypes>
+														                            </SupportedNodeType>
+													                          </SupportedNodeTypes>
+													                          <StorageType>inmemory</StorageType>
+												                        </SupportedStorageType>
+											                      </SupportedStorageTypes>
+										                    </SupportedPerformanceType>
+									                  </SupportedPerformanceTypes>
+									                  <Architecture>cluster</Architecture>
+								                </SupportedArchitectureType>
+							              </SupportedArchitectureTypes>
+							              <Version>4.0</Version>
+						            </SupportedEngineVersion>
+					            <Engine>redis</Engine>
+					          </SupportedEngineVersions>
+				        </SupportedEngine>
+			      </SupportedEngines>
+		    </AvailableZone>
+	  </AvailableZones>
 </DescribeAvailableResourceResponse>
-
 ```
 
 `JSON` 格式
@@ -304,5 +303,5 @@ https://r-kvstore.aliyuncs.com
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.aliyun.com/status/product/R-kvstore)查看更多错误码。
 
