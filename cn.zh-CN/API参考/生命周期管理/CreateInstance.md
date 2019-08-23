@@ -304,5 +304,5 @@ https://r-kvstore.aliyuncs.com/
 |400|VpcServiceError|Invoke vpc service failed.|调用vpc服务失败。|
 |400|IzNotSupportVpcError|Specify iz not support vpc.|指定 iz不支持Vpc。|
 
-访问[错误中心](https://error-center.alibabacloud.com/status/product/R-kvstore)查看更多错误码。
+访问[错误中心](https://error-center.aliyun.com/status/product/R-kvstore)查看更多错误码。
 
