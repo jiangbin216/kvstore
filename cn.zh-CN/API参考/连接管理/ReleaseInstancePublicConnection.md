@@ -4,9 +4,9 @@
 
 该API对应的控制台操作请参见[释放外网连接地址](~~125424~~)。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ReleaseInstancePublicConnection)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=ReleaseInstancePublicConnection&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
@@ -53,9 +53,8 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <ReleaseInstancePublicConnectionResponse>
-  <RequestId>88F850B5-CC68-48B4-83CA-5497C3C191DE</RequestId>
+    <RequestId>88F850B5-CC68-48B4-83CA-5497C3C191DE</RequestId>
 </ReleaseInstancePublicConnectionResponse>
-
 ```
 
 `JSON` 格式
