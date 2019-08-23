@@ -4,17 +4,14 @@
 
 该API对应的控制台操作请参见[设置SSL加密](~~84898~~)。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceSSL)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceSSL&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyInstanceSSL|系统规定参数，取值：ModifyInstanceSSL。
-
- |
 |InstanceId|String|是|r-bp1xxxxxxxxxxxxx|需要修改设置的实例的ID。
 
  |
@@ -25,11 +22,14 @@
 -   Update（更新证书）
 
  |
+|Action|String|否|ModifyInstanceSSL|系统规定参数，取值：ModifyInstanceSSL。
+
+ |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -63,11 +63,10 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <ModifyInstanceSSLResponse>
-  <InstanceId>r-xxxxxxxxxxxxxxx</InstanceId>
-  <RequestId>52D901ED-E0A5-42FB-B9DB-39C295C37738</RequestId>
-  <TaskId>1111111111</TaskId>
+      <InstanceId>r-xxxxxxxxxxxxxxx</InstanceId>
+      <RequestId>52D901ED-E0A5-42FB-B9DB-39C295C37738</RequestId>
+      <TaskId>1111111111</TaskId>
 </ModifyInstanceSSLResponse>
-
 ```
 
 `JSON` 格式
@@ -88,5 +87,5 @@ https://r-kvstore.aliyuncs.com/
 |403|IncorrectDBInstanceLockMode|Current DB instance lock mode does not support this operation.|当前的实例锁定模式不支持此操作。|
 |400|InvalidParameters.Format|Specified parameters is not valid.|参数无效|
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.aliyun.com/status/product/R-kvstore)查看更多错误码。
 
