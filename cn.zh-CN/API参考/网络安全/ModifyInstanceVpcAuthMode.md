@@ -4,17 +4,14 @@
 
 该API对应的控制台操作请参见开启免密访问\]\(~~85168~~\)。
 
-## 调试 {#apiExplorer .section}
+## 调试 {#api_explorer .section}
 
-前往【[API Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceVpcAuthMode)】在线调试，API Explorer 提供在线调用 API、动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用。
+[您可以在OpenAPI Explorer中直接运行该接口，免去您计算签名的困扰。运行成功后，OpenAPI Explorer可以自动生成SDK代码示例。](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceVpcAuthMode&type=RPC&version=2015-01-01)
 
 ## 请求参数 {#parameters .section}
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|Action|String|是|ModifyInstanceVpcAuthMode|系统规定参数，取值：ModifyInstanceVpcAuthMode。
-
- |
 |InstanceId|String|是|r-bp1xxxxxxxxxxxxx|需要修改设置的实例的ID。
 
  |
@@ -26,11 +23,14 @@
  **说明：** 默认为Open。
 
  |
+|Action|String|否|ModifyInstanceVpcAuthMode|系统规定参数，取值：ModifyInstanceVpcAuthMode。
+
+ |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
 
-## 返回参数 {#resultMapping .section}
+## 返回数据 {#resultMapping .section}
 
 |名称|类型|示例值|描述|
 |--|--|---|--|
@@ -58,9 +58,8 @@ https://r-kvstore.aliyuncs.com/
 
 ``` {#xml_return_success_demo}
 <ModifyInstanceVpcAuthModeResponse>
-  <RequestId>ABAF95F6-35C1-4177-AF3A-70969EBDF623</RequestId>
+      <RequestId>ABAF95F6-35C1-4177-AF3A-70969EBDF623</RequestId>
 </ModifyInstanceVpcAuthModeResponse>
-
 ```
 
 `JSON` 格式
@@ -73,5 +72,5 @@ https://r-kvstore.aliyuncs.com/
 
 ## 错误码 { .section}
 
-[查看本产品错误码](https://error-center.aliyun.com/status/product/R-kvstore)
+访问[错误中心](https://error-center.aliyun.com/status/product/R-kvstore)查看更多错误码。
 
