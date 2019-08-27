@@ -28,7 +28,7 @@
 3.  执行脚本，请参考如下示例：
 
     ``` {#codeblock_w2p_2xl_84m}
-    python rdb_restore.py -c r-m5ec7db53da93674 -d 2018-07-17 -i rm-davinx-003.redis.6d6e3611-8.newtest.rdstest.aliyun-inc.com -p 6379 -a Davinx123456
+    python rdb_restore.py -c r-m5ec7db53da93674 -d 2018-07-17 -t rm-davinx-003.redis.6d6e3611-8.newtest.rdstest.aliyun-inc.com -p 6379 -a Davinx123456
     ```
 
     命令参数详解如下：
@@ -57,6 +57,6 @@
 
     示例脚本执行的结果如下，当出现`restore: rdb done`时数据恢复完成。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21349/156687168011901_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/21349/156688710011901_zh-CN.png)
 
 
