@@ -1,6 +1,6 @@
 # UntagResources {#doc_api_R-kvstore_UntagResources .reference}
 
-调用UntagResources解绑标签。
+调用UntagResources将标签从Redis实例解绑。
 
 -   每次解绑的标签数量不能超过20个；
 -   标签从一个实例解绑后，如果没有绑定到其它实例，则该标签自动被删除。
@@ -15,7 +15,7 @@
 
 |名称|类型|是否必选|示例值|描述|
 |--|--|----|---|--|
-|RegionId|String|是|cn-hangzhou|地域ID，可调用[DescribeRegions](~~61012~~)查询，使用此参数指定要创建实例的地域。
+|RegionId|String|是|cn-hangzhou|地域ID，可调用[DescribeRegions](~~61012~~)查询。
 
  |
 |ResourceId.N|RepeatList|是|r-hp3xxxxxxxxxxxxx|实例ID，可以设置多个。
@@ -34,12 +34,15 @@
  **说明：** 设置方法请参见请求示例。
 
  |
-|All|Boolean|否|false|删除所有标签，已设置TagKey.N时无效。可选值：
+|All|Boolean|否|false|解绑实例上的所有标签。可选值：
 
  -   true
 -   false
 
- **说明：** 默认值：false。
+ **说明：** 
+
+-   默认值：false。
+-   如果同时设置了**TagKey.N**和该参数，该参数不生效。
 
  |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
