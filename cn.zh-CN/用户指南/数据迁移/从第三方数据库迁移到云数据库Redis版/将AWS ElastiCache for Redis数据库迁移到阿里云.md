@@ -20,35 +20,21 @@
 
 ## 从AWS ElastiCache for Redis备份和导出数据到S3存储桶 {#section_kl3_g1o_bm7 .section}
 
-1.  下载[redis-shake](https://github.com/alibaba/RedisShake/releases)。 
+1.  创建备份到特定集群。单击左侧导航栏中的Redis，选择需要备份的**集群名称**，单击**备份**，**资源名称**里选择需要备份的集群，填写**备份名称**后单击**创建快照**。 
 
-    **说明：** 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156741110735338_zh-CN.png)
 
-    -   redis-shake需要在64位Linux系统上运行。
-    -   建议您下载最新发布的版本。
-2.  解压redis-shake.tar.gz。 
+2.  将备份文件导出到AWS S3存储桶。单击左侧导航栏中的备份，选择需要导出的备份文件，单击上方的**复制**，填写**新缓存快照标识符**名称，选择**目标S3位置**，单击右下角**复制**，导出过程将开始。 
 
-    ``` {#codeblock_vmv_svv_xxz}
-    # tar -xvf redis-shake.tar.gz
-    ```
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156741110735339_zh-CN.png)
 
-    **说明：** 解压获得的redis-shake为64位Linux系统所需的二进制文件，redis-shake.conf为redis-shake的配置文件，您将在下个步骤对其进行修改。
+3.  您可以在S3存储桶中找到导出的RDB文件。 
 
-3.  创建备份到特定集群。单击左侧导航栏中的Redis，选择需要备份的**集群名称**，单击**备份**，**资源名称**里选择需要备份的集群，填写**备份名称**后单击**创建快照**。 
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156741110735448_zh-CN.png)
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156707242535338_zh-CN.png)
+4.  从S3存储桶下载RDB文件。 
 
-4.  将备份文件导出到AWS S3存储桶。单击左侧导航栏中的备份，选择需要导出的备份文件，单击上方的**复制**，填写**新缓存快照标识符**名称，选择**目标S3位置**，单击右下角**复制**，导出过程将开始。 
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156707242535339_zh-CN.png)
-
-5.  您可以在S3存储桶中找到导出的RDB文件。 
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156707242635448_zh-CN.png)
-
-6.  从S3存储桶下载RDB文件。 
-
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156707242635449_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/83060/156741110735449_zh-CN.png)
 
 
 ## 操作步骤 {#section_zbs_9cp_wrd .section}
