@@ -4,7 +4,7 @@ Public endpoints for ApsaraDB for Redis instances are also known as Internet end
 
 ## Prerequisites {#section_b3b_ih1_mfb .section}
 
--   The public IP address of an ECS instance or a local host has been added to the whitelist of the ApsaraDB for Redis instance. For more information about how to configure the whitelist, see [EN-US\_TP\_123386.md\#](reseller.en-US/Quick Start/Step 2: Set IP whitelists.md#).
+-   The public IP address of an ECS instance or a local host has been added to the whitelist of the ApsaraDB for Redis instance. For more information about how to configure the whitelist, see [Step 2: Set IP whitelists](reseller.en-US/Quick Start/Step 2: Set IP whitelists.md#).
 -   For ApsaraDB for Redis 2.8 or 5.0 instances, you cannot apply for public endpoints with the [password-free access](../../../../reseller.en-US/User Guide/Manage instances/Enable password-free access.md#) feature enabled. Please disable password-free access before applying for public endpoints.
 
     **Note:** For ApsaraDB for Redis 4.0 instances, you can apply for public endpoints after enabling the password-free access feature. At this point, you can access an ApsaraDB for Redis instance from a private endpoint without a password. However, a password is still required to access an ApsaraDB for Redis instance from a public endpoint.
@@ -29,7 +29,7 @@ Public endpoints for ApsaraDB for Redis instances and generated public traffic a
 3.  On the Instance List page, click the target instance ID or click **Manage** in the **Actions** column corresponding to the target instance.
 4.  On the Instance Information page, click **Apply for External IP Address** in the **Connection Information** area.
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141285/156714940441043_en-US.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/141285/156738906641043_en-US.png)
 
 5.  In the Apply for External IP Address dialog box, enter the endpoint and port number, and click **OK**.
 6.  On the Instance Information page, view the **Public Endpoint** in the Connection Information area.
@@ -43,9 +43,8 @@ Public endpoints for ApsaraDB for Redis instances and generated public traffic a
 
 You can use DMS, redis-cli, or Redis clients in various languages to connect to the Redis instance. For more information about the connection methods, see the following topics:
 
--   [EN-US\_TP\_3127.md\#](reseller.en-US/Quick Start/Step 3: Connect to the instance/Use DMS.md#)
--   [EN-US\_TP\_3129.md\#](reseller.en-US/Quick Start/Step 3: Connect to the instance/Use redis-cli.md#)
--   [EN-US\_TP\_3128.md\#](reseller.en-US/Quick Start/Step 3: Connect to the instance/Use a Redis client.md#)
+-   [Use redis-cli](reseller.en-US/Quick Start/Step 3: Connect to the instance/Use redis-cli.md#)
+-   [Use a Redis client](reseller.en-US/Quick Start/Step 3: Connect to the instance/Use a Redis client.md#)
 
 ## Resolve connection issues through the public network {#section_y2n_4gp_hb5 .section}
 
