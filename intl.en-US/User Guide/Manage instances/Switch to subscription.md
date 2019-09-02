@@ -24,7 +24,7 @@ After you purchase a Pay-As-You-Go instance, you can change its billing method t
 
 ## Procedure {#section_wvf_xlg_vdb .section}
 
-1.  Log on to the [ApsaraDB for Redis console](https://kvstore.console.aliyun.com/).
+1.  Log on to the [ApsaraDB for Redis console](https://partners-intl.console.aliyun.com/#/kvstore).
 2.  In the upper-left corner of the top navigation bar, select the region where the target instance is located.
 3.  On the Instance List page, find the target instance and click **Switch to Subscription** in the Action column.
 4.  Adjust the slider of **Duration** to select a subscription period.
@@ -34,5 +34,5 @@ After you purchase a Pay-As-You-Go instance, you can change its billing method t
 
 |API|Description|
 |---|-----------|
-|[TransformToPrePaid](../../../../intl.en-US/API Reference/Lifecycle management/TransformToPrePaid.md#)|You can call this operation to change the billing method of an ApsaraDB for Redis instance from Pay-As-You-Go to subscription.|
+|[TransformToPrePaid](../../../../reseller.en-US/API Reference/Lifecycle management/TransformToPrePaid.md#)|You can call this operation to change the billing method of an ApsaraDB for Redis instance from Pay-As-You-Go to subscription.|
 
