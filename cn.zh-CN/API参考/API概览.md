@@ -2,7 +2,7 @@
 
 云数据库 Redis 版提供以下相关API接口。
 
-## 生命周期管理 {#section_do4_dho_egv .section}
+## 生命周期管理 {#section_wnc_4ph_gxs .section}
 
 |API|描述|
 |---|--|
@@ -12,7 +12,7 @@
 |[TransformToPrePaid](cn.zh-CN/API参考/生命周期管理/TransformToPrePaid.md)|调用TransformToPrePaid将按量付费的Redis实例转换为包年包月（预付费）实例。|
 |[DeleteInstance](cn.zh-CN/API参考/生命周期管理/DeleteInstance.md)|调用DeleteInstance释放Redis实例。|
 
-## 区域管理 {#section_zew_m7l_wjw .section}
+## 区域管理 {#section_nne_l2y_9fr .section}
 
 |API|描述|
 |---|--|
@@ -20,7 +20,7 @@
 |[DescribeRegions](cn.zh-CN/API参考/区域管理/DescribeRegions.md)|调用DescribeRegions查询可创建Redis实例的地域。|
 |[DescribeZones](cn.zh-CN/API参考/区域管理/DescribeZones.md)|调用DescribeZones查询支持Redis的可用区。|
 
-## 连接管理 {#section_ja8_yqu_b5t .section}
+## 连接管理 {#section_7sr_b7z_is7 .section}
 
 |API|描述|
 |---|--|
@@ -29,7 +29,7 @@
 |[ModifyIntranetAttribute](cn.zh-CN/API参考/连接管理/ModifyIntranetAttribute.md)|调用ModifyIntranetAttribute临时调整Redis实例的内网带宽。|
 |[DescribeIntranetAttribute](cn.zh-CN/API参考/连接管理/DescribeIntranetAttribute.md)|调用DescribeIntranetAttribute查询Redis实例当前的内网带宽。如果使用了临时调整带宽功能，还可查询临时带宽的过期时间。|
 
-## 实例管理 {#section_ugg_sc0_iq0 .section}
+## 实例管理 {#section_lfn_lwx_cij .section}
 
 |API|描述|
 |---|--|
@@ -47,7 +47,7 @@
 |[ModifyInstanceMinorVersion](cn.zh-CN/API参考/实例管理/ModifyInstanceMinorVersion.md)|调用ModifyInstanceMinorVersion升级Redis实例的小版本。|
 |[RestartInstance](cn.zh-CN/API参考/实例管理/RestartInstance.md)|调用RestartInstance重启运行中的Redis实例。|
 
-## 续费管理 {#section_i08_lag_qba .section}
+## 续费管理 {#section_846_9pp_u4o .section}
 
 |API|描述|
 |---|--|
@@ -55,7 +55,7 @@
 |[DescribePrice](cn.zh-CN/API参考/续费管理/DescribePrice.md)|调用DescribePrice查询创建Redis实例、升级配置或续费等操作产生的费用。|
 |[DescribeInstanceAutoRenewalAttribute](cn.zh-CN/API参考/续费管理/DescribeInstanceAutoRenewalAttribute.md)|调用DescribeInstanceAutoRenewalAttribute查看Redis实例的自动续费情况。|
 
-## 账号管理 {#section_a9p_kor_tms .section}
+## 账号管理 {#section_udx_s4f_mdh .section}
 
 |API|描述|
 |---|--|
@@ -66,7 +66,7 @@
 |[DeleteAccount](cn.zh-CN/API参考/账号管理/DeleteAccount.md)|调用DeleteAccount删除一个Redis账号。|
 |[GrantAccountPrivilege](cn.zh-CN/API参考/账号管理/GrantAccountPrivilege.md)|调用GrantAccountPrivilege修改Redis账号的权限。|
 
-## 备份恢复 {#section_las_yez_zyh .section}
+## 备份恢复 {#section_mep_bs3_vjn .section}
 
 |API|描述|
 |---|--|
@@ -76,14 +76,14 @@
 |[DescribeBackups](cn.zh-CN/API参考/备份恢复/DescribeBackups.md)|调用DescribeBackups查询Redis实例的备份文件信息。|
 |[RestoreInstance](cn.zh-CN/API参考/备份恢复/RestoreInstance.md)|调用RestoreInstance将备份文件中的数据恢复到指定的Redis实例中。|
 
-## 监控管理 {#section_jol_ih6_ybn .section}
+## 监控管理 {#section_3ho_eyn_3hx .section}
 
 |API|描述|
 |---|--|
 |[DescribeMonitorItems](cn.zh-CN/API参考/监控管理/DescribeMonitorItems.md)|调用DescribeMonitorItems查询Redis监控项列表。|
 |[DescribeHistoryMonitorValues](cn.zh-CN/API参考/监控管理/DescribeHistoryMonitorValues.md)|调用DescribeHistoryMonitorValues查看Redis实例的历史监控信息。|
 
-## 日志管理 {#section_qui_ah5_btz .section}
+## 日志管理 {#section_tsv_mpe_wsd .section}
 
 |API|描述|
 |---|--|
@@ -92,7 +92,7 @@
 |[DescribeSlowLogRecords](cn.zh-CN/API参考/日志管理/DescribeSlowLogRecords.md)|调用DescribeSlowLogRecords查询Redis实例在指定时间内产生的慢日志。|
 |[ModifyAuditLogConfig](cn.zh-CN/API参考/日志管理/ModifyAuditLogConfig.md)|调用ModifyAuditLogConfig设置审计日志的保留天数。|
 
-## 网络安全 {#section_zyn_iis_izz .section}
+## 网络安全 {#section_ueg_nnx_toe .section}
 
 |API|描述|
 |---|--|
@@ -100,15 +100,24 @@
 |[ModifySecurityIps](cn.zh-CN/API参考/网络安全/ModifySecurityIps.md)|调用ModifySecurityIps设置Redis实例的IP白名单。|
 |[ModifyInstanceSSL](cn.zh-CN/API参考/网络安全/ModifyInstanceSSL.md)|调用ModifyInstanceSSL设置Redis实例的SSL加密模式。|
 |[ModifyInstanceVpcAuthMode](cn.zh-CN/API参考/网络安全/ModifyInstanceVpcAuthMode.md)|调用ModifyInstanceVpcAuthMode开启或关闭免密访问。开启免密访问后，同一VPC内的云服务器不使用密码就可以访问Redis，同时仍然支持通过用户名及密码的方式连接Redis。|
+|[DescribeInstanceSSL](cn.zh-CN/API参考/网络安全/DescribeInstanceSSL.md)|调用DescribeInstanceSSL查看Redis实例是否开启了SSL加密认证。|
 
-## 参数管理 {#section_0lg_ie8_bqo .section}
+## 参数管理 {#section_cbw_fi4_dby .section}
 
 |API|描述|
 |---|--|
 |[ModifyInstanceConfig](cn.zh-CN/API参考/参数管理/ModifyInstanceConfig.md)|调用ModifyInstanceConfig修改Redis实例的配置参数。|
 |[DescribeParameters](cn.zh-CN/API参考/参数管理/DescribeParameters.md)|调用DescribeParameters查询Redis实例的配置参数和运行参数。|
 
-## 性能优化 {#section_oy7_npm_rpr .section}
+## 标签管理 {#section_f3l_jr1_sql .section}
+
+|API|描述|
+|---|--|
+|[TagResources](cn.zh-CN/API参考/标签管理/TagResources.md)|调用TagResources为一个或多个Redis实例绑定标签。|
+|[ListTagResources](cn.zh-CN/API参考/标签管理/ListTagResources.md)|调用ListTagResources查询绑定了指定标签的Redis实例或者查询指定实例绑定的标签。|
+|[UntagResources](cn.zh-CN/API参考/标签管理/UntagResources.md)|调用UntagResources将标签从Redis实例解绑。|
+
+## 性能优化 {#section_rxf_zmj_eds .section}
 
 |API|描述|
 |---|--|
