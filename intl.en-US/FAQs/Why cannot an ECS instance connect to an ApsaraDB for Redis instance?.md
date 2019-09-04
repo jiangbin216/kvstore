@@ -17,5 +17,5 @@ The ECS instance cannot directly connect to the ApsaraDB for Redis instance over
 
 ## Connect through the Internet {#section_1fu_fuf_8a8 .section}
 
-To connect an ApsaraDB for Redis instance through the Internet, you must apply a public endpoint for the Redis instance first, see [Through the Internet](../../../../reseller.en-US/Quick Start/Step 3: Connect to the instance/Through the Internet.md#).
+To connect an ApsaraDB for Redis instance through the Internet, you must apply a public endpoint for the Redis instance first, see [Through the Internet](../../../../reseller.en-US/Quick Start/Step 3: Connect to the instance/Through the Internet.md#), then connect to the Redis instance with the public endpoint.
 
