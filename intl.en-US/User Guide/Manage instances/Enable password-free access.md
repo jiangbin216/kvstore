@@ -10,11 +10,11 @@ ApsaraDB for Redis supports password-free access in VPCs to achieve more conveni
 
 ## Limits {#section_br8_hg0_6f2 .section}
 
--   Public endpoints can be used to access ApsaraDB for Redis 4.0 instances while VPC password-free access is enabled. In this case, you do not need to use a password to access ApsaraDB for Redis instances if an internal endpoint is used. However, you still need a password if a public endpoint is used.
+-   [Public endpoints](../../../../reseller.en-US/Quick Start/Step 3: Connect to the instance/Through the Internet.md#) can be used to access ApsaraDB for Redis 4.0 instances while VPC password-free access is enabled. In this case, you do not need to use a password to access ApsaraDB for Redis instances if an internal endpoint is used. However, you still need a password if a public endpoint is used.
 
     **Note:** If a public endpoint fails to access ApsaraDB for Redis 4.0 instances while VPC password-free access is enabled, upgrade the kernel version, see [Upgrade the minor version](reseller.en-US/User Guide/Manage instances/Upgrade the minor version.md#).
 
--   Public endpoints are unavailable for instances of ApsaraDB for Redis 2.8 and ApsaraDB for Redis 5.0 while VPC password-free access in enabled.
+-   For ApsaraDB for Redis 2.8 or 5.0 instances, you cannot apply for public endpoints with the [password-free access](reseller.en-US/User Guide/Manage instances/Enable password-free access.md#) feature enabled. Please disable password-free access before applying for public endpoints.
 
 ## Procedure {#section_ugs_sio_csy .section}
 
@@ -24,9 +24,9 @@ ApsaraDB for Redis supports password-free access in VPCs to achieve more conveni
 4.  On the Instance Information page, find the Connection Information section and click **Enable Password-free Access**.
 5.  In the message that appears, click **OK**.
 
-Refresh the Instance Information page. **Disable Password-free Access** is displayed. You can click **Disable Password-free Access** if password-free access is not necessary. However, applications that use the password-free access function cannot connect to databases if this function is disabled. Exercise caution when you disable this function.
+To disable password-free access, refresh the Instance Information page until **Disable Password-free Access** is displayed, then click it. However, applications that use the password-free access function lose connection to databases if this function is disabled.
 
-**Note:** If your application is already connected to the instance before password-free access is enabled, restart the application and reconnect to the ApsaraDB for Redis instance for this function to take effect.
+**Note:** If your application is already connected to the instance before password-free access is enabled, reconnect it to the ApsaraDB for Redis instance for this function to take effect.
 
 ## Related operations {#section_lh5_zmp_tgb .section}
 
