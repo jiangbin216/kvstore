@@ -16,6 +16,9 @@
 |Action|String|否|DescribeInstanceAttribute|系统规定参数，取值：DescribeInstanceAttribute。
 
  |
+|RegionId|String|否|cn-hangzhou|地域ID。
+
+ |
 |AccessKeyId|String|否|Lxxxxxxxxxxxxxxw|阿里云颁发给用户的访问服务所用的密钥ID。
 
  |
@@ -25,6 +28,9 @@
 |名称|类型|示例值|描述|
 |--|--|---|--|
 |Instances| | |实例信息的集合。
+
+ |
+|DBInstanceAttribute| | |实例信息的集合。
 
  |
 |ArchitectureType|String|standard|指定架构类型返回实例列表：
@@ -58,7 +64,7 @@
 |Config|String|\{\\"EvictionPolicy\\":\\"volatile-lru\\",\\"hash-max-ziplist-entries\\":512,\\"zset-max-ziplist-entries\\":128,\\"zset-max-ziplist-value\\":64,\\"set-max-intset-entries\\":512,\\"hash-max-ziplist-value\\":64\}|实例的配置参数（JSON String），参见[参数说明](~~43885~~)。
 
  |
-|ConnectionDomain|String|r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com|Redis实例的连接地址（仅支持内网访问）。
+|ConnectionDomain|String|r-j6cxxxxxxxxxxxxx.redis.rds.aliyuncs.com|Redis实例的连接地址。
 
  |
 |Connections|Long|10000|实例连接数限制，单位：个。
@@ -162,6 +168,9 @@
 
  |
 |Tags| | |标签信息。
+
+ |
+|Tag| | |标签信息。
 
  |
 |Key|String|tagkey|标签key。
