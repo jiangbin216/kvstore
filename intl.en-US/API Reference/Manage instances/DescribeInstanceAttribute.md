@@ -1,6 +1,6 @@
 # DescribeInstanceAttribute {#doc_api_R-kvstore_DescribeInstanceAttribute .reference}
 
-You can call this operation to query detailed information of an ApsaraDB for Redis instance.
+You can call DescribeInstanceAttribute to query detailed information of an ApsaraDB for Redis instance.
 
 ## Debugging {#api_explorer .section}
 
