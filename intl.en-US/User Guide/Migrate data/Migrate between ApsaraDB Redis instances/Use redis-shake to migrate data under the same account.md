@@ -18,7 +18,7 @@ The redis-shake tool is an open-source tool developed by Alibaba Cloud. You can 
 -   The rump mode does not support incremental migration. We recommend that you stop writing data to the source Redis before migration to prevent data inconsistency.
 -   The rump mode supports data migration between different Redis versions, such as from Redis 2.8 to Redis 4.0.
 -   The rump mode supports data migration between different cloud products. In this case, either the source or destination must support Internet access.
--   For more information about the redis-shake tool, see [redis-shake on GitHub](https://github.com/aliyun/redis-shake) or [FAQ](https://github.com/alibaba/RedisShake/wiki/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE%EF%BC%9F).
+-   For more information about the redis-shake tool, see [redis-shake on GitHub](https://github.com/aliyun/redis-shake) or [FAQ](https://github.com/alibaba/RedisShake/wiki/FAQ).
 
 ## Procedure {#section_0ne_wlk_e5d .section}
 
