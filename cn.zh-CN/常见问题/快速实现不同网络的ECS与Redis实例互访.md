@@ -15,23 +15,23 @@
 **前提条件**
 
 -   ECS与Redis实例在同一账号下且在同一地域。
--   专有网络中的网段设置需满足[开启ClassicLink的条件](https://help.aliyun.com/document_detail/65412.html)。
+-   专有网络中的网段设置需满足[ClassicLink概述](../../../../intl.zh-CN/VPC与外部网络连接/ClassicLink/ClassicLink概述.md#)中说明的开启ClassicLink的条件。
 
-**说明：** 若ECS与Redis不在同一地域，为了快速使二者连通，可[使用全球多活进行跨地域实例迁移](../../../../../cn.zh-CN/用户指南/迁移数据/云数据库Redis版之间迁移/使用全球多活进行跨地域实例迁移.md#)，将Redis迁移到ECS所在地域。
+**说明：** 若ECS与Redis不在同一地域，为了快速使二者连通，可[使用redis-shake](../../../../intl.zh-CN/用户指南/数据迁移/云数据库Redis版之间迁移/使用redis-shake在云数据库Redis版实例之间迁移.md#)将Redis迁移到ECS所在地域。
 
 **操作步骤**
 
-1.  登录[云数据库Redis版管理控制台](https://kvstore.console.aliyun.com/)。
-2.  将 ECS 实例的内网 IP [加入Redis实例白名单](../../../../../cn.zh-CN/用户指南/管理实例/设置IP白名单.md#)。
-3.  [建立ClassicLink连接](https://help.aliyun.com/document_detail/65413.html)。
+1.  登录[Redis管理控制台](https://kvstore.console.aliyun.com/)。
+2.  将ECS实例的内网IP[加入Redis实例白名单](../../../../intl.zh-CN/用户指南/实例管理/设置IP白名单.md#)。
+3.  [建立ClassicLink连接](../../../../intl.zh-CN/VPC与外部网络连接/ClassicLink/建立ClassicLink连接.md#)。
 4.  在ECS中测试连接。
 
-    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/73738/154743122433629_zh-CN.png)
+    ![](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/73738/156801891833629_zh-CN.png)
 
 
 ## 专有网络ECS访问经典网络Redis {#section_obl_1j5_zfb .section}
 
-在该情况下，选择合适的时间将Redis实例切换到专有网络能够让您快速实现互通。相关操作请参见[切换为专有网络](../../../../../cn.zh-CN/用户指南/管理实例/切换为专有网络.md#)。
+在该情况下，选择合适的时间将Redis实例切换到专有网络能够让您快速实现互通。相关操作请参见[切换为专有网络](../../../../intl.zh-CN/用户指南/实例管理/切换为专有网络.md#)。
 
-**说明：** 若ECS与Redis不在同一地域，为了快速使二者连通，可[使用全球多活进行跨地域实例迁移](../../../../../cn.zh-CN/用户指南/迁移数据/云数据库Redis版之间迁移/使用全球多活进行跨地域实例迁移.md#)，将Redis迁移到ECS所在地域。
+**说明：** 若ECS与Redis不在同一地域，为了快速使二者连通，可[使用redis-shake](../../../../intl.zh-CN/用户指南/数据迁移/云数据库Redis版之间迁移/使用redis-shake在云数据库Redis版实例之间迁移.md#)将Redis迁移到ECS所在地域。
 
