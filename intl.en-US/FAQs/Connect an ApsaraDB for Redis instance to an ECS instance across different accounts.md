@@ -9,7 +9,7 @@ CEN allows you to create a global network for rapidly building a distributed bus
 **Note:** 
 
 -   If you do not deploy resources across regions and have no account requirements, we recommend that you create an ECS instance and an ApsaraDB for Redis instance in the same VPC of the same region under the same account.
--   If permitted, we recommend that you migrate the ECS and ApsaraDB for Redis instances under different accounts to the same account. For more information, see [Use the redis-shake tool to migrate data under the same account](../../../../reseller.en-US/.md#).
+-   If permitted, we recommend that you migrate the ECS and ApsaraDB for Redis instances under different accounts to the same account. For more information, see [Use redis-shake to migrate data under the same account](../../../../reseller.en-US/User Guide/Migrate data/Migrate between ApsaraDB Redis instances/Use redis-shake to migrate data under the same account.md#).
 
 **Procedure**
 
@@ -21,7 +21,7 @@ CEN allows you to create a global network for rapidly building a distributed bus
 3.  Add the internal IP address of the ECS instance to a whitelist of the ApsaraDB for Redis instance. For more information, see [Set IP whitelists](../../../../reseller.en-US/User Guide/Manage instances/Set IP whitelists.md#).
 4.  Run the `ping <host>` command on the ECS instance to confirm that the instances are connected, as shown in the following example.
 
-    ![Test the connection by using the Ping command](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156799762938517_en-US.png)
+    ![Test the connection by using the Ping command](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156810036138517_en-US.png)
 
     **Note:** 
 
@@ -42,7 +42,7 @@ Alibaba Cloud Express Connect helps you build private network communication chan
 3.  Add the internal IP address of the ECS instance to a whitelist of the ApsaraDB for Redis instance. For more information, see [Set IP whitelists](../../../../reseller.en-US/User Guide/Manage instances/Set IP whitelists.md#).
 4.  Run the `ping <host>` command on the ECS instance to confirm that the instances are connected, as shown in the following example.
 
-    ![Test the connection by using the Ping command](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156799762938517_en-US.png)
+    ![Test the connection by using the Ping command](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156810036138517_en-US.png)
 
     **Note:** 
 
