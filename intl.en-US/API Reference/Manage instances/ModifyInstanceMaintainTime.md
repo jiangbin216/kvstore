@@ -1,41 +1,82 @@
-# ModifyInstanceMaintainTime {#reference_h3w_qv2_xdb .reference}
+# ModifyInstanceMaintainTime {#doc_api_R-kvstore_ModifyInstanceMaintainTime .reference}
 
-## Description {#section_z1z_2kw_wbb .section}
+You can call this operation to modify the maintenance window of an ApsaraDB for Redis instance. Alibaba Cloud maintains the ApsaraDB for Redis instance in the specified maintenance window.
 
-This API is used to modify the maintenance time. Alibaba Cloud may perform routine maintenance for instances at the specified maintenance time.
+For more information about how to perform the corresponding operation in the console, see [Set a maintenance window](~~55252~~).
 
-## Request parameters {#section_fn4_gkw_wbb .section}
+## Debugging {#apiExplorer .section}
 
-|Name|Type|Required|Description|
-|----|----|--------|-----------|
-|<Common request parameters\>|-|Yes|See [Public parameters](intl.en-US/API Reference/Common Parameters.md#section_hph_dhp_wbb).|
-|Action|String|Yes|Required parameter. Value: ModifyInstanceMaintainTime.|
-|InstanceId|String|Yes|Instance ID \(globally unique\)|
-|MaintainStartTime|String|Yes|Maintenance start time|
-|MaintainEndTime|String|Yes|Maintenance end time|
+Alibaba Cloud provides OpenAPI Explorer to simplify API usage. You can use [OpenAPI Explorer](https://api.aliyun.com/#product=R-kvstore&api=ModifyInstanceMaintainTime) to search for APIs, call APIs, and dynamically generate SDK example code.
 
-## Response parameters {#section_e4w_jkw_wbb .section}
+## Request parameters {#parameters .section}
 
-|Name|Type|Description|
-|----|----|-----------|
-|<Common return parameters\>|-|See [Public return parameters](intl.en-US/API Reference/Common Parameters.md#section_rjr_zgp_wbb).|
+|Parameter|Type|Required|Example|Description|
+|---------|----|--------|-------|-----------|
+|Action|String|Yes|ModifyInstanceMaintainTime|The operation that you want to perform. Set this parameter to ModifyInstanceMaintainTime.
 
-## Request example {#section_d3l_4kw_wbb .section}
+ |
+|InstanceId|String|Yes|r-bp1xxxxxxxxxxxxx|The ID of the instance for which you want to modify the maintenance window.
+
+ |
+|MaintainStartTime|String|Yes|03:00Z|The start time of the maintenance window. The time must be in the `HH:mmZ` format.
+
+ |
+|MaintainEndTime|String|Yes|02:00Z|The end time of the maintenance window. The time must be in the `HH:mmZ` format.
+
+ **Note:** The interval between the start time and the end time must be one hour. For example, if the value of the MaintainStartTime parameter is `01:00Z`, the value of the MaintainEndTime parameter must be `02:00Z`.
+
+ |
+|AccessKeyId|String|No|Lxxxxxxxxxxxxxxw|The AccessKey ID that Alibaba Cloud provides for you to access services.
+
+ |
+
+## Response parameters {#resultMapping .section}
+
+|Parameter|Type|Example|Description|
+|---------|----|-------|-----------|
+|RequestId|String|8D0C0AFC-E9CD-47A4-8395-5C31BF9B3E76|The ID of the request.
+
+ |
+
+## Examples {#demo .section}
+
+Sample request
+
+``` {#request_demo}
+
+https://r-kvstore.aliyuncs.com/
+? Action=ModifyInstanceMaintainTime
+&InstanceId=r-bp1xxxxxxxxxxxxx
+&MaintainStartTime=02:00Z
+&MaintainEndTime=03:00Z
+&<Common request parameters>
 
 ```
-https://r-kvstore.aliyuncs.com
-<Common request parameters>
-&Action=ModifyInstanceMaintainTime
-&InstanceId=657e361a074646d5
-& MaintainStartTime=02:00Z
-& MaintainEndTime=06:00Z
-```
 
-## Response example {#section_hjp_tkw_wbb .section}
+Sample success response
 
-```
+`XML` format
 
-"RequestId" : "A099747A-0826-499D-9422-381C07337F73"
+``` {#xml_return_success_demo}
+<ModifyInstanceMaintainTimeResponse>
+  <RequestId>8D0C0AFC-E9CD-47A4-8395-5C31BF9B3E76</RequestId>
+</ModifyInstanceMaintainTimeResponse>
 
 ```
+
+`JSON` format
+
+``` {#json_return_success_demo}
+{
+	"RequestId":"8D0C0AFC-E9CD-47A4-8395-5C31BF9B3E76"
+}
+```
+
+## Error codes { .section}
+
+|HTTP status code|Error code|Error message|Description|
+|----------------|----------|-------------|-----------|
+|400|InvalidEndTime.Format|Specified end time is not valid.|The error message returned because the verification of the end time failed.|
+
+[View error codes.](https://error-center.aliyun.com/status/product/R-kvstore)
 
