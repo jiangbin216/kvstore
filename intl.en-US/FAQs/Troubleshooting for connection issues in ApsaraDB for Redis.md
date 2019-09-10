@@ -11,7 +11,7 @@ The ApsaraDB for Redis instance only supports connections over an internal netwo
     -   [Connect an ApsaraDB for Redis instance to an ECS instance across different accounts](reseller.en-US/FAQs/Connect an ApsaraDB for Redis instance to an ECS instance across different accounts.md#).
 -   The ECS instance and the ApsaraDB for Redis instance run in different regions. Solution:
 
-    Migrate one of the instances across regions , see [Use redis-shake to migrate data](../../../../reseller.en-US/.md#) or [Use redis-shake to migrate data under the same account](../../../../reseller.en-US/User Guide/Migrate data/Migrate between ApsaraDB Redis instances/Use redis-shake to migrate data under the same account.md#).
+    Migrate one of the instances across regions , see [Use redis-shake to migrate data under the same account](../../../../reseller.en-US/User Guide/Migrate data/Migrate between ApsaraDB Redis instances/Use redis-shake to migrate data under the same account.md#).
 
 -   The ECS instance and the ApsaraDB for Redis instance run in different types of networks. one runs in a classic network and the other runs in a VPC. Solution:
     -   Switch the network type of the Redis instance from classic network to VPC. For more information, see [Switch to VPC](../../../../reseller.en-US/User Guide/Manage instances/Switch to VPC.md#).
