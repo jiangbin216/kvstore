@@ -14,7 +14,7 @@
     在ECS所在地域创建新的Redis实例，将源实例中的数据迁移到新实例中，操作步骤请参见[使用redis-shake迁移RDB文件内的数据](../../../../cn.zh-CN/用户指南/数据迁移/云下到云上/使用redis-shake迁移RDB文件内的数据.md#)。
 
 -   ECS与Redis的网络类型不同，一方是经典网络而另一方是VPC网络。解决方法：
-    -   将网络类型统一转换为VPC。请参见[ECS实例迁移](../../../../cn.zh-CN/最佳实践/经典网络迁移到VPC/ECS实例迁移.md#)或[切换Redis实例的网络类型](../../../../cn.zh-CN/用户指南/实例管理/切换为专有网络.md#)。
+    -   将Redis实例的网络类型转换为VPC，请参见[切换Redis实例的网络类型](../../../../cn.zh-CN/用户指南/实例管理/切换为专有网络.md#)。
     -   [快速实现不同网络的ECS与Redis实例互访](cn.zh-CN/常见问题/快速实现不同网络的ECS与Redis实例互访.md#)。
 -   ECS的安全组规则阻塞了对Redis地址和端口的访问。解决方法：
 
@@ -26,8 +26,14 @@
 
     **说明：** 如果出现`Caused by: redis.clients.jedis.exceptions.JedisConnectionException: java.net.ConnectException: 拒绝连接 (Connection refused)`，请检查Redis白名单设置，若白名单设置无误且可以在ECS上[ping](../../../../cn.zh-CN/技术运维问题/网络连接类/使用ping命令检测ECS与Redis之间的连接.md#)通Redis实例，请检查应用中的连接配置。
 
--   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，尤其是ECS能[ping](../../../../cn.zh-CN/技术运维问题/网络连接类/使用ping命令检测ECS与Redis之间的连接.md#)通Redis但[telnet](../../../../cn.zh-CN/技术运维问题/网络连接类/使用telnet命令检测Redis端口连通性.md#) 6379端口失败时，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：请检查服务器，并在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
--   DNS解析问题。客户端出现`UnknownHostException`或者`failed to connect: r-***************.redis.rds.aliyuncs.com could not be resolved`之类的报错。解决方法：用ping或者telnet命令测试Redis连接地址的解析情况，如不成功请检查DNS配置。
+-   ECS行为异常触发安全策略，导致服务被禁止。如果多台正常连接到Redis的ECS实例中有某个实例出现突发的连接问题，尤其是ECS能[ping](../../../../cn.zh-CN/技术运维问题/网络连接类/使用ping命令检测ECS与Redis之间的连接.md#)通Redis但[telnet](../../../../cn.zh-CN/技术运维问题/网络连接类/使用telnet命令检测Redis端口连通性.md#) 6379端口失败时，可能是该ECS存在异常行为（例如对外攻击）导致服务被禁止。解决方法：
+
+    请检查服务器，在安全组的出方向设置精确的规则，比如限定该ECS只能访问业务需要的地址和端口，此处为Redis实例的6379端口。若问题还不能解决，请提交工单进行详细排查。
+
+-   DNS解析问题。客户端出现`UnknownHostException`或者`failed to connect: r-***************.redis.rds.aliyuncs.com could not be resolved`之类的报错。解决方法：
+
+    用ping或者telnet命令测试Redis连接地址的解析情况，如不成功请检查DNS配置。
+
 
 **说明：** 如因条件限制无法实施以上解决方案，您可以提交工单重新创建ECS或Redis实例，使二者在同一VPC中。
 
