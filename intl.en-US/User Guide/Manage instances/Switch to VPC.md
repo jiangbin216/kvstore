@@ -37,7 +37,11 @@ The network type of an ApsaraDB for Redis instance is the classic network. A VPC
 
 ## Related API operations {#section_bx4_1fp_tgb .section}
 
-|API|说明|
-|---|--|
+|API|Description|
+|---|-----------|
 |[SwitchNetwork](../../../../reseller.en-US/API Reference/Manage instances/SwitchNetwork.md#)|Call this OpenAPI to switch the network type of an ApsaraDB for Redis instance to VPC.|
+
+## Troubleshooting {#section_ynz_jxr_ggb .section}
+
+For more information, see [Troubleshooting for connection issues in ApsaraDB for Redis](../../../../reseller.en-US/FAQs/Troubleshooting for connection issues in ApsaraDB for Redis.md#).
 
