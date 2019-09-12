@@ -12,10 +12,10 @@
 
 以下情况中，ECS无法直接通过内网连接Redis数据库。
 
--   如果您的ECS和redis在不同地域的VPC中，内网是不通的。在不同地域下的ECS连接Redis，目前只能通过高速通道实现跨VPC的内网访问，详情参见 [跨地域VPC互连](https://help.aliyun.com/document_detail/44842.html)。
--   如果您的ECS和redis属于不同的网络类型，您可以通过如下方法来解决：
-    -   如果可以接受转换为VPC网络类型，请参考[切换为专有网络](../../../../intl.zh-CN/用户指南/实例管理/切换为专有网络.md#)或者[迁移方案概述](https://help.aliyun.com/document_detail/55051.html)。
-    -   如果不接受转化为VPC，您需要重新购买同一地域下、同属经典网络的ECS和Redis。
+-   如果您的ECS和Redis在不同地域的VPC中，内网是不通的。在不同地域下的ECS连接Redis，目前只能通过高速通道实现跨VPC的内网访问，详情参见 [跨地域VPC互连](https://help.aliyun.com/document_detail/44842.html)。
+-   如果您的ECS和Redis属于不同的网络类型，您可以通过如下方法来解决：
+    -   如果可以将Redis的网络类型转换为VPC，请参考[切换为专有网络](../../../../intl.zh-CN/用户指南/实例管理/切换为专有网络.md#)。
+    -   如果不能将Redis的网络类型转换为VPC，您需要重新购买同一地域下、同属经典网络的ECS和Redis。
 
 ## 外网连接 {#section_hs9_qsw_a21 .section}
 
