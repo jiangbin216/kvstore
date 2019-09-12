@@ -82,6 +82,6 @@ redis> LRANGE user:55_recent_activitiy 0 10
 
 ## 相关资源 {#section_yww_yhw_1gb .section}
 
--   使用[Redis内存分析方法](https://help.aliyun.com/knowledge_detail/50037.html)排除业务中潜在的风险点，找到业务性能瓶颈。
+-   使用[Redis内存分析方法](https://www.alibabacloud.com/help/zh/doc-detail/50037.html)排除业务中潜在的风险点，找到业务性能瓶颈。
 -   [云数据库Redis集群版](../../../../intl.zh-CN/产品简介/产品系列/Redis集群版-双副本.md#)助您解决高并发问题。
 
