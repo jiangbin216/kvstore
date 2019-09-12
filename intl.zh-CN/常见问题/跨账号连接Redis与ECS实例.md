@@ -22,7 +22,7 @@
 3.  在Redis的白名单中[加入ECS实例的内网IP](../../../../intl.zh-CN/用户指南/实例管理/设置IP白名单.md#)。
 4.  在ECS中使用`ping <host>`命令确认连接成功，示例如下。
 
-    ![ping测试示例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156810034638517_zh-CN.png)
+    ![ping测试示例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156827339338517_zh-CN.png)
 
     **说明：** 
 
@@ -35,7 +35,7 @@
 
 **操作步骤**
 
-1.  在两个账号的VPC之间[创建高速通道连接](https://help.aliyun.com/document_detail/44842.html)。
+1.  在两个账号的VPC之间[创建高速通道连接](../../../../intl.zh-CN/专有网络对等连接（关闭新购）/跨账号VPC互连.md#)。
 2.  在ECS的安全组入方向和出方向规则中允许ECS与Redis的连接。
 
     **说明：** 您可以在ECS中使用`ping <host>`命令（host为Redis实例的连接地址）查看Redis的内网IP地址，并将其设置在安全组规则中。ECS安全组规则配置方法请参见[配置安全组](../../../../intl.zh-CN/企业版快速入门/配置安全组.md#)。
@@ -43,7 +43,7 @@
 3.  在Redis的白名单中[加入ECS实例的内网IP](../../../../intl.zh-CN/用户指南/实例管理/设置IP白名单.md#)。
 4.  在ECS中使用`ping <host>`命令确认连接成功，示例如下。
 
-    ![ping测试示例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156810034638517_zh-CN.png)
+    ![ping测试示例](http://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/assets/img/80706/156827339338517_zh-CN.png)
 
     **说明：** 
 
