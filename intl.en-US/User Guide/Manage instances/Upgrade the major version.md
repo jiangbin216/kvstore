@@ -21,6 +21,9 @@ The method and time required for upgrading the major version vary with the archi
     ![Upgrade the major version of an instance](images/35955_en-US.png "Upgrade the major version")
 
 5.  In the Major Update dialog box, select the target version. 
+
+    ![Select the target major version](images/35959_en-US.png "Select the target major version")
+
 6.  Select **Update Now** or **Update During Maintenance** as required, and then click **OK**. 
 
     **Note:** We recommend that you set the [maintenance window](reseller.en-US/User Guide/Manage instances/Set a maintenance window.md#) to a period during off-peak hours and select **Update During Maintenance** to minimize the impact on normal business during the upgrade.
